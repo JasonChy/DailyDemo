@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*没啥技术含量，只不过是在没事干，就把这个也记上，Windows下好像有这个api函数，但是在wince下用不了，所以还得自己封装一个。大体代码如下：*/
+
+    /*the seconds of round year = 3600*24*366 */
+    const SECONDOFROUNDYEAR = 31622400;
+
+    /*the seconds of general year = 3600*24*365 */
+    const SECONDOFYEAR = 31536000;
+
+    function SecondsFrom1970() {
+        SYSTEMTIME st;
+        unsigned int tTemp=0;
+        unsigned int tSecond=0;
+        int month_s[2][12]={{31,28,31,30,31,30,31,31,30,31,30,31},
+        {31,29,31,30,31,30,31,31,30,31,30,31}};
+        int nDays=0;
+        int nCount=0;
+        int i;
+        int j;
+
+        GetLocalTime(&st);
+        tSecond=st.wHour*3600+st.wMinute*60+st.wSecond;
+
+        for (i=1970;i<st.wYear;++i)
+        {
+            if (IsRound(i))
+                ++nCount;
+        }
+
+        tTemp+=(st.wYear-1970-nCount)*SECONDOFYEAR+nCount*SECONDOFROUNDYEAR;
+
+        if (st.wMonth>1)
+        {
+            if (IsRound(st.wYear))
+            {
+                for (j=0;j<st.wMonth-1;++j)
+                {
+                    tTemp+=month_s[1][j]*MAXSECONDOFDAY;
+                }
+                tTemp+=(st.wDay-1)*MAXSECONDOFDAY+tSecond;
+            }
+            else
+            {
+                for (j=0;j<st.wMonth-1;++j)
+                {
+                    tTemp+=month_s[0][j]*MAXSECONDOFDAY;
+                }
+                tTemp+=(st.wDay-1)*MAXSECONDOFDAY+tSecond;
+            }
+        }
+        else
+        {
+            tTemp+=(st.wDay-1)*MAXSECONDOFDAY+tSecond;
+        }
+
+        return tTemp;
+    }
+
+    function IsRound( year ) {
+        /*is round year?*/
+        if((year%100)&&(year%4==0)) return 1;
+        if((year%100==0)&&(year%400==0)) return 1;
+        return 0;
+    }
+</script>
+
+</html>

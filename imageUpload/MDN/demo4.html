@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽实现文件上传</title>
+    <style>
+        #dropbox {
+            width: 500px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background: rgba(0, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body>
+<div id="dropbox">
+
+</div>
+<script>
+      const dropbox = document.getElementById("dropbox");
+      dropbox.addEventListener("dragenter", dragenter, false);
+      dropbox.addEventListener("dragover", dragover, false);
+      dropbox.addEventListener("drop", drop, false);
+
+      function dragenter(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log('文件拖进来了！')
+      }
+
+      function dragover(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        console.log('文件拖出去了！')
+      }
+
+      function drop(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        var dt = e.dataTransfer;
+        var files = dt.files;
+
+        console.log('文件已经被选中了');
+
+        handleFiles(files);
+      }
+
+      function handleFiles(fileses) {
+        console.log(fileses);
+      }
+</script>
+</body>
+</html>

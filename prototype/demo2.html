@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype Pattern Example</title>
+    <script type="text/javascript">
+        function Foo(){}
+        var Boo = {name: "Boo", age: 25 };
+        Foo.prototype = Boo;
+        var f = new Foo();
+
+        console.log(f.__proto__ === Foo.prototype); // true
+        console.log(f.__proto__ === Boo);   // true
+        console.log(Object.getPrototypeOf(f) === f.__proto__);   // true
+        console.log(f.__proto__); // Object {name: "Boo", age: 25}
+        console.log(f.prototype); // undefined
+        console.log(Foo.prototype); // Object {name: "Boo", age: 25}
+        console.log(Boo); // Object {name: "Boo", age: 25}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

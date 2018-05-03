@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <select name="" id="Provinces" ng-options="x.name for x in Provinces">
+
+        </select>
+
+    </div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function( $scope ) {
+        $scope.init = function () {
+            $scope.Provinces = [
+                { name:"浙江", value: "省"},
+                { name:"江苏", value: "省"}
+            ];
+        };
+        $scope.init();
+
+    });
+</script>
+
+</html>

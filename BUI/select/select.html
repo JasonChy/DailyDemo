@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>选择框</title>
+    <!-- 此文件为了显示Demo样式，项目中不需要引入 -->
+    <!--<link href="../../assets/code/demo.css" rel="stylesheet">-->
+
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/dpl.css" rel="stylesheet">
+    <link href="http://g.alicdn.com/bui/bui/1.1.21/css/bs3/bui.css" rel="stylesheet">
+
+    <script src="http://g.tbcdn.cn/fi/bui/jquery-1.8.1.min.js"></script>
+    <script src="http://g.alicdn.com/bui/seajs/2.3.0/sea.js"></script>
+    <script src="http://g.alicdn.com/bui/bui/1.1.21/config.js"></script>
+    <script src="address_level3.js"></script>
+    <style>
+        .demo-content{
+            float: left;
+            margin-left: 1rem;
+        }
+        .container{
+            margin: 50px auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="demo-content">
+            <div id="s1">
+                <input type="hidden" id="hide1" value="b1" name="hide1">
+            </div>
+        </div>
+        <div class="demo-content">
+            <div id="s2">
+                <input type="hidden" id="hide2" value="b2" name="hide2">
+            </div>
+        </div>
+        <div class="demo-content">
+            <div id="s3">
+                <input type="hidden" id="hide3" value="b3" name="hide3">
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- script start -->
+<script type="text/javascript">
+
+
+
+    BUI.use('bui/select',function(Select){
+        console.log(addressData);
+
+        /*var cityItems = [
+            {text:'选项1',value:'a'},
+            {text:'选项2',value:'b'},
+            {text:'选项3',value:'c'}
+        ];*/
+
+        var proviceItems = [];
+        var cityItems = [];
+        var areaItems = [];
+
+
+        for(var i = 0; i < addressData.length; i++){
+            var provices = {
+                text: addressData[i].label,
+                value: addressData[i].value
+            };
+            proviceItems.push(provices);
+        }
+
+
+        /*省select开始*/
+        selectProvince = new Select.Select({
+            render:'#s1',
+            valueField:'#hide1',
+            items:proviceItems
+        });
+
+        selectProvince.render();
+        selectProvince.on('change', function(ev){
+            cityItems = [];
+            // console.log(ev.item.text);
+            for(var j = 0; j < addressData.length; j++){
+                if(addressData[j].value==ev.item.value) {
+                    // console.log(ev.item.text);
+                    for(var k=0; k < addressData[j].children.length; k++) {
+                        var cities = {
+                            text: addressData[j].children[k].label,
+                            value: addressData[j].children[k].value
+                        };
+                        cityItems.push(cities);
+                    }
+
+                    //var currenceProvice = addressData[j].value;
+                    //console.log(currenceProvice);
+
+                }
+            }
+            selectCity(cityItems);
+        });
+        /*省select结束*/
+
+
+        /*市select结束*/
+        function selectCity(cityItems) {
+            selectCity = new Select.Select({
+                render:'#s2',
+                valueField:'#hide2',
+                items:cityItems
+            });
+
+            selectCity.render();
+            // var currenceProvice2 = currenceProvice;
+            selectCity.on('change', function(ev){
+                //onsole.log(2342,currenceProvice);
+                // console.log(ev.item);
+                areaItems = [];
+                // console.log(ev.item.text);
+
+                for(var j = 0; j < addressData.length; j++){
+                    for(var q = 0; q < addressData[j].children.length; q++){
+                        if (addressData[j].children[q].value==ev.item.value) {
+                            for(var r = 0; r < addressData[j].children[q].children.length; r++) {
+                                var areas = {
+                                    text: addressData[j].children[q].children[r].label,
+                                    value: addressData[j].children[q].children[r].value
+                                };
+                                areaItems.push(areas);
+                            }
+                        }
+                    }
+
+                };
+                console.log(areaItems);
+                selectArea(areaItems);
+
+                /*for(var p = 0; p < currenceProvice.children.length; p++){
+                    if(cityItems.value==ev.item.value) {
+                        // console.log(ev.item.text);
+                        for(var k=0; k < addressData[j].children.length; k++) {
+                            var cities = {
+                                text: addressData[j].children[k].label,
+                                value: addressData[j].children[k].value
+                            };
+                            cityItems.push(cities);
+                        }
+                    }
+                };*/
+
+
+            });
+        }
+        /*市select结束*/
+
+        /*区select结束*/
+        function selectArea(areaItems) {
+            selectArea = new Select.Select({
+                render:'#s3',
+                valueField:'#hide3',
+                items:areaItems
+            });
+
+            selectArea.render();
+            selectArea.on('change', function(ev){
+                console.log(ev.item);
+            });
+        }
+        /*区select结束*/
+
+
+
+
+        /*市select开始*/
+        /*var cityItems = [];
+
+        for(var j = 0; j < addressData.length; j++){
+            var cities = {
+                text: addressData[i].label,
+                value: addressData[i].value
+            };
+            proviceItems.push(cities);
+        }
+        console.log(proviceItems);*/
+
+
+        /*/!*区select开始*!/
+        selectArea = new Select.Select({
+            render:'#s1',
+            valueField:'#hide',
+            items:areaItems
+        });
+
+        selectArea.render();
+        selectArea.on('change', function(ev){
+            console.log(ev.item);
+        });
+        /!*区select结束*!/*/
+    });
+
+</script>
+<!-- script end -->
+
+</html>

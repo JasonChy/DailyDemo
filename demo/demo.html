@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #images {
+            width: 100px;
+            height: 100px;
+            background: url("images/index.png");
+            background-position:  -1084px -467px;
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a style="display: inline-block;width: 100px;height: 100px;background: pink;"
+           href="https://www.baidu.com" id="aTag">
+            这个链接不跳转
+        </a>
+    </div>
+
+    <div id="images">
+
+    </div>
+
+    <div>
+
+    </div>
+</body>
+
+<script>
+    document.getElementById("aTag").removeAttribute('href');
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <span>你还好吗？</span>
+    </div>
+
+</body>
+<!--<script>
+    var box = document.getElementById("box");
+    box.onclick = function(){
+        console.log("第一个",this)
+        function fn(){
+            console.log("第二个",this);
+        }
+        fn();
+    };
+</script>-->
+
+<!--<script>
+    var box = document.getElementById("box");
+    box.onclick = function(){
+        var _this = this;
+        function fn(){
+            console.log(_this);
+        }
+        fn();
+    };
+</script>-->
+
+<script>
+    var box = document.getElementById("box");
+    box.onclick = function(){
+        (function(){
+            console.log(this);
+        }.call(this)); //box
+    };
+</script>
+</html>

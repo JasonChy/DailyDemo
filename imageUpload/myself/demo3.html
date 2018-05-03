@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>身份证上传</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style/index.css">
+    <script src="./script/hd.js"></script>
+    <style>
+        #frontImage {
+            max-width: 5.33rem;
+            max-height: 3.33rem;
+            /*width: expression(this.width > 5.33rem ? "5.33rem" : this.width);
+            height: expression(this.width > 3.33rem ? "3.33rem" : this.width);*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="labelText">
+        拍摄/上传 您的身份证
+    </div>
+    <div class="front">
+        <div class="frontHolder" id="frontHolder"></div>
+        <div class="imagesBox">
+            <img src="" alt="身份证正面" id="frontImage"/>
+        </div>
+        <input type="file" id="frontInput">
+        <label for="frontInput" class="uploadLabel">上传</label>
+    </div>
+
+    <div id="deleteButton">
+        删除按钮
+    </div>
+</div>
+</body>
+<script>
+  let frontInput = document.getElementById('frontInput');
+  let frontFile = frontInput[0];
+  frontInput.addEventListener('change', handleFiles, false);
+
+  function handleFiles() {
+    const fileObj = this.files;
+    console.log(fileObj);
+    const frontImage = document.getElementById('frontImage');
+
+    let reader = new FileReader();
+    reader.readAsDataURL(fileObj[0]);
+    reader.onload = (function (aImg) {
+      return function (e) {
+        aImg.src = e.target.result;
+      };
+    })(frontImage);
+
+    document.getElementById('frontHolder').style.opacity = 0;
+    document.getElementById('deleteButton').style.display = 'block';
+
+
+  }
+</script>
+</html>

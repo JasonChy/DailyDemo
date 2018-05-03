@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*计算天数*/
+    /*其实日期字符串*/
+    var startDate = "1991-05-15";
+    var endDate = "2017-05-15";
+
+    /*平年一年的秒数 365*24*3600*/
+    const secondsOfCommonYear = 31536000;
+
+    /*闰年一年的秒数 366*24*3600 = 31622400 */
+    const secondsOfLeapYear = 31622400;
+
+    /*一天的秒数24*3600*/
+    const secondsOfADay = 86400;
+
+    /*平年各月份的天数*/
+    var daysNumOfEveryMonth1 = [31,28,31,30,31,30,31,31,30,31,30,31];
+    /*闰年各月份的天数*/
+    var daysNumOfEveryMonth2 = [31,29,31,30,31,30,31,31,30,31,30,31];
+
+
+    var result = computeMillisecond(endDate);
+    console.log(result);
+
+    /*判断闰年*/
+    function isLeapYear( year ) {
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            console.log(year+"年是闰年");
+            /*闰年返回1*/
+            return 1;
+        }
+        else {
+            /*平年返回0*/
+            return 0;
+        }
+    }
+
+    function computeMillisecond ( aDateString ) {
+        /*将日期字符串转为日期对象*/
+        var aDate = new Date(aDateString);
+        /*获取aDate的年月日*/
+        var yearOfADate = aDate.getFullYear();
+        var mouthOfADate = aDate.getMonth();
+        var dayOfADate = aDate.getDate();
+        /*获取aDate的时分秒*/
+        var hourOfADate = aDate.getHours();
+        var minutesOfADate = aDate.getMinutes();
+        var secondsOfADate = aDate.getSeconds();
+
+        /*闰年年数变量*/
+        var leapYearNum = 0;
+
+        /*计算整年的秒数*/
+        for (var i=1970; i<yearOfADate; i++ ){
+            /*计算闰年的年数*/
+            if (isLeapYear(i)){
+                ++leapYearNum;
+            }
+            tempSeconds = (yearOfADate-1970-leapYearNum)*secondsOfCommonYear + leapYearNum*secondsOfLeapYear;
+        }
+
+        /*计算最后一年的秒数*/
+        if(mouthOfADate >= 1){
+            /*最后一年是平年的情况*/
+            if(isLeapYear(yearOfADate)){
+                for(var j=0; j<mouthOfADate-1; j++){
+                    tempSeconds += daysNumOfEveryMonth1[j]*secondsOfADay;
+                }
+                console.log(j);
+            }
+            /*最后一年是闰年的情况*/
+            else {
+                for(var k=0; k<mouthOfADate-1; k++){
+                    tempSeconds += daysNumOfEveryMonth2[k]*secondsOfADay;
+                }
+                console.log(k);
+            }
+        }
+        /*加上最后一个月的秒数*/
+        tempSeconds = tempSeconds + (dayOfADate-1)*24*3600 + hourOfADate*3600 + minutesOfADate*60 + secondsOfADate;
+        /*转换为毫秒*/
+        var milliSeconds = tempSeconds*1000;
+        return milliSeconds;
+    }
+</script>
+
+</html>

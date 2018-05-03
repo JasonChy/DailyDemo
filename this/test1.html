@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    var o = {
+        user:"追梦子",
+        fn:function () {
+            console.log(this.user);
+        }
+    };
+    window.o.fn();
+</script>
+
+<script>
+    var o = {
+        a:10,
+        b:{
+            a:12,
+            fn: function(){
+                console.log(this.a);
+            }
+        },
+        f1:function(){
+            console.log(this.a)
+        }
+    };
+    o.b.fn();
+    o.f1();
+</script>

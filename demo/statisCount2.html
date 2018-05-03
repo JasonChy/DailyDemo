@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const stringArr = 'dsffljlsdgkdhfghf  ggkdfa lslas fdkvmfvmnbc kvfohmfg,alddfa';
+    let obj = {};
+    obj[stringArr[0]] = 1;
+    for (let i = 1; i < stringArr.length; i++) {
+//      console.log(stringArr[i]);
+      // 先计算出obj对象中的属性的个数
+      let memberCount = 0;
+      for (let member in obj) {
+        if (obj.hasOwnProperty(member)) {
+          memberCount++;
+        }
+      }
+      let currentMemberCount = 0;
+      for (let member in obj) {
+        if (obj.hasOwnProperty(member)) {
+          currentMemberCount++;
+          let currentChar = stringArr[i];
+          // 当字符串中当前位的字符与对象obj的属性名member相同时，就停止当前循环，将obj的属性member的值+1
+          if (currentChar == member) {
+            obj[member]++;
+            break;
+          }
+          // 当对象obj的属性遍历到最后一个属性还没有字符与obj的属性名member相同，就给对象obj新增一个新的属性currentChar置为1
+          else if (currentMemberCount == memberCount){
+            obj[currentChar] = 1;
+          }
+        }
+      }
+    }
+    console.log(obj);
+
+    let maxKey = '';
+    let maxCount = 0;
+    for (let member in obj) {
+      if (obj.hasOwnProperty(member)) {
+        if (obj[member] > maxCount) {
+          maxKey = member;
+          maxCount = obj[member];
+        }
+      }
+    }
+    console.log('出现最多的字符是：' + maxKey + ' |  ' + maxKey + '出现的次数是：' + maxCount);
+
+</script>
+</html>

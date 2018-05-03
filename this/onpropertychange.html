@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="show"></div>
+    <input type="text" id="txt" value="蚂蚁部落">
+</body>
+<script>
+    window.onload = function () {
+        var otext = document.getElementById("txt");
+        var oshow = document.getElementById("show");
+        var count = 0;
+        otext.onpropertychange = function () {
+            count++;
+            oshow.innerHTML = count;
+         console.log("onInput函数"+count);
+        };
+        /*if(document.all){
+            otext.onpropertychange = function () {
+                count++;
+                oshow.innerHTML = count;
+                console.log("onpropertychange函数"+count);
+            }
+        }
+        else{
+            otext.oninput = function () {
+                count++;
+                oshow.innerHTML = count;
+                console.log("onInput函数"+count);
+            }
+        }*/
+    }
+</script>
+</html>

@@ -1,0 +1,21 @@
+{
+    "data": {
+        "dailyReport": {
+            "statTime": 1492515352000,// 统计时间，精确到日，前端处理格式
+            "statOrg": "舟山市新城大昌小额贷款有限公司",// 查询机构
+            "applying": 10, // 申请中户数
+            "approving": 5, // 审批中户数
+            "fetched": 3, // 已获贷户数
+            "rejected": 1, // 已拒绝户数
+            "querier": "张三",// 查询人
+            "printTime": 1492515352000// 打印时间，精确到分，前端处理格式
+        }
+    },
+    "reqInfo": {
+        "traceId": "0a0f1c9a14925924137011284",
+        "resultCode": null,
+        "resultMsg": "请求成功",
+        "showType": 0,
+        "success": "true"
+    }
+}

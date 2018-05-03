@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = arr1.map(function (num, index) {
+        return num*num+index;
+    });
+    console.log(arr2);
+</script>
+
+<script>
+    var arr3 = [1, 2, 3, 4, 5];
+    var arr4 = arr3.map( num => num*num );
+    console.log(arr4);
+</script>
+
+<script>
+    var arr3 = [1, 2, 3, 4, 5];
+    var arr4 = arr3.map( num => num*num+1 );
+    console.log(arr4);
+</script>
+
+<script>
+    var arr3 = [1, 2, 3, 4, 5];
+    var arr4 = arr3.map( (num,index) => num*num+index );
+    console.log(arr4);
+</script>
+</html>

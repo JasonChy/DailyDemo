@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生活号发起申贷请求测试小工具</title>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.jsonp.js"></script>
+    <style>
+        .container {
+            width: 1200px;
+            height: 500px;
+            text-align: center;
+            margin: 100px auto;
+            padding: 50px;
+        }
+
+        .testTitle {
+            height: 40px;
+            line-height: 40px;
+            margin-left: -100px;
+            font: bold 18px/1rem "microsoft yahei";
+            color: #46b8da;
+        }
+
+        .labelStyle {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .inputStyle {
+            height: 30px;
+            margin: 10px auto;
+            padding-left: 5px;
+            font-size: 16px;
+        }
+
+        .buttonStyle {
+            height: 35px;
+            margin: 20px 0 10px -222px;
+            font-size: 14px;
+            border-radius: 4px;
+            background: #eeeeee;
+            color: #333333;
+            outline: none;
+            border-style: outset;
+            border-color: buttonface;
+            border-image: initial;
+        }
+
+        .result {
+            color: #ff5728;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="testTitle">生活号-发起申贷请求测试小工具</div>
+
+    <span class="labelStyle" for="">支付宝登录号：</span>
+    <input type="text" class="inputStyle" id="alipayAccount">
+
+    <br>
+    <span class="labelStyle" for="">外部机构产品码：</span>
+    <input type="text" class="inputStyle" id="isvProdCode">
+    <br>
+
+    <button class="buttonStyle" onclick="clickEvent()">发起生活号申贷请求</button>
+
+    <div class="result">
+    </div>
+
+</div>
+</body>
+<script>
+    $(function () {
+        clickEvent = function () {
+            var alipayAccount = $("#alipayAccount").val();
+            var isvProdCode = $("#isvProdCode").val();
+
+            if (alipayAccount == '' || alipayAccount == undefined || alipayAccount == null) {
+                alert("支付宝登录号不能为空");
+            } else if (isvProdCode == '' || isvProdCode == undefined || isvProdCode == null) {
+                alert("外部产品码不能为空");
+            } else {
+
+                var url = "http://10.15.10.39:8080/shengHuoHaoLoan?alipayAccount=" + alipayAccount + "&isvProdCode=" + isvProdCode;
+
+
+                $.get(url, function (response, status) {
+                    console.log(status);
+                    $(".result").html(response.msg + '');
+                });
+
+                $.ajax({
+                    url: url,
+                    dataType: 'jsonp',
+                    processData: false,
+                    type: 'get',
+                    success: function (data) {
+                        console.log(JSON.stringify(data));
+//                        alert(JSON.stringify(data));
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest.status);
+                        alert(XMLHttpRequest.readyState);
+                        alert(textStatus);
+                    }
+                });
+
+            }
+        }
+    })
+</script>
+</html>
+
+

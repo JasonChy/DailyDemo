@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小贷测试工具</title>
+    <style>
+        #header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .containerBox {
+            overflow: hidden;
+            width: 1200px;
+        }
+
+        #nav {
+            float: left;
+            line-height: 50px;
+            background-color: #eeeeee;
+            height: 600px;
+            width: 16.66%;
+            padding: 5px 5px 5px 20px;
+        }
+
+        #nav li {
+            display: block;
+            height: 30px;
+            text-decoration: none;
+            font: normal 14px/30px 'Helvetica, sans-serif';
+            color: #4082B2;
+            border-bottom: 1px solid #E0EBF2;
+        }
+
+        #section {
+            line-height: 50px;
+            width: 80%;
+            height: 610px;
+            float: left;
+        }
+
+        iframe {
+            width: 1000px;
+            height: 610px;
+        }
+
+        #footer {
+            background-color: black;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <script src="lib/JQuery/jquery.min.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1>小贷测试工具</h1>
+</div>
+
+<div class="containerBox">
+    <div id="nav">
+        <ul>
+            <li>
+                <a href="alipayAccountGenerator.html">支付宝账号创建</a>
+            </li>
+            <li>
+                <a href="alipayAccountsQuery.html">支付宝账号查询</a>
+            </li>
+            <li>
+                <a href="mayiBankAccountsQuery.html">自助贷账号查询</a>
+            </li>
+            <li>
+                <a href="zhiMaAuth.html">芝麻信用授信</a>
+            </li>
+            <li>
+                <a href="shengHuoHao.html">生活号申贷</a>
+            </li>
+            <li>
+                <a href="shengHuoHaoLoanNew.html">生活号(新产品)申贷</a>
+            </li>
+            <li>
+                <a href="scenarioInfoSearch.html">产品还款方式查询</a>
+            </li>
+            <li>
+                <a href="bizDataPrepare.html">小程序造数据</a>
+            </li>
+            <li>
+                <a href="shengHuoHaoWorkFlow.html">生活号推流</a>
+            </li>
+            <li>
+                <a href="loanDataCleansing.html">自助贷数据清理</a>
+            </li>
+            <li>
+                <a href="mayiBankCookiesAcqusition.html">获取自助贷cookies</a>
+            </li>
+            <li>
+                <a href="syncLedger.html">台账表同步</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="section">
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+</div>
+
+<div id="footer">
+    Author：ZhengZhi
+</div>
+<script>
+  $(function () {
+    $("#nav a").click(function (e) {
+//      console.log(this);
+//      console.log(e.target);
+
+      // console.log(e.target.href);
+       console.log('点击了', this.getAttribute("href"));
+      e.preventDefault();
+//      console.log($("iframe")[0].src);
+      $("#section iframe")[0].src = this.getAttribute("href");
+      // $("#hidden").show();
+      // $("iframe").attr("src", "2.htm");
+    });
+  });
+</script>
+</body>
+</html>

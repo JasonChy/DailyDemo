@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*计算天数*/
+    /*其实日期字符串*/
+    var startDate = "1991-06-09";
+    var endDate = "2017-05-15";
+
+    var daysNumber = 0;
+    for ( var year=1991; year<2018; year++ ) {
+        if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            console.log(year+"年是闰年");
+            daysNumber += 366;
+        }
+        else {
+            daysNumber += 365;
+        }
+    }
+
+    /*计算起始日期对应的毫秒数*/
+    var start = Date.parse(startDate);
+    var end = Date.parse(endDate);
+
+    /*计算毫秒数的差*/
+    var difference = end-start;
+
+    /*将毫米数差转换成天数*/
+    var daysNumber = difference /( 24*3600*1000 );
+
+    console.log("天数是："+daysNumber);
+</script>
+
+</html>

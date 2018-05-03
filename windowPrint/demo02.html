@@ -1,0 +1,38 @@
+<!--window.print打印指定div
+window.print可以打印网页，但有时候我们只希望打印特定控件或内容，怎么办呢？
+
+首先我们可以把要打印的内容放在div中，然后用下面的代码进行打印。
+-->
+<html>
+<head>
+    <script language="javascript">
+        function printdiv(printpage)
+        {
+            var headstr = "<html><head><title></title></head><body>";
+            var footstr = "</body>";
+            var printData = document.getElementById("dvData").innerHTML; 获得 div 里的所有 html 数据
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr+newstr+footstr;
+            window.print();
+            document.body.innerHTML = oldstr;
+            return false;
+        }
+    </script>
+    <title>div print</title>
+</head>
+
+<body>
+//HTML Page
+//Other content you wouldn't like to print
+<input name="b_print" type="button" class="ipt"   onClick="printdiv('div_print');" value=" Print ">
+
+<div id="div_print">
+
+    <h1 style="Color:Red">The Div content which you want to print</h1>
+
+</div>
+//Other content you wouldn't like to print
+//Other content you wouldn't like to print
+</body>
+
+</html>

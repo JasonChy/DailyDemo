@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    $(document).ready(function () {
+        var url = 'http://localhost:8080/WorkGroupManagment/open/getGroupById" + "?id=1&callback=?';
+        $.ajax({
+            url: url,
+            dataType: 'jsonp',
+            processData: false,
+            type: 'get',
+            success: function (data) {
+                alert(data.name);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+    });
+</script>
+</html>

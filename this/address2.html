@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="address.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    var province = "330000";
+    var city = "330900";
+    var area = "330502";
+    var street = "330502002";
+
+    /*var addressString = options[province].*/
+
+    var addressString = "";
+    for(var i=0; i<options.length; i++){
+        /*找省*/
+        if ( options[i].value == province ) {
+            var aProvince = options[i];
+            addressString += aProvince.label;
+            var cities = aProvince.children;
+
+            /*找市*/
+            for(var j=0; j<cities.length; j++){
+                if ( cities[j].value == city ) {
+                    var aCity = cities[j];
+                    addressString += aCity.label;
+                    var areas = aCity.children;
+
+                    /*找区*/
+                    for(var k=0; k<areas.length; k++){
+                        if ( areas[k].value == area ) {
+                            var aArea = area[k];
+                            addressString += aArea.label;
+                            var streetes = aArea.children;
+
+                            /*找街道*/
+                            for (var l=0; l<streetes.length; l++) {
+                                if (streetes[l].value == street) {
+                                    var aStreet = area[l];
+                                    addressString += aStreet.label;
+                                    /*var streetes = aArea.children;*/
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    console.log(addressString);
+</script>
+</html>

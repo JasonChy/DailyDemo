@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div>
+    <div class="my-search">
+        <div class="ch-search-region am-form-inline" role="form">
+
+            <div class="am-form-group" style="float:right;margin-left:2%">
+                <select id="searchState">
+                    <option value="">选择客户类型</option>
+                    <option value="1">普通客户</option>
+                    <option value="3">意向客户</option>
+                    <option value="2">合作客户</option>
+                </select>
+            </div>
+
+
+            <div class="am-form-group" style="float:right;margin-left:2%">
+                <select id="searchSize">
+                    <option value="">选择规模</option>
+                    <option value="1">小型</option>
+                    <option value="2">中型</option>
+                    <option value="3">大型</option>
+                    <option value="4">连锁</option>
+                </select>
+            </div>
+            <div class="am-form-group" style="float:right;margin-left:2%">
+                <select style="" class="am-form-field ng-pristine ng-untouched ng-valid ng-not-empty"
+                        ng-model="searchOpName" ng-options="a for a in searchOpNames">
+                    <option label="全部员工" value="string:全部员工" selected="selected">全部员工</option>
+                    <option label="陈磊" value="string:陈磊">陈磊</option>
+                    <option label="林峰" value="string:林峰">林峰</option>
+                    <option label="肯诺" value="string:肯诺">肯诺</option>
+                    <option label="王斌" value="string:王斌">王斌</option>
+                    <option label="黎林优" value="string:黎林优">黎林优</option>
+                    <option label="公共" value="string:公共">公共</option>
+                    <option label="红海" value="string:红海">红海</option>
+                    <option label="新亮联盟" value="string:新亮联盟">新亮联盟</option>
+                </select>
+            </div>
+
+            <div class="am-form-group" style="float:right">
+                <span>区</span>
+                <select class="ch-input shopSearch-select-1 ng-pristine ng-untouched ng-valid ng-empty" id="area1"
+                        ng-model="searchArea" ng-options="x.name for x in Areas">
+                    <option value="?" selected="selected"></option>
+                </select>
+            </div>
+
+            <div class="am-form-group" style="float:right;margin-right:2%">
+                <span>市</span>
+                <select class="ch-input shopSearch-select-1 ng-pristine ng-untouched ng-valid ng-not-empty" id="city1"
+                        ng-model="searchCity" ng-options="x.name for x in Citys">
+                    <option label="全部" value="object:809" selected="selected">全部</option>
+                    <option label="杭州" value="object:810">杭州</option>
+                    <option label="湖州" value="object:811">湖州</option>
+                    <option label="嘉兴" value="object:812">嘉兴</option>
+                    <option label="金华" value="object:813">金华</option>
+                    <option label="丽水" value="object:814">丽水</option>
+                    <option label="宁波" value="object:815">宁波</option>
+                    <option label="衢州" value="object:816">衢州</option>
+                    <option label="绍兴" value="object:817">绍兴</option>
+                    <option label="台州" value="object:818">台州</option>
+                    <option label="温州" value="object:819">温州</option>
+                    <option label="舟山" value="object:820">舟山</option>
+                </select>
+            </div>
+
+            <div class="am-form-group" style="float:right;margin-right:2%">
+                <span>省</span>
+                <select class="ch-input shopSearch-select-1 ng-pristine ng-untouched ng-valid ng-not-empty"
+                        id="province1" ng-model="searchProvince" ng-options="x.name for x in Provinces">
+                    <option label="浙江" value="object:808" selected="selected">浙江</option>
+                </select>
+            </div>
+
+
+        </div>
+
+
+        <div class="am-g am-g-collapse marginTop20" style="width:100%;">
+            <div class="am-u-sm-6 am-u-sm-offset-6 am-u-end">
+                <div class="am-g" style="float:right;">
+                    <div class="am-u-sm-3 am-u-sm-offset-2">
+                        <input type="text" class="am-u-sm-5 am-form-field am-text-center" id="searchStartDate"
+                               data-am-datepicker="{theme: 'warning'}" placeholder="输入年月日">
+                    </div>
+
+                    <div class="am-u-sm-1 am-text-center">
+                        <p style="padding-top:5px;">至</p>
+                    </div>
+
+                    <div class="am-u-sm-3">
+                        <input type="text" class="am-form-field am-text-center" id="searchEndDate"
+                               data-am-datepicker="{theme: 'warning'}" placeholder="输入年月日">
+                    </div>
+
+                    <div class="am-u-sm-3 am-u-end">
+                        <button type="button"
+                                class="am-btn am-btn-warning am-radius ch-btn-tool-filter am-margin-right-xs"
+                                style="height:35px;min-width:96px;margin:0;" ng-click="searchCustomer()">筛选
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <select name="" id="" ng-options="x.name for x in Provinces">
+
+    </select>
+
+</div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.Provinces = [
+            {}
+        ];
+
+        //省市区 开始
+        var url = ENV.SERVER_PATH + '/config/getAreaChildsByParentId.do?parentId=100000';
+        $http.get(url).success(function (result) {
+            if (result.flag == 'Y') {
+                var data = eval("(" + result.data + ")");
+                var exist = false;
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].isid == user.province) {
+                        $scope.Provinces = [];
+                        $scope.Provinces.push(data[i]);
+                        $scope.searchProvince = $scope.Provinces[0];
+
+                        exist = true;
+                        break;
+                    }
+                }
+                if (!exist) {
+                    $scope.Provinces = [];
+                    $scope.Provinces.push(data[0]);
+                    $scope.searchProvince = $scope.Provinces[0];
+                }
+
+
+                var url = ENV.SERVER_PATH + '/config/getAreaChildsByParentId.do?parentId=' + $scope.searchProvince.isid;
+                $http.get(url).success(function (result) {
+                    if (result.flag == 'Y') {
+                        $scope.Citys = eval("(" + result.data + ")");
+                        var all = {'isid': '', 'name': '全部'};
+                        $scope.Citys.unshift(all);
+                        $scope.searchCity = $scope.Citys[0];
+                    }
+                });
+
+
+                if (user.roleName == 'admin') {
+                    var url = ENV.SERVER_PATH + '/crm/getInnerUserByOrgName.do?orgName=' + encodeURI(encodeURI(user.orgName));
+                    $http.get(url)
+                        .success(function (result) {
+                            if (result.flag == 'Y') {
+                                $scope.searchOpNames = eval("(" + result.data + ")");
+                                $scope.opNames = eval("(" + result.data + ")");
+                                $scope.searchOpNames.unshift('全部员工');
+                                //$scope.searchOpNames.unshift();
+                                //$scope.opName = user.name;
+                                $scope.searchOpName = $scope.searchOpNames[0];
+                                $scope.searchCustomer();
+                            }
+                        });
+                } else {
+                    $scope.searchOpNames = [user.name];
+                    $scope.searchOpName = $scope.searchOpNames[0];
+                    $scope.searchCustomer();
+                }
+
+            }
+        });
+        //省市区 完毕
+
+    };
+
+    $scope.$watch('searchCity', function () {
+        if ($scope.searchCity != undefined && $scope.searchCity != '') {
+            if ($scope.searchCity.isid == '') {
+                $scope.Areas = [];
+                $scope.searchArea = '';
+            } else {
+                var url = ENV.SERVER_PATH + '/config/getAreaChildsByParentId.do?parentId=' + $scope.searchCity.isid;
+                $http.get(url).success(function (result) {
+                    if (result.flag == 'Y') {
+                        $scope.Areas = eval("(" + result.data + ")");
+                        var all = {'isid': '', 'name': '全部'};
+                        $scope.Areas.unshift(all);
+                        $scope.searchArea = $scope.Areas[0];
+                    }
+                });
+            }
+        }
+
+    });
+
+    })
+    ;
+</script>
+
+</html>

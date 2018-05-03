@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <select ng-init="selectedName = names[0]" ng-model="selectedProvince" ng-options="x.name for x in Provinces">
+    </select>
+
+    <select ng-init="selectedName = names[0]" name="" id="" ng-options="x.name for x in Citys" ng-model="selectedProvince">
+
+    </select>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope) {
+        $scope.Provinces = [
+            { name:"浙江", value: "001", children: [{name: "杭州",value: "5345"}, {name: "宁波",value: "5346"}]},
+            { name:"江苏", value: "002", children: [{name: "无锡",value: "5494"}, {name: "常州",value: "8422"}]}
+        ];
+
+        $scope.citys6 = [{name: "杭州",value: "5345"}, {name: "宁波",value: "5346"}];
+
+        $scope.$watch('selectedProvince', function () {
+            if ($scope.selectedProvince != undefined && $scope.selectedProvince != '') {
+                $scope.Citys = [{name: "杭州",value: "5345"}, {name: "宁波",value: "5346"}];
+            }
+
+        });
+
+
+    });
+
+</script>
+
+</body>
+</html>

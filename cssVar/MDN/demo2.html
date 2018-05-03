@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        :root {
+            --main-bg-color: brown;
+        }
+        .one {
+            display: inline-block;
+            color: white;
+            background: var(--main-bg-color);
+            width: 150px;
+            height: 70px;
+            margin: 10px;
+        }
+        .two {
+            display: inline-block;
+            color: white;
+            background: black;
+            width: 150px;
+            height: 70px;
+            margin: 10px;
+        }
+        .three {
+            color: white;
+            background: var(--main-bg-color);
+            width: 75px;
+            margin: 10px;
+        }
+        .four {
+            color: white;
+            background: var(--main-bg-color);
+            width: 100px;
+            margin: 10px;
+        }
+        .five {
+            background: var(--main-bg-color);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="one"></div>
+        <div class="two">Text <span class="five">- more text</span></div>
+        <input type="text" class="three">
+        <textarea name="" class="four" id="">Lorem Ipsum</textarea>
+    </div>
+</body>
+</html>

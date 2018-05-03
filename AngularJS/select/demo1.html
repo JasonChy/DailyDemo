@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <select name="" id="" ng-options="x.name for x in Provinces">
+
+        </select>
+
+    </div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.Provinces = [
+            {}
+        ];
+
+        //省市区 开始
+        var url = ENV.SERVER_PATH + '/config/getAreaChildsByParentId.do?parentId=100000';
+        $http.get(url).success(function (result) {
+            if (result.flag == 'Y') {
+                var data = eval("(" + result.data + ")");
+                var exist = false;
+                for (var i=0;i<data.length;i++){
+                    if (data[i].isid == user.province){
+                        $scope.Provinces =[];
+                        $scope.Provinces.push(data[i]);
+                        $scope.searchProvince = $scope.Provinces[0];
+
+                        exist = true;
+                        break;
+                    }
+                }
+                if (!exist){
+                    $scope.Provinces =[];
+                    $scope.Provinces.push(data[0]);
+                    $scope.searchProvince = $scope.Provinces[0];
+                }
+
+
+                var url = ENV.SERVER_PATH + '/config/getAreaChildsByParentId.do?parentId=' + $scope.searchProvince.isid;
+                $http.get(url).success(function (result) {
+                    if (result.flag == 'Y') {
+                        $scope.Citys = eval("(" + result.data + ")");
+                        var all = {'isid': '', 'name': '全部'};
+                        $scope.Citys.unshift(all);
+                        $scope.searchCity = $scope.Citys[0];
+                    }
+                });
+
+
+                if (user.roleName == 'admin') {
+                    var url = ENV.SERVER_PATH + '/crm/getInnerUserByOrgName.do?orgName=' + encodeURI(encodeURI(user.orgName));
+                    $http.get(url)
+                        .success(function (result) {
+                            if (result.flag == 'Y') {
+                                $scope.searchOpNames = eval("(" + result.data + ")");
+                                $scope.opNames = eval("(" + result.data + ")");
+                                $scope.searchOpNames.unshift('全部员工');
+                                //$scope.searchOpNames.unshift();
+                                //$scope.opName = user.name;
+                                $scope.searchOpName = $scope.searchOpNames[0];
+                                $scope.searchCustomer();
+                            }
+                        });
+                } else {
+                    $scope.searchOpNames = [user.name];
+                    $scope.searchOpName = $scope.searchOpNames[0];
+                    $scope.searchCustomer();
+                }
+
+            }
+        });
+        //省市区 完毕
+
+    };
+
+    $scope.$watch('searchCity', function () {
+        if ($scope.searchCity != undefined && $scope.searchCity != '') {
+            if ($scope.searchCity.isid == '') {
+                $scope.Areas = [];
+                $scope.searchArea = '';
+            } else {
+                var url = ENV.SERVER_PATH + '/config/getAreaChildsByParentId.do?parentId=' + $scope.searchCity.isid;
+                $http.get(url).success(function (result) {
+                    if (result.flag == 'Y') {
+                        $scope.Areas = eval("(" + result.data + ")");
+                        var all = {'isid': '', 'name': '全部'};
+                        $scope.Areas.unshift(all);
+                        $scope.searchArea = $scope.Areas[0];
+                    }
+                });
+            }
+        }
+
+    });
+
+    });
+</script>
+
+</html>

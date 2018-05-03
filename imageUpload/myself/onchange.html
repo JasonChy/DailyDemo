@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="file" id="fileInput" multiple onchange="fileSelected()">
+</div>
+</body>
+<script>
+  function fileSelected() {
+    const fileInput = document.getElementById('fileInput');
+    // const fileObj = fileInput.files[0];
+    // console.log(fileObj);
+    console.log(fileInput.value);
+    // fileInput.value = '';
+  }
+</script>
+</html>

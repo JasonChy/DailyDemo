@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>File(s) size</title>
+    <script>
+      function updateSize() {
+        var fileSelect = document.getElementById("fileSelect"),
+            fileElem = document.getElementById("fileElem");
+
+        fileSelect.addEventListener("click", function (e) {
+          if (fileElem) {
+            fileElem.click();
+          }
+          e.preventDefault(); // 避免导航到 "#"
+        }, false);
+      }
+      function handleFiles(fileses) {
+        console.log(fileses);
+      }
+    </script>
+</head>
+
+<body onload="updateSize();">
+    <form name="uploadForm">
+        <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+        <a href="#" id="fileSelect">Select some files</a>
+    </form>
+</body>
+</html>

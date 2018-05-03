@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="address.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+
+
+    let valueString1 = "230000,230800,230803,230803003";
+    console.log("这个地址是："+resolveAddress(valueString1));
+
+    function resolveAddress( valueString ) {
+        /*截取省市区街道的代码*/
+        let province = valueString.substring(0,6);
+        let city = valueString.substring(7,13);
+        let area = valueString.substring(14,20);
+        let street = valueString.substring(21,30);
+        console.log(province+" "+city+" "+area+" "+street);
+        /*let addressString = options[province].*/
+        let addressString = "";
+
+        /*开始循环遍历找到省市区*/
+        for(let i=0; i<options.length; i++){
+            /*找省*/
+            if ( options[i].value == province ) {
+                let aProvince = options[i];
+                addressString += aProvince.label;
+                let cities = aProvince.children;
+
+                /*找市*/
+                for(let j=0; j<cities.length; j++){
+                    if ( cities[j].value == city ) {
+                        let aCity = cities[j];
+                        addressString += aCity.label;
+                        let areas = aCity.children;
+
+                        /*找区*/
+                        for(let k=0; k<areas.length; k++){
+                            if ( areas[k].value == area ) {
+                                let aArea = areas[k];
+                                addressString += aArea.label;
+                                let streetes = aArea.children;
+
+                                /*找街道*/
+                                for (let l=0; l<streetes.length; l++) {
+                                    if (streetes[l].value == street) {
+                                        let aStreet = streetes[l];
+                                        addressString += aStreet.label;
+                                        /*let streetes = aArea.children;*/
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return addressString;
+    }
+
+
+</script>
+</html>

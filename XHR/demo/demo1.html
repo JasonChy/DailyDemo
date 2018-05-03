@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="beian">
+
+    </div>
+
+<script>
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'hyd.png', true);
+      //可以将`xhr.responseType`设置为`"blob"`也可以设置为`" arrayBuffer"`
+      //xhr.responseType = 'arrayBuffer';
+      xhr.responseType = 'blob';
+
+      xhr.onload = function (e) {
+        console.log('17', this);
+        if (this.status == 200) {
+          let blob = this.response;
+          console.log('20', blob);
+          let image11 = document.createElement('img');
+          image11.src = 'blob:' + blob;
+          document.getElementById('beian').appendChild(image11);
+        }
+      };
+
+  xhr.send();
+</script>
+</body>
+</html>

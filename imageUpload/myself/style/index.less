@@ -1,0 +1,57 @@
+
+.container {
+  width: 100%;
+  /*height: 15rem;*/
+}
+
+.labelText {
+  margin-top: 183/75rem;
+  font-size: 26/75rem;
+  font-family: SimHei sans-serif;
+  text-align: center;
+}
+
+.front {
+  position: relative;
+  width: 400/75rem;
+  height: 250/75rem;
+  margin: 60/75rem auto;
+  border: 2px solid #ededed;
+  border-radius: 4px;
+  .imagesBox {
+    width: 400/75rem;
+    height: 250/75rem;
+    line-height: 250/75rem;
+    text-align: center;
+    z-index: -1;
+  }
+  #frontInput {
+    display: none;
+  }
+  .frontHolder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400/75rem;
+    height: 250/75rem;
+    background-image: url("../images/frontHolder.jpg");
+    background-repeat: no-repeat;
+    background-size: 400/75rem 250/75rem;
+  }
+  .uploadLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250/75rem;
+    line-height: 240/75rem;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0;
+  }
+}
+
+
+#deleteButton {
+  display: none;
+}

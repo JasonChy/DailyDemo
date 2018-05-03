@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var pat = /my/;
+    var str = "this is my code";
+    console.log(pat.test(str));
+</script>
+<script>
+    var pat = /hello/;
+    console.log(Array.isArray((pat.exec("oh hello world")))); //返还hello
+    console.log((pat.exec("oh hello world")) instanceof Array); //返还hello
+
+</script>
+
+<script>
+    //不区分大小写
+    var str = "Visit Hunger";
+    var patt1 = /hunger/i;
+    console.log(str.match(patt1));  //全局匹配
+
+    var str = "hello hunger valley! I am hunger";
+    var patt1 = /hunger/g;
+    console.log(str.match(patt1));
+    //不区分大小写，全局匹配 var str="hello Hunger valley! I am hunger";
+    // var patt1=/hunger/gi; console.log(str.match(patt1));
+
+</script>
+<script>
+    (function loader() {
+        if (window.Tracert) {
+            return
+        }
+        var Tracert = {
+            _isInit: true,
+            _readyToRun: [],
+            call: function () {
+                var args = arguments;
+                var argsList;
+                try {
+                    argsList = [].slice.call(args, 0)
+                } catch (ex) {
+                    var argsLen = args.length;
+                    argsList = [];
+                    for (var i = 0; i < argsLen; i++) {
+                        argsList.push(args[i])
+                    }
+                }
+                Tracert.addToRun(function () {
+                    Tracert.call.apply(Tracert, argsList)
+                })
+            },
+            addToRun: function (_fn) {
+                var fn = _fn;
+                if (typeof fn === "function") {
+                    fn._logTimer = (new Date()) - 0;
+                    Tracert._readyToRun.push(fn)
+                }
+            },
+        };
+        var fnlist = ["config", "logPv", "info", "err", "click", "expo", "pageName", "pageState", "time", "timeEnd", "parse", "expoCheck", "stringify", "report"];
+        for (var i = 0; i < fnlist.length; i++) {
+            var fn = fnlist[i];
+            (function (fn) {
+                Tracert[fn] = function () {
+                    var args = arguments;
+                    var argsList;
+                    try {
+                        argsList = [].slice.call(args, 0)
+                    } catch (ex) {
+                        var argsLen = args.length;
+                        argsList = [];
+                        for (var i = 0; i < argsLen; i++) {
+                            argsList.push(args[i])
+                        }
+                    }
+                    argsList.unshift(fn);
+                    Tracert.addToRun(function () {
+                        Tracert.call.apply(Tracert, argsList)
+                    })
+                }
+            })(fn)
+        }
+        window.Tracert = Tracert
+    })();
+    !function () {
+        if (!window.BizLog) {
+            var n = {
+                _readyToRun: [], call: function () {
+                    var o, a = arguments;
+                    try {
+                        o = [].slice.call(a, 0)
+                    } catch (i) {
+                        var u = a.length;
+                        o = [];
+                        for (var c = 0; u > c; c++)o.push(a[c])
+                    }
+                    n.addToRun(function () {
+                        n.call.apply(n, o)
+                    })
+                }, addToRun: function (o) {
+                    "function" == typeof o && (o._logTimer = new Date - 0, n._readyToRun.push(o))
+                }
+            };
+            window.BizLog = n
+        }
+    }();
+    window.BizLog.call('config', {disabled: true});
+</script>
+</html>

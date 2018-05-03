@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let students2 = {
+        age: null,
+        name: null,
+        sex: "男",
+        score: {
+            Chinese: 88,
+            Math: 99,
+            English: null,
+            science: {
+                Physics: 100,
+                Chemistry: null,
+                biology: null
+            }
+        }
+    };
+    recursiveTraversalProperties(students2);
+    console.log(students2);
+    // console.log("长度是："+students2.length);
+
+    function recursiveTraversalProperties ( obj ) {
+        for (let member in obj) {
+            if (typeof (member) != "object") {
+                if( obj[member] == null ) {
+                    obj[member] = "这个字段为空";
+                }
+            }
+            else if (typeof (member) == "object") {
+                for ( let subMember in member){
+                    recursiveTraversalProperties( subMember );
+                }
+            }
+        }
+    }
+</script>
+</html>

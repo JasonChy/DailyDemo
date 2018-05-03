@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label for="aaa">
+        <input type="checkbox" name="cb" value="a1" id="aaa"/>篮球
+    </label>
+    <label for="bbb">
+        <input type="checkbox" name="cb" value="b2" id="bbb"/>足球
+    </label>
+    <label for="ccc">
+        <input type="checkbox" name="cb" value="c3" id="ccc"/>排球
+    </label>
+    <label for="ddd">
+        <input type="checkbox" name="cb" value="d4" id="ddd"/>太极
+    </label>
+    <br/>
+    <input type="button" value="提交" onclick="checkedValues()"/>
+</div>
+</body>
+<script>
+    var initValue = '/a1/c3/d4/';
+    var valueArray = initValue.split('/');
+    console.log(valueArray);
+    var checkbox = document.getElementsByName('cb');
+    for (var i = 1; i < valueArray.length - 1; i++) {
+        for (let j = 0; j < checkbox.length; j++) {
+            if (checkbox[j].value == valueArray[i]) {
+                // var = valueArray[i];
+                // alert(checkbox[i].value);
+                checkbox[j].checked = true;
+            }
+        }
+    }
+
+    function checkedValues() {
+        var arr = new Array();
+        var result = '/';
+
+        var checkbox = document.getElementsByName('cb');
+        for (var i = 0; i < checkbox.length; i++) {
+            if (checkbox[i].checked == true) {
+                arr.push(checkbox[i].value);
+                result = result + checkbox[i].value + '/';
+            }
+        }
+        // console.log(JSON.stringify(arr));
+        console.log(result);
+        JSON.stringify()
+    }
+</script>
+</html>

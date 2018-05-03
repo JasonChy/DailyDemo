@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一段“多态”的JavaScript代码</title>
+</head>
+<body>
+
+</body>
+<script>
+    const makeSound = function (animal) {
+        if (animal instanceof Duck) {
+            console.log('嘎嘎嘎');
+        } else if (animal instanceof Chicken) {
+            console.log('咯咯咯');
+        }
+    };
+
+    const Duck = function () {};
+
+    const Chicken = function () {};
+
+    makeSound( new Duck() );
+    makeSound( new Chicken() );
+</script>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>Hello Amaze UI</title>
+    <style>
+        #header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .containerBox {
+            overflow: hidden;
+            width: 1200px;
+        }
+
+        #nav {
+            float: left;
+            line-height: 50px;
+            background-color: #eeeeee;
+            height: 600px;
+            width: 18%;
+            padding: 5px 5px 5px 20px;
+        }
+
+        #nav .firstLevelMenu {
+            font: bold 14px/32px 'Helvetica, sans-serif';
+        }
+        #nav .subMenuItem li {
+            display: block;
+            height: 28px;
+            padding-left: 1.5rem;
+            font: normal 13px/28px 'Helvetica, sans-serif';
+            color: #4082B2;
+        }
+        #nav li a {
+            padding: 0.2rem 0;
+        }
+
+        #section {
+            line-height: 50px;
+            width: 80%;
+            height: 610px;
+            float: left;
+        }
+
+        iframe {
+            width: 1000px;
+            height: 610px;
+        }
+
+        #footer {
+            background-color: black;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="lib/AmazeUI-2.7.2/assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="lib/AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="lib/AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="lib/AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="lib/AmazeUI-2.7.2/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="lib/AmazeUI-2.7.2/assets/css/app.css">
+</head>
+<body>
+<div id="header">
+    <h1>小贷测试工具</h1>
+</div>
+
+<div class="containerBox">
+    <div id="nav">
+        <ul class="am-list admin-sidebar-list" id="collapase-nav-1">
+
+            <li class="am-panel">
+                <a data-am-collapse="{parent: '#collapase-nav-1', target: '#testTool'}" class="firstLevelMenu">
+                    <i class="am-icon-list am-margin-left-sm"></i> 测试工具 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+                </a>
+                <ul class="subMenuItem testTool am-list am-collapse admin-sidebar-sub am-in" id="testTool">
+                    <li><a href="alipayAccountGenerator.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 支付宝账号创建 </a></li>
+                    <li><a href="alipayAccountsQuery.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 支付宝账号查询 </a></li>
+                    <li><a href="mayiBankAccountsQuery.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 自助贷账号查询 </a></li>
+                    <li><a href="zhiMaAuth.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 芝麻信用授信 </a></li>
+                    <li><a href="shengHuoHao.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 生活号申贷 </a></li>
+                    <li><a href="shengHuoHaoLoanNew.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 生活号(新产品)申贷 </a></li>
+                    <li><a href="scenarioInfoSearch.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 产品还款方式查询 </a></li>
+                    <li><a href="bizDataPrepare.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 小程序造数据 </a></li>
+                    <li><a href="shengHuoHaoWorkFlow.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 生活号推流 </a></li>
+                    <li><a href="loanDataCleansing.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 自助贷数据清理 </a></li>
+                    <li><a href="mayiBankCookiesAcqusition.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 自助贷数据清理 </a></li>
+                    <li><a href="loanDataCleansing.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 获取自助贷cookies </a></li>
+                    <li><a href="syncLedger.html"><i class="am-icon-angle-double-right am-margin-left-sm"></i> 台账表同步 </a></li>
+                </ul>
+            </li>
+
+            <li class="am-panel">
+                <a data-am-collapse="{parent: '#collapase-nav-1', target: '#company-nav'}" class="firstLevelMenu">
+                    <i class="am-icon-list am-margin-left-sm"></i> 第三方工具 <i class="am-icon-angle-right am-fr am-margin-right"></i>
+                </a>
+                <ul class="subMenuItem am-list am-collapse admin-sidebar-sub" id="company-nav">
+                    <li><a href="http://finmap.stable.alipay.net/wkprod/expressSign.htm" target="_blank">
+                        <span class="am-icon-angle-double-right am-margin-left-sm"></span> 银行卡绑定 </a>
+                    </li>
+                    <li><a href="https://zfundcheck.alipay.com/main.htm#/newRule/rule?_k=eh8az1" target="_blank">
+                        <span class="am-icon-angle-double-right am-margin-left-sm"></span> 资损核对平台 </a>
+                    </li>
+                    <li><a href="http://www.bejson.com" target="_blank">
+                        <span class="am-icon-angle-double-right am-margin-left-sm"></span> JSON校验格式化 </a>
+                    </li>
+                    <li><a href="http://www.bejson.com/enc/urlencode" target="_blank">
+                        <span class="am-icon-angle-double-right am-margin-left-sm"></span> URL解码/编码 </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="section">
+        <iframe src="alipayAccountGenerator.html" frameborder="0"></iframe>
+    </div>
+</div>
+
+<div id="footer">
+    Author：ZhengZhi
+</div>
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="lib/AmazeUI-2.7.2/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="lib/AmazeUI-2.7.2/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="lib/AmazeUI-2.7.2/assets/js/amazeui.min.js"></script>
+<script>
+  $(function () {
+    $("#testTool a").click(function (e) {
+      // console.log(e.target.href);
+      console.log('点击了', this.getAttribute("href"));
+      e.preventDefault();
+      //      console.log($("iframe")[0].src);
+      $("iframe")[0].src = this.getAttribute("href");
+      // $("#hidden").show();
+      // $("iframe").attr("src", "2.htm");
+    });
+  });
+</script>
+</body>
+</html>

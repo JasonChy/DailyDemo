@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>File(s) size</title>
+    <style>
+        label {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            background: #c0f9ff;
+            display: inline-block;
+            font-weight: 500;
+            color: #666;
+            font-family: simhei sans-serif;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+    <label for="fileElem">选择文件</label>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let loanTypeMap = {
+        "11": "个人住房贷款",
+        "12": "个人商用房（包括商住两用）贷款",
+        "13": "个人住房公积金贷款",
+        "21": "个人汽车贷款",
+        "31": "个人助学贷款",
+        "41": "个人经营性贷款",
+        "51": "农户贷款",
+        "91": "个人消费贷款",
+        "99": "其他"
+    };
+
+    let guarantyModeMap = {
+      "0": "信用",
+      "1": "质押",
+      "2": "抵押",
+      "3": "保证",
+      "4": "联保"
+    };
+
+    function mapingFunc( code, mapping ) {
+        for ( member in mapping ) {
+            // console.log(member + ": " + mapObject[member]);
+            if( member == code) {
+                //console.log(mapObject[member]);
+                return mapping[member];
+            }
+            else {
+                return code;
+            }
+        }
+    }
+    let a = "56";
+    document.writeln(a);
+
+    a = mapingFunc(a, loanTypeMap);
+    document.writeln(a);
+
+    let b = "56";
+    document.writeln(b);
+
+    b = mapingFunc(b, guarantyModeMap);
+    document.writeln(b);
+
+
+</script>
+</html>

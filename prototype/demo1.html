@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype Pattern Example</title>
+    <script type="text/javascript">
+
+        function Person(){
+        }
+
+        Person.prototype = {
+            name : "Nicholas",
+            age : 29,
+            job: "Software Engineer",
+            sayName : function () {
+                alert(this.name);
+            }
+        };
+
+        var friend = new Person();
+
+        console.log(friend instanceof Object);  //true
+        console.log(friend instanceof Person);  //true
+        console.log(friend.constructor == Person);  //false
+        console.log("constructor", friend.constructor);  //false
+        console.log(friend.constructor == Object);  //true
+        console.log(friend.hasOwnProperty(constructor)  );  //true
+        console.log(friend.hasOwnProperty("constructor") );  //true
+        console.log(friend.__proto__.hasOwnProperty("constructor") );  //true
+        console.log("constructor" in friend );  //true
+        console.log("constructor" in friend.__proto__ );  //true
+        console.log( Object.keys(friend) );
+        console.log( Object.keys(friend.constructor) );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

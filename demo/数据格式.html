@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="one">
+        <input type="text" id="input1">
+        <span></span>
+    </div>
+    <div id="second">
+        <input type="text">
+        <span></span>
+    </div>
+</body>
+<script>
+    document.querySelector('#one input').oninput = function() {
+        console.log(this);
+        document.querySelector('#one span').innerHTML = this.value;
+    };
+
+    document.querySelector('#second input').oninput = function() {
+        setTimeout(function() {
+            document.querySelector('#second span').innerHTML = document.querySelector('#second input').value;   }, 0);
+    };
+</script>
+</html>

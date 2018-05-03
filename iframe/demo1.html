@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <iframe src="inner/inner1.html" frameborder="0" width="1200" height="800">
+        你知道吗
+    </iframe>
+</div>
+</body>
+</html>
+<script>
+    (function loader() {
+        if (window.Tracert) {
+            return
+        }
+        var Tracert = {
+            _isInit: true,
+            _readyToRun: [],
+            call: function () {
+                var args = arguments;
+                var argsList;
+                try {
+                    argsList = [].slice.call(args, 0)
+                } catch (ex) {
+                    var argsLen = args.length;
+                    argsList = [];
+                    for (var i = 0; i < argsLen; i++) {
+                        argsList.push(args[i])
+                    }
+                }
+                Tracert.addToRun(function () {
+                    Tracert.call.apply(Tracert, argsList)
+                })
+            },
+            addToRun: function (_fn) {
+                var fn = _fn;
+                if (typeof fn === "function") {
+                    fn._logTimer = (new Date()) - 0;
+                    Tracert._readyToRun.push(fn)
+                }
+            },
+        };
+        var fnlist = ["config", "logPv", "info", "err", "click", "expo", "pageName", "pageState", "time",
+            "timeEnd", "parse", "expoCheck", "stringify", "report"];
+
+        for (var i = 0; i < fnlist.length; i++) {
+            var fn = fnlist[i];
+            (function (fn) {
+                Tracert[fn] = function () {
+                    var args = arguments;
+                    var argsList;
+                    try {
+                        argsList = [].slice.call(args, 0)
+                    } catch (ex) {
+                        var argsLen = args.length;
+                        argsList = [];
+                        for (var i = 0; i < argsLen; i++) {
+                            argsList.push(args[i])
+                        }
+                    }
+                    argsList.unshift(fn);
+                    Tracert.addToRun(function () {
+                        Tracert.call.apply(Tracert, argsList)
+                    })
+                }
+            })(fn)
+        }
+        window.Tracert = Tracert
+    })();
+
+    !function () {
+        if (!window.BizLog) {
+            var n = {
+                _readyToRun: [], call: function () {
+                    var o, a = arguments;
+                    try {
+                        o = [].slice.call(a, 0)
+                    } catch (i) {
+                        var u = a.length;
+                        o = [];
+                        for (var c = 0; u > c; c++)o.push(a[c])
+                    }
+                    n.addToRun(function () {
+                        n.call.apply(n, o)
+                    })
+                }, addToRun: function (o) {
+                    "function" == typeof o && (o._logTimer = new Date - 0, n._readyToRun.push(o))
+                }
+            };
+            window.BizLog = n
+        }
+    }();
+    window.BizLog.call('config', {disabled: true});
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自己的实例</title>
+    <style>
+        .container {
+            width: 1000px;
+            /*height: 200px;*/
+            margin: 100px auto;
+        }
+        .imageBox {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #cccccc;
+        }
+        .imagePlace {
+            width: 400px;
+            height: 300px;
+        }
+        .fileInputBox {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .fileInput {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 30px;
+            opacity: 0;
+        }
+        .fileInputText {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imageBox">
+            <img src="" alt="" class="imagePlace" id="imagePlace">
+        </div>
+        <div class="fileInputBox">
+            <div class="fileInputText">身份证正面</div>
+            <input type="file" class="fileInput" id="fileInput" onchange="inputChanged(this)" />
+        </div>
+
+    </div>
+    <script>
+        const inputButton = document.getElementById('fileInput');
+        const imagePlace = document.getElementById('imagePlace');
+
+        // console.log(inputButton);
+
+        function inputChanged(param) {
+           console.log( param.files );
+          // console.log('选择了文件', param.files[0]);
+
+          const fileObj = param.files[0];
+          const reader = new FileReader();
+          // console.log(fileObj)
+          // reader.readAs
+          reader.readAsDataURL(fileObj);
+          reader.onload = function (e) {
+            imagePlace.src = e.target.result;
+          };
+          // console.log( url )
+
+          // console.log(imagePlace);
+
+
+
+
+        }
+    </script>
+</body>
+</html>

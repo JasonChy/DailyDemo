@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var obj1 = {
+      "querier": "赵敏",
+      "reportTitle": "自助贷报名情况日报表",
+      "statTable": {
+        "empty": false
+      },
+      "statTime": 1493800175504,
+      "statOrg": "舟山市新城大昌小额贷款有限公司",
+      "printTime": 1493800175504,
+      "statMap": {
+        "applying": {
+          "houseHolds": 10
+        },
+        "rejected": {
+          "houseHolds": 20
+        },
+        "approving": {
+          "houseHolds": 30
+        },
+        "fetched": {
+          "houseHolds": 40
+        }
+      }
+    };
+
+
+    var record = {};
+    record.tDate = [
+      {
+        key: '1',
+        loadState: '申请中',
+        households: obj1.statMap.applying.houseHolds,
+      },
+      {
+        key: '2',
+        loadState: '审批中',
+        households: obj1.statMap.approving.houseHolds,
+      },
+      {
+        key: '3',
+        loadState: '已获贷',
+        households: obj1.statMap.fetched.houseHolds,
+      },
+      {
+        key: '4',
+        loadState: '已拒绝',
+        households: obj1.statMap.rejected.houseHolds,
+      }
+    ];
+
+    console.log( record.tDate );
+</script>
+</html>

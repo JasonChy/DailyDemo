@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <select name="sport" id="sport">
+            <option value="1">篮球</option>
+            <option value="2">足球</option>
+            <option value="3">排球</option>
+            <option value="4">武术</option>
+            <option value="5">羽毛球</option>
+        </select>
+
+        <button onclick="print()">输出</button>
+        <div id="selectSport"></div>
+    </div>
+</body>
+<script>
+    function print() {
+        console.log(document.getElementById("sport").value);
+        var index = document.getElementById("sport").selectedIndex;
+        var str = document.getElementById("sport").options[index].text;
+        document.getElementById("selectSport").innerText = str;
+    }
+</script>
+</html>

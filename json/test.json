@@ -1,0 +1,36 @@
+{
+    "data": {
+            " reportTitle": " 自助贷业务历史月报表",
+            " statTimeStr": " 2017年4月28日",
+            "statOrg": "舟山市新城大昌小额贷款有限公司",
+            "reportType": "月报",
+            "applying": 10,
+            "approving": 5,
+            "fetched": 3,
+            "rejected": 1,
+            "borrowing": 1,
+            " borrowingAmt": 1,
+            "credit": 1,
+            "creditAmt": 1,
+            "overdue": 1,
+            "overdueAmt ": 666,
+            "principal": 1,
+            "principalAmt": 1,
+            "interest": 1,
+            "interestAmt": 1,
+            "principalPenalty": 1,
+            "principalPenaltyAmt": 1,
+            "interestPenalty": 1,
+            "interestPenaltyAmt": 1,
+            "repaymentAmount": 1,
+            "querier": "张三",
+            "printTime": 1492515352000
+        },
+    "reqInfo": {
+        "traceId": "0a0f1c9a14925924137011284",
+        "resultCode": null,
+        "resultMsg": "请求成功",
+        "showType": 0,
+        "success": "true"
+    }
+}

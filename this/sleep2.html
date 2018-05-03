@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sleep</title>
+</head>
+<body>
+
+</body>
+<script>
+    var numbers = [8, 42, 38, 1110, 2, 39, 1];
+    numbers.forEach(
+        function (num) {
+            setTimeout( function () {
+              console.log(num);
+            },num )
+        }
+    );
+
+    /*numbers.forEach( num => {
+      setTimeout( () => {
+        console.log(num);
+      },num )
+        }
+    )*/
+</script>
+</html>

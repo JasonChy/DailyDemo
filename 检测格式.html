@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>见客App测试小工具</title>
+    <script src="jquery/jquery.min.js"></script>
+    <style>
+        .container {
+            width: 1200px;
+            height: 500px;
+            text-align: center;
+            margin:100px auto;
+            padding: 50px;
+        }
+        .testTitle {
+            height: 40px;
+            line-height: 40px;
+            margin-left: -60px;
+            font: bold 18px/1rem "microsoft yahei";
+            color: #46b8da ;
+        }
+        .labelStyle {
+            display: inline-block;
+            width: 150px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+        .inputStyle {
+            height: 30px;
+            margin: 10px auto;
+            padding-left: 5px;
+            font-size: 16px;
+        }
+        .buttonStyle {
+            height: 35px;
+            margin: 20px 0 10px -272px;
+            font-size: 14px;
+            border-radius: 4px;
+            background: #eeeeee;
+            color: #333333;
+            outline: none;
+            border-style: outset;
+            border-color: buttonface;
+            border-image: initial;
+        }
+        .result {
+            color: #ff5728;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="testTitle">见客App测试小工具——提交申贷数据</div>
+
+    <span class="labelStyle" for="">客户支付宝：</span>
+    <input type="text" class="inputStyle" id="alipayAccount">
+
+    <br>
+    <span class="labelStyle" for="">外部机构产品码：</span>
+    <input type="text" class="inputStyle" id="isvProdCode">
+    <br>
+
+    <span class="labelStyle" for="">申贷金额(万元)：</span>
+    <input type="text" class="inputStyle" id="loanAmount">
+    <br>
+
+    <button class="buttonStyle" onclick="clickEvent()">提交申贷数据</button>
+
+    <div class="result">
+    </div>
+
+</div>
+</body>
+<script>
+  $(function () {
+    clickEvent = function () {
+      var alipayAccount = $("#alipayAccount").val();
+      var isvProdCode = $("#isvProdCode").val();
+      var loanAmount = $("#loanAmount").val();
+
+      if ( alipayAccount == '' || alipayAccount == undefined || alipayAccount == null) {
+        alert("客户支付宝不能为空");
+      } else if( isvProdCode == '' || isvProdCode == undefined || isvProdCode == null) {
+        alert("外部机构产品码不能为空");
+      } else if( loanAmount == '' || loanAmount == undefined || loanAmount == null) {
+        alert("申贷金额不能为空");
+      } else {
+        var url = "/jianKeLoanApply.json?alipayAccount=" + alipayAccount + "&isvProdCode=" + isvProdCode + "&loanAmount=" + loanAmount;
+
+        $.get(url, function(response, status){
+          console.log(JSON.stringify(response));
+          if(response.reqInfo.success == "true") {
+            $(".result").html(response.data);
+
+          } else if (response.reqInfo.success == "false") {
+            $(".result").html(response.data);
+          }
+        });
+      }
+    }
+  })
+</script>
+</html>
