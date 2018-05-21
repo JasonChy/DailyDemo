@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function copyArt() {
+    var CurUserNameCookiescgcg = getCookie("LoginName");
+    if (CurUserNameCookiescgcg == "" || CurUserNameCookiescgcg == null) {
+      var docarttitle = document.getElementById("docarttitle");
+      var docencodetitle = "";
+      if (docarttitle == null) {
+        docencodetitle = ""
+      } else {
+        docencodetitle = "&titleencode=" + docarttitle.value
+      }
+      $("#LayerLogin").load('/artlogin.html');
+      $("#LayerLogin").show();
+      ArtLoginTypeID = 0;
+      artStatistics('20-21-1');
+      return false
+    } else {
+      var selhtml = "";
+      var selection;
+      if (window.getSelection) {
+        selection = window.getSelection();
+        if (selection != null) {
+          selhtml = selection.toString()
+        }
+      } else if (document.selection) {
+        selection = document.selection.createRange();
+        if (selection != null) {
+          selhtml = selection.text
+        }
+      }
+      if (selhtml.length > 200) {
+        document.getElementById("fuzhitishidiv").style.display = 'none';
+        if (getCookie("360doc1") != null && UserID != 0) {
+          $.ajax({
+            url: "http://www.360doc.com/ajax/GetLoginForm20130912.ashx?ArtID=" + ArticleID + "&type=5&arttype=" + CurArtType + "",
+            cache: false,
+            success: function (result) {
+              if (result == "-1") {
+                return true
+              } else {
+                showfuzhitishidiv();
+                return false
+              }
+            },
+            error: onFailed
+          })
+        } else {
+          showfuzhitishidiv();
+          return false
+        }
+      } else {
+        return true
+      }
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>得到图片的质量</title>
+</head>
+<body>
+
+    <div>
+        <input type="file" onchange="fileSelect(this.files)">
+    </div>
+
+</body>
+<script>
+    function fileSelect(param) {
+      console.log(typeof param);
+      console.log(param[0].quality)
+    }
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>object URLs（对象URL）</title>
+</head>
+<body>
+<div>
+    <input type="file" id="fileElem" multiple accept="image/*">
+</div>
+</body>
+<script>
+  document.getElementById('fileElem').onchange = function () {
+    console.log('17 选择了')
+  };
+
+
+  function uploadFileMethod1() {
+
+    var FileController = $ctx + "/fankuiController/saveFiles";                    // 接收上传文件的后台地址
+    // FormData 对象
+    var fileName = document.getElementById("file").value;
+    // alert(getPath(fileObj));
+    var form = new FormData();
+    form.append("json_filesNameArray", fileName);                        // 可以增加表单数据
+    /* var fileArray = new Array();
+    for (var i = 0; i < fileArray.length; i++) {
+      var fileObj = document.getElementById("file").files[i]; // 获取文件对象
+      fileArray.push(fileObj);
+    }  */
+    var files = document.getElementById("file").files;
+    for (var i = 0; i < files.length; i++) {
+      alert(files[i].name);
+      form.append("fileArray", files[i]);   // 文件对象
+    }
+    // XMLHttpRequest 对象
+    //var fileObj = document.getElementById("file").files[0];
+    //form.append("fileArray", fileObj);
+    var xhr = new XMLHttpRequest();
+    xhr.open("post", FileController, true);
+    xhr.send(form);
+    xhr.onload = function () {
+      alert("上传完成!");
+    };
+  }
+</script>
+</html>
