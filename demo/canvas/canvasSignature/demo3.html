@@ -10,18 +10,15 @@
         html {
             /*position: relative;*/
         }
-
         html, body {
             width: 98%;
             height: 98%;
         }
-
         .comment {
             height: 20px;
             margin: 4px 0;
             font: bold 16px/20px 'PingFang SC';
         }
-
         #canvas {
             /*position: fixed;*/
             top: 0;
@@ -60,7 +57,6 @@
             border: 1px solid #DEDEDE;
             z-index: 1;
         }
-
         .footer {
             position: absolute;
             bottom: 0;
@@ -71,20 +67,20 @@
     </style>
 </head>
 <body>
-<p class="comment">
-    请在下方红框区域 书写你的姓名：
-</p>
-<div id="canvas">
+    <p class="comment">
+        请在下方红框区域 书写你的姓名：
+    </p>
+    <div id="canvas">
 
-</div>
-<div class="footer">
-    <p id="clearCanvas">清除</p>
-    <p id="saveCanvas">保存</p>
-</div>
+    </div>
+    <div class="footer">
+        <p id="clearCanvas">清除</p>
+        <p id="saveCanvas">保存</p>
+    </div>
 </body>
 <script>
   window.onload = function () {
-    document.ontouchmove = function (e) {
+    document.ontouchmove = function(e){
       e.preventDefault();
     };
 
@@ -122,12 +118,12 @@
     //开始绘制
     canvas.addEventListener("touchstart", function (e) {
       cxt.beginPath();
-      cxt.moveTo(e.changedTouches[0].pageX - 8, e.changedTouches[0].pageY - 32);
+      cxt.moveTo(e.changedTouches[0].pageX, e.changedTouches[0].pageY - 32);
     }.bind(this), false);
 
     //绘制中
     canvas.addEventListener("touchmove", function (e) {
-      cxt.lineTo(e.changedTouches[0].pageX - 8, e.changedTouches[0].pageY - 32);
+      cxt.lineTo(e.changedTouches[0].pageX, e.changedTouches[0].pageY - 32);
       cxt.stroke();
     }.bind(this), false);
 
@@ -144,41 +140,8 @@
     //保存图片，直接转base64
     saveEl.addEventListener("click", function () {
       const imgBase64 = canvas.toDataURL();
-      // console.log(imgBase64);
-      downloadFile('ship.png', canvas.toDataURL("image/png"));
-
+      console.log(imgBase64);
     }.bind(this), false);
-  }
-
-
-  function base64Img2Blob(code) {
-    console.log('155 base64Img2Blob');
-    var parts = code.split(';base64,');
-    var contentType = parts[0].split(':')[1];
-    var raw = window.atob(parts[1]);
-    var rawLength = raw.length;
-
-    var uInt8Array = new Uint8Array(rawLength);
-
-    for (var i = 0; i < rawLength; ++i) {
-      uInt8Array[i] = raw.charCodeAt(i);
-    }
-    return new Blob([uInt8Array], {type: contentType});
-  }
-  function downloadFile(fileName, content) {
-    console.log('进入下载函数');
-    const canvasDiv = document.getElementById("canvas");
-    var aLink = document.createElement('a');
-    var blob = base64Img2Blob(content); //new Blob([content]);
-    console.log('171', blob);
-
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错
-    aLink.download = fileName;
-    aLink.href = URL.createObjectURL(blob);
-    location.href = URL.createObjectURL(blob);
-
-    aLink.dispatchEvent(evt);
   }
 </script>
 </html>
