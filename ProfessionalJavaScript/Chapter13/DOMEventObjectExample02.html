@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="点我吧">
+<script>
+    const btn = document.getElementById("btn");
+    document.body.onclick = function (event) {
+      console.log(event.currentTarget === document.body);
+      console.log(this === document.body);
+      console.log(event.target === btn);
+    }
+</script>
+</body>
+</html>

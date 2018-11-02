@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="Click Me" id="myBtn"/>
+<script type="text/javascript">
+  var btn = document.getElementById("myBtn");
+  btn.onclick = function (event) {
+    alert('13: ' + event.eventPhase);   //2
+  };
+
+  document.body.addEventListener("click", function (event) {
+    alert("17: " + event.eventPhase);   //1
+  }, true);
+
+  document.body.onclick = function (event) {
+    alert("21: " + event.eventPhase);   //3
+  };
+
+</script>
+</body>
+</html>

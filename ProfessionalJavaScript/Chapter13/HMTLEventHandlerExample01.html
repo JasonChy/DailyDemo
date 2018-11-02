@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  const mybtn = document.getElementById("mybtn");
+  mybtn.onclick = null;
+  function showMessage() {
+    console.log(this);
+    window.setTimeout(alert("Hello World！"), 1000)
+  }
+</script>
+<input type="button" id="mybtn" value="Click Me" onclick="showMessage()"/>
+</body>
+</html>

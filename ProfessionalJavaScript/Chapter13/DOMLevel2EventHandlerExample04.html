@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="myBtn" value="点我吧">
+<script>
+  const myBtn = document.getElementById("myBtn");
+  const handler = function () {
+    console.log(event);
+  };
+  myBtn.addEventListener("click", handler, false);
+
+  // 无法清除 事件处理程序
+  // myBtn.onclick = null;
+
+  // 要用removeEventListener才可以清除事件处理程序，
+  // 并且removeEventListener中的第二个参数函数和addEventListener中的函数必须是同一个
+  myBtn.removeEventListener("click", handler, false);
+</script>
+</body>
+</html>

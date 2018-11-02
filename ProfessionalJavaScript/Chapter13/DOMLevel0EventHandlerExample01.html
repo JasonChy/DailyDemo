@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="myBtn" value="Click Me">
+<script>
+  const btn = document.getElementById("myBtn");
+  btn.onclick = function () {
+    // this是当前被点击的元素，也就是事件源元素
+    console.log(this);
+  }
+</script>
+</body>
+</html>
