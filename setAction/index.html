@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div>
+        <div role="main" id="content">
+            <div class="crumbs">
+                <a href="/wfp/index.htm">首页</a><span>&gt;</span>配置管理 <span>&gt;</span><strong>流程升级</strong>
+            </div>
+            <div class="fm-input">
+                <form id="processUpdateFrom" method="POST" action="/wfp/admin/processVersionUpgrade.json"
+                      enctype="multipart/form-data">
+
+                    <input type="hidden" name="action" id="actionName" value="/wfp/admin/processVersionUpgrade.json"/>
+                    <input type="hidden" name="processCode" value="$!processDefExtPO.code"/>
+                    <div class="fm-item">
+                        <label class="fm-label" for="">流程名称：</label>
+                        <div style="padding-top:4px;font-size:14px;">$!processDefExtPO.processName</div>
+                    </div>
+                    <div class="fm-item">
+                        <label class="fm-label" for="">流程编码 ：</label>
+                        <div style="padding-top:4px;font-size:14px;">$!processDefExtPO.code</div>
+                    </div>
+                    <div class="fm-item">
+                        <label class="fm-label" for="">最新版本号 ：</label>
+                        <div style="padding-top:4px;font-size:14px;">$!processDefExtPO.maxVersion</div>
+                    </div>
+                    <div class="fm-item">
+                        <label class="fm-label" for=""><span class="required">*</span>流程配置文件：</label>
+                        <input type="file" size="24" class="i-file" id="processFile" name="processFile"/>
+                        <div class="fm-explain">流程xml配置文件(系统自动根据流程xml编码进行流程升级操作)</div>
+                    </div>
+                    <div class="fm-item">
+                        <label class="fm-label" for=""><span class="required">*</span>流程版本号（仅流程更新时使用）：</label>
+                        <input class="i-text" name="version"/>
+                    </div>
+                    <div class="fm-item">
+                        <span class="btn btn-ok"><input type="button" class="btn" id="updateOpt" value="流程升级"/></span>
+                        <span class="btn btn-ok"><input type="button" class="btn" id="returnToQuery" value="返回"/></span>
+                        <span class="btn btn-ok"><input type="button" class="btn" id="modifyOpt" value="流程更新"/></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</head>
+<body>
+
+</body>
+<script>
+  ABL(function () {
+    function getCtoken(key) {
+      var m = new RegExp('\\b' + key + '\\=([^;]+)').exec(document.cookie);
+      return m = m ? encodeURIComponent(m[1]) : '';
+    }
+
+    jQuery(document).ready(function () {
+      jQuery('#updateOpt').click(function () {
+        ctoken = getCtoken(key);
+        $('#processUpdateFrom').attr('action', '/wfp/admin/processVersionUpgrade.json' + ctoken);
+        jQuery('#processUpdateFrom').submit();
+      });
+      jQuery('#modifyOpt').click(function () {
+        ctoken = getCtoken(key);
+        $('#processUpdateFrom').attr('action', '/wfp/admin/processVersionUpgrade.json' + ctoken);
+        jQuery('#processUpdateFrom').submit();
+      });
+    #
+      if ($!message)
+      alert('$!message');
+    #
+      end
+    });
+
+    jQuery('#returnToQuery').click(function () {
+      window.location.href = 'processQuery.htm';
+    });
+  });
+</script>
+</html>
