@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--将DOM处理的脚本放在DOM生成前去执行，是找不到的-->
+    <script>
+      document.getElementById("box").innerText = '你好世界';
+    </script>
+</head>
+<body>
+<div id="box">
+
+</div>
+<!--<script defer>
+  document.getElementById("box").innerText = '你好世界';
+</script>-->
+</body>
+</html>

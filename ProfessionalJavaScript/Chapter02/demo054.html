@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<label for="checkcash">是否已提现</label>
+<select id="checkcash" style="width: 181px">
+    <option selected="selected" value="0">请选择</option>
+    <option value="1">是</option>
+    <option value="2">否</option>
+</select>
+&nbsp;
+<input type='button' id='alert' value="anwo">
+</body>
+<script>
+  $('#checkcash').click(function () {
+    if ($('#checkcash').val() == '0') {
+      $("#checkcash option[value='0']").remove();
+    }
+  });
+  $("#alert").click(function () {
+    alert("1123");
+  })
+</script>
+</html>

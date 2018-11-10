@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>世界，你好。</div>
+</body>
+<script>
+  let index = 0;
+  // 每秒插入一个div
+  window.setInterval(
+      function () {
+        // 创建一个新的div
+        const box = document.createElement("div");
+        // 新的div的id为"index_" + index;
+        box.id = "index_" + index;
+        // 给新的div的追加一个文本节点index
+        let textnode = document.createTextNode(index);
+        box.appendChild(textnode);
+        // 将新的div追加到body最后一个孩子后
+        document.body.appendChild(box);
+        // 将新的div追加到body第一个孩子前
+        // document.body.insertBefore(box, document.body.childNodes[index + 1]);
+        index++;
+      },
+      1000
+  )
+</script>
+</html>

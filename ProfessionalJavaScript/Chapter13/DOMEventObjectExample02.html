@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #btn {
+            color: red;
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
-<input type="button" id="btn" value="点我吧">
+<input type="button" id="btn" value="点我吧" style="color: red; font-size: 16px;">
 <script>
-    const btn = document.getElementById("btn");
-    document.body.onclick = function (event) {
-      console.log(event.currentTarget === document.body);
-      console.log(this === document.body);
-      console.log(event.target === btn);
-    }
+  const btn = document.getElementById("btn");
+  document.body.onclick = function (event) {
+    console.log(event.currentTarget === document.body);
+    console.log(this === document.body);
+    console.log(event.target === btn);
+  }
 </script>
 </body>
 </html>

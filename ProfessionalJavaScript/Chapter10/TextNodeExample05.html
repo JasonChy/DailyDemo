@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const element = document.createElement("div");
+    element.className = "message";
+
+    const textNode = document.createTextNode("Hello World!");
+    element.appendChild(textNode);
+
+    const anotherTextNode = document.createTextNode("Yippee!");
+    element.appendChild(anotherTextNode);
+
+    document.body.appendChild(element);
+
+    // 打印出来可以看到创建的div中带有两个text的node
+    console.log(document.body.getElementsByTagName('div')[0].childNodes);
+
+    console.log(element.childNodes.length);
+    element.normalize();
+    console.log(element.childNodes.length);
+    console.log(element.firstChild.nodeValue);
+    console.log(element.firstChild.nodeType);
+    console.log(element.firstChild.nodeName);
+
+</script>
+</html>

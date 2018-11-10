@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="myDiv" data-appid="12345" data-myname="Nicholas">试试看</div>
+<button onclick="clickme()">修改</button>
+</body>
+<script>
+
+  const myDiv = document.getElementById("myDiv");
+  const appid = myDiv.dataset.appid;
+  const myname = myDiv.dataset.myname;
+  console.log(appid);
+  console.log(myname);
+  function clickme() {
+    myDiv.dataset.appid = '789';
+    myDiv.dataset.myname = '齐亚鹏';
+    console.log(myDiv.dataset.myDiv.appid);
+    console.log(myDiv.dataset.myDiv.myname);
+  }
+</script>
+</html>

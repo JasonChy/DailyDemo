@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            margin: 50px;
+            border: 50px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="box">试试看</div>
+<script>
+  const box = document.querySelector('#box');
+  // const d2 = document.getElementById('box');
+  const ds = getComputedStyle(box);
+  console.log(ds.width);     //100px;
+  // console.log(box.currentStyle.width);  //100px，
+  console.log(box.width);  //100px，
+
+</script>
+</body>
+</html>
