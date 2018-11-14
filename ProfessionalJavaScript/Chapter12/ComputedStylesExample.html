@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computed Style Example</title>
+    <style>
+        #myDiv {
+            background-color: blue;
+            width: 100px;
+            height: 200px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv" style="background-color: red; border: 1px solid black;">是的嘛</div>
+</body>
+<script>
+    const myDiv = document.getElementById("myDiv");
+    const computedStyle = window.getComputedStyle(myDiv, null);
+    const computedStyle2 = document.defaultView.getComputedStyle(myDiv, null);
+    console.log(computedStyle);
+    console.log(computedStyle2);
+    console.log(computedStyle.backgroundColor);
+    console.log(computedStyle2.backgroundColor);
+    console.log(computedStyle.width);
+    console.log(computedStyle2.width);
+    console.log(computedStyle.height);
+    console.log(computedStyle2.height);
+    console.log(computedStyle.border);
+    console.log(computedStyle2.border);
+    console.log(myDiv.currentStyle.backgroundColor);
+</script>
+</html>
