@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client coordinates Example</title>
+    <script type="text/javascript" src="EventUtil.js"></script>
+</head>
+<body>
+<div id="myDiv" style="background-color:red;height:10000px;width:100px;padding-top: 80px;margin-top: 350px;">Click me</div>
+<script>
+    const div = document.getElementById("myDiv");
+    EventUtil.addHandler(div, "click", function (event) {
+        event = EventUtil.getEvent(event);
+        let pageX = event.pageX;
+        let pageY = event.pageY;
+
+
+        pageX2 = event.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft);
+        pageY2 = event.clientY + (document.body.scrollTop || document.documentElement.scrollTop);
+
+        // console.log("Page coordinates: " + event.pageX + "|" + pageX + "," + event.pageY + "|" + pageY);
+        // 以下两个结果是一致的
+        console.log("浏览器时间属性：(" + pageX + ", " + pageY + ")");
+        console.log("计算出出的结果：(" + pageX2 + ", " + pageY2 + ")");
+        div.scrollTop = 0;
+    });
+
+</script>
+</body>
+</html>
