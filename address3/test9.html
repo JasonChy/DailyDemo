@@ -1,0 +1,153 @@
+<!--这个版本将select框直接写死在页面上-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三级联动</title>
+    <style>
+        select {
+            width: 120px;
+            height: 30px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        input {
+            width: 200px;
+            height: 30px;
+            padding-left: 5px;
+            border-radius: 4px;
+            border: 1px solid #dddddd;
+        }
+    </style>
+
+    <script src="address_level3.js"></script>
+</head>
+<body>
+<div id="div">
+    <input type="text" id="addInput">
+    <br><br>
+    <button onclick="editAdd()">编辑地址</button>
+    <br><br>
+
+    <select name="" id="provinceBox"> </select>
+    <select name="" id="cityBox"> </select>
+    <select name="" id="areaBox"> </select>
+
+    <button onclick="printAdd()">打印地址</button>
+    <br><br>
+    <div>
+        <div>
+            当前选择的地址为：
+            <span id="currentAdd"> </span>
+        </div>
+
+        <br>
+        <div>
+            当前选择的地址码为：
+            <span id="currentAddCode"> </span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    const provinceBox = document.getElementById("provinceBox");
+    const cityBox = document.getElementById("cityBox");
+    const areaBox = document.getElementById("areaBox");
+    window.onload = function () {
+        // console.log(addressData);
+
+        provinceBox.options[0] = new Option("请选择省", "-1");
+        cityBox.options[0] = new Option("请选择市", "-1");
+        areaBox.options[0] = new Option("请选择区", "-1");
+        //创建省市区完毕
+
+        //循环第一步
+        for (let i = 0; i < addressData.length; i++) {
+            // console.log(provinceBox.length);
+            provinceBox.options[provinceBox.length] = new Option(addressData[i].label, addressData[i].value);
+        }
+
+        // 选择了 省
+        provinceBox.onchange = function () {
+            //恢复默认选项
+            //city.options[0].selected = true;
+            //area.options[0].selected = true;
+            //清空市区选项
+            cityBox.options.length = 0;
+            cityBox.options[cityBox.length] = new Option("请选择市", "-1");
+            areaBox.options.length = 0;
+            areaBox.options[areaBox.length] = new Option("请选择区", "-1");
+            for (let j = 0; j < addressData[provinceBox.selectedIndex - 1].children.length; j++) {
+                cityBox.options[cityBox.length] =
+                    new Option(addressData[provinceBox.selectedIndex - 1].children[j].label,
+                        addressData[provinceBox.selectedIndex - 1].children[j].value);
+            }
+        };
+
+        // 选择了 市
+        cityBox.onchange = function () {
+            //恢复默认选项
+            //area.options[0].selected = true;
+            //清空区选项
+            areaBox.options.length = 0;
+            areaBox.options[areaBox.length] = new Option("请选择区", "-1");
+            for (let k = 0; k < addressData[provinceBox.selectedIndex - 1].children[cityBox.selectedIndex - 1].children.length; k++) {
+                areaBox.options[areaBox.length] =
+                    new Option(addressData[provinceBox.selectedIndex - 1].children[cityBox.selectedIndex - 1].children[k].label,
+                        addressData[provinceBox.selectedIndex - 1].children[cityBox.selectedIndex - 1].children[k].value);
+            }
+        }
+    };
+
+    // 打印地址
+    function printAdd() {
+        const provinceCode = provinceBox.value;
+        const cityCode = cityBox.value;
+        const areaCode = areaBox.value;
+        /*打印地址code*/
+        document.getElementById("currentAddCode").innerText = provinceCode + "" + cityCode + areaCode;
+
+        /*打印地址文字*/
+        const provinceIndex = provinceBox.selectedIndex;
+        const cityIndex = cityBox.selectedIndex;
+        const areaIndex = areaBox.selectedIndex;
+        document.getElementById("currentAdd").innerText = "" +
+            provinceBox.options[provinceIndex].text + '/' +
+            cityBox.options[cityIndex].text + '/' +
+            areaBox.options[areaIndex].text;
+    }
+
+    /*编辑地址*/
+    function editAdd() {
+        const addString = document.getElementById('addInput').value;
+        console.log(addString);
+        if (addString) {
+            const addStrings = addString.split("/");
+
+            for (let i = 1; i < provinceBox.options.length; i++) {
+                if (provinceBox.options[i].text === addStrings[0]) {
+                    provinceBox.options[i].selected = true;
+                }
+            }
+            /*添加这个省下面的城市option*/
+            provinceBox.onchange();
+            /*找市*/
+            for (let k = 1; k < cityBox.options.length; k++) {
+                if (cityBox.options[k].text === addStrings[1]) {
+                    cityBox.options[k].selected = true;
+                }
+            }
+            /*添加这个市下面的区option*/
+            cityBox.onchange();
+            /*找区*/
+            for (let k = 1; k < areaBox.options.length; k++) {
+                if (areaBox.options[k].text === addStrings[2]) {
+                    areaBox.options[k].selected = true;
+                }
+            }
+        }
+    }
+</script>
+</html>

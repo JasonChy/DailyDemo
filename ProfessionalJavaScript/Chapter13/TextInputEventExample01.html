@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="myText">
+</body>
+<script>
+    const textBox = document.querySelector('#myText');
+    textBox.focus();
+    textBox.addEventListener('textInput', function(event) {
+        console.log(event);
+        console.log(event.inputMethod);
+    }, true)
+</script>
+</html>

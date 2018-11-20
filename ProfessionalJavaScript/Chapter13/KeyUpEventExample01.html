@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    document.body.focus();
+    document.body.addEventListener('keyup', function (ev) {
+        console.log(ev);
+        console.log(typeof ev.getModifierState);
+        console.log(ev.getModifierState('Shift'));
+        console.log(ev.getModifierState('Ctrl'));
+    })
+</script>
+</html>
