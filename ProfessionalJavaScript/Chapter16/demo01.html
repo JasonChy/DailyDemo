@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         #dragBox {
+             display: inline-block;
+             width: 50px;
+             height: 30px;
+             line-height: 30px;
+             text-align: center;
+             border: 1px solid blue;
+         }
+         #dropTarget {
+             width: 400px;
+             height: 300px;
+             line-height: 300px;
+             border: 1px solid red;
+             text-align: center;
+         }
+    </style>
+</head>
+<body>
+<div>
+    <div id="dragBox" draggable="true">拖拽我</div>
+    <div id="dropTarget">容器</div>
+
+</div>
+</body>
+<script>
+    document.getElementById('dropTarget').addEventListener('dragover', function (event) {
+        event.preventDefault();
+    document.getElementById('dropTarget').addEventListener('dragenter', function (event) {
+        event.preventDefault();
+        console.log('进来了')
+    });
+    })
+</script>
+</html>
