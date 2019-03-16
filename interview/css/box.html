@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS盒子模型</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<section id="sec">
+    <style>
+        #sec {
+            overflow: hidden;
+            background: #F00;
+        }
+
+        .child {
+            height: 100px;
+            background: yellow;
+            margin-top: 10px;
+        }
+    </style>
+    <article class="child"></article>
+</section>
+
+<!--BFC垂直方向边缘重叠-->
+<section id="margin">
+    <style>
+        #margin {
+            background: pink;
+            overflow: hidden;
+        }
+        #margin>p {
+            margin: 5px auto 25px;
+            background: red;
+        }
+    </style>
+    <p>1</p>
+    <div style="overflow: hidden;">
+        <p>2</p>
+    </div>
+    <p>3</p>
+</section>
+
+<!--BFC不与float重叠-->
+<section id="layout">
+    <style>
+        #layout {
+            margin-top: 10px;
+            background: red;
+        }
+        #layout .left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        #layout .right {
+            overflow: auto;
+            height: 110px;
+            background: #CCCCCC;
+        }
+    </style>
+    <div class="left"></div>
+    <div class="right"></div>
+</section>
+
+<!--BCF清除浮动-->
+<section id="float">
+    <style>
+        #float {
+            margin-top: 10px;
+            background: red;
+            /*float: left;*/
+            overflow: hidden;
+        }
+        #float .float {
+            float: left;
+            font-size: 30px;
+        }
+    </style>
+    <div class="float">我是浮动元素</div>
+</section>
+</body>
+</html>

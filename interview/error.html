@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.addEventListener('error', function (e) {
+            console.log(e);
+        }, true)
+    </script>
+</head>
+<body>
+<script src="baidu.com/error.js"></script>
+<script>
+    const obj = { a: 1, b: { c: 2}};
+    (new Image()).src = JSON.stringify(obj)
+</script>
+</body>
+</html>
