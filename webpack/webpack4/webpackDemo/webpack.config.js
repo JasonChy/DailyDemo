@@ -7,7 +7,20 @@ module.exports = {
       test: /\.jpg$/,
       use: {
         loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'image/',
+        },
       },
+    }, {
+      test: /\.scss$/,
+      use: [ 'style-loader', {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 2,
+          modules: true,
+        },
+      }, 'sass-loader', 'postcss-loader' ],
     }],
   },
   output: {
@@ -15,3 +28,4 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
 };
+
