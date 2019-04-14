@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
-
 
 // plugin可以在webpack运行到某个时刻的时候，帮你做一些事情
 module.exports = {
@@ -15,8 +13,6 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     open: true,
-    hot: true,
-    hotOnly: true,
   },
   module: {
     rules: [{
@@ -37,9 +33,6 @@ module.exports = {
         },
       }, 'sass-loader', 'postcss-loader' ],
     }, {
-      test: /\.css$/,
-      use: [ 'style-loader', 'css-loader', 'postcss-loader' ],
-    }, {
       test: /\.(eot|ttf|svg)/,
       use: {
         loader: 'file-loader',
@@ -51,7 +44,6 @@ module.exports = {
       template: './src/index.html',
     }),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   output: {
     publicPath: '/',
