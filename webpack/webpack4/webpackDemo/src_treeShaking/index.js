@@ -5,4 +5,4 @@
 
 import { add } from './math';
 
-add(1, 6);
+add(1, 2);

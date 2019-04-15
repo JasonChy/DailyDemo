@@ -1,16 +1,11 @@
 {
   "name": "webpackdemo",
-  "sideEffects": [
-    "*.css"
-  ],
   "version": "1.0.0",
   "description": "",
   "private": true,
   "scripts": {
     "watch": "webpack --watch",
-    "start": "webpack-dev-server",
-    "dev": "webpack-dev-server --config ./webpackConfig/webpack.dev.js",
-    "build": "webpack --config ./webpackConfig/webpack.prod.js"
+    "start": "webpack-dev-server"
   },
   "author": "Jason CHi",
   "license": "ISC",
@@ -33,8 +28,7 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-middleware": "^3.6.2",
-    "webpack-dev-server": "^3.3.1",
-    "webpack-merge": "^4.2.1"
+    "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",

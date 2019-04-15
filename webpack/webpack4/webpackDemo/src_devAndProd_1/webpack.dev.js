@@ -15,11 +15,29 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     open: true,
+    port: 8080,
     hot: true,
-    hotOnly: true,
+    // hotOnly: true,
   },
   module: {
     rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      /* options: {
+        presets: [
+          [ '@babel/preset-env', {
+            targets: {
+              chrome: '67',
+            },
+            useBuiltIns: 'usage',
+          },
+            [ '@babel/preset-react' ],
+          ],
+        ],
+      },*/
+    },
+    {
       test: /\.(jpg|png|gif)$/,
       use: {
         loader: 'file-loader',
@@ -48,13 +66,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: 'src/index.html',
     }),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  // tree shaking 需要optimization
+  optimization: {
+    usedExports: true,
+  },
   output: {
-    publicPath: '/',
+    publicPath: '/', // 使用devServer的使用要用/, npx webpack的时候要用./
     filename: '[name].js', // 没有这句的话，打包生成的js默认名称为main.js
     path: path.resolve(__dirname, 'dist'),
   },
