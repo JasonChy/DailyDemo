@@ -62,23 +62,9 @@ module.exports = {
     // code spliting的配置，让打包后的文件命名开头不是vendors
     splitChunks: {
       chunks: 'all',
-      minSize: 0,
-      minChunks: 1, // 一个模块至少被引用多少次时才做拆分
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
       cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        default: {
-          // minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-          filename: 'common.js',
-        },
+        vendors: false,
+        default: false,
       },
     },
   },

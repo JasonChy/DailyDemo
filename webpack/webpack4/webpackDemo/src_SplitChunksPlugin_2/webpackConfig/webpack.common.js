@@ -63,7 +63,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       minSize: 0,
-      minChunks: 1, // 一个模块至少被引用多少次时才做拆分
+      minChunks: 1,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
       automaticNameDelimiter: '~',

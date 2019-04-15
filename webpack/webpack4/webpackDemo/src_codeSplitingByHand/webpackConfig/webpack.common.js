@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     main: './src/index.js',
+    lodash: './src/lodash.js',
   },
   module: {
     rules: [{
@@ -58,30 +59,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
-  optimization: {
-    // code spliting的配置，让打包后的文件命名开头不是vendors
-    splitChunks: {
-      chunks: 'all',
-      minSize: 0,
-      minChunks: 1, // 一个模块至少被引用多少次时才做拆分
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        default: {
-          // minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-          filename: 'common.js',
-        },
-      },
-    },
-  },
   output: {
     filename: '[name].js', // 没有这句的话，打包生成的js默认名称为main.js
     path: path.resolve(__dirname, '../dist'),
