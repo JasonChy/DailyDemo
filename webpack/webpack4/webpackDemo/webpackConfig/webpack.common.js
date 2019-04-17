@@ -35,23 +35,13 @@ module.exports = {
         },
       },
     }, {
-      test: /\.scss$/,
-      use: [ 'style-loader', {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 2,
-        },
-      }, 'sass-loader', 'postcss-loader' ],
-    }, {
-      test: /\.css$/,
-      use: [ 'style-loader', 'css-loader', 'postcss-loader' ],
-    }, {
       test: /\.(eot|ttf|svg)/,
       use: {
         loader: 'file-loader',
       },
     }],
   },
+  // manifest
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
@@ -59,31 +49,26 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   optimization: {
+    // 在没改变源代码的情况下，文件名称中的hash值不变
+    runtimeChunk: {
+      name: 'runtime',
+    },
+    // tree shaking 需要optimization
+    usedExports: true,
     // code spliting的配置，让打包后的文件命名开头不是vendors
     splitChunks: {
       chunks: 'all',
-      minSize: 0,
-      minChunks: 1, // 一个模块至少被引用多少次时才做拆分
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
       cacheGroups: {
-        vendors: {
+        verdors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-        },
-        default: {
-          // minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-          filename: 'common.js',
+          name: 'vendors',
         },
       },
     },
   },
+  performance: false,
   output: {
-    filename: '[name].js', // 没有这句的话，打包生成的js默认名称为main.js
     path: path.resolve(__dirname, '../dist'),
   },
 };

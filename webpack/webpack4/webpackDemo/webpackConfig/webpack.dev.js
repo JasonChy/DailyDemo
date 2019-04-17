@@ -14,15 +14,29 @@ const devConfig = {
     hot: true,
     // hotOnly: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [ 'style-loader', {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2,
+          },
+        }, 'sass-loader', 'postcss-loader' ],
+      }, {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader', 'postcss-loader' ],
+      },
+    ],
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
-  // tree shaking 需要optimization
-  optimization: {
-    usedExports: true,
-  },
   output: {
     // publicPath: '/', // 使用devServer的使用要用/, npx webpack的时候要用./
+    filename: '[name].js', // 没有这句的话，打包生成的js默认名称为main.js
+    chunkFilename: '[name].js',
   },
 };
 
