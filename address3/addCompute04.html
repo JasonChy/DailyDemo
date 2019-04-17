@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="string01.js"></script>
+<script src="address_level3online.js"></script>
+<script>
+    const addArr = addString.split(",");
+    console.log(addArr);
+    console.log('addressData', addressData);
+
+    for (let i = 0; i < addArr.length; i++) {
+        for (let j = 0; j < addressData.length; j++) {
+            if ((new RegExp(addArr[i].trim())).test(addressData[j].label.trim())) {
+                break;
+            }
+            for (let k = 0; k < addressData[j].children.length; k++) {
+                if ((new RegExp(addArr[i].trim())).test(addressData[j].children[k].label.trim())) {
+                    break;
+                }
+                for (let l = 0; l < addressData[j].children[k].children.length; l++) {
+                    if ((new RegExp(addArr[i].trim())).test(addressData[j].children[k].children[l].label.trim())) {
+                        break;
+                    }
+
+                    // console.log('19: ' + addressData[j].label);
+                     if (   (j === addressData.length - 1)
+                        && (k === addressData[j].children.length - 1)
+                        && (l === addressData[j].children[k].children.length - 1)
+                        && (!(new RegExp(addArr[i].trim())).test(addressData[j].children[k].children[l].label.trim()))) {
+
+                        console.log(`${j} / ${k} / ${l} / ${i} / ${addArr[i].trim()}`);
+                    }
+                }
+            }
+        }
+
+        /* if (l === addressData[j].children[k].children.length - 1 && addArr[i] !== addressData[j].children[k].children[l].label) {
+            console.log(addArr[i]);
+        }*/
+    }
+</script>
+</html>

@@ -31,6 +31,17 @@
 <body>
 <div class="one">one</div>
 <div class="two">two</div>
-<script src="https://blog-static.cnblogs.com/files/yjlblog/cursor-effects.js?_=1552750388199"></script>
+<div id="blogBox"> <a href="https://www.qiyapeng.com" id="alink">齐亚鹏的博客网站</a></div>
+<!--<script src="https://blog-static.cnblogs.com/files/yjlblog/cursor-effects.js?_=1552750388199"></script>-->
+<script>
+    // alert('36');
+
+    document.getElementById('blogBox').addEventListener('click', function () {
+        setTimeout(() => { console.log('blogBox clicked'); }, 200)
+    }, false);
+    document.getElementById('alink').addEventListener('click', function () {
+        setTimeout(() => { console.log('alink clicked'); }, 200)
+    }, false);
+</script>
 </body>
 </html>

@@ -22,20 +22,20 @@
         const ev = document.getElementById('ev');
         window.addEventListener('click', function () {
             console.log('window capture')
-        }, true);
+        }, false);
 
         document.addEventListener('click',function () {
             console.log('document capture')
-        }, true);
+        }, false);
         document.documentElement.addEventListener('click',function () {
             console.log('html capture')
-        }, true);
+        }, false);
         document.body.addEventListener('click',function () {
             console.log('body capture')
-        }, true);
+        }, false);
         ev.addEventListener('click',function () {
             console.log('ev capture')
-        }, true);
+        }, false);
 
         const testEvent = new Event('test');
         ev.addEventListener('test', function () {

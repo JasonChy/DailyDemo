@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="string01.js"></script>
+<script src="address_level3online.js"></script>
+<script>
+    const addArr = addString.split(",");
+    console.log('addressData', addressData);
+    const set01 = new Set(addArr);
+
+    console.log(set01);
+
+    for (let j = 0; j < addressData.length; j++) {
+        if (set01.has(addressData[j].label)) {
+            break;
+        }
+        for (let k = 0; k < addressData[j].children.length; k++) {
+            if (set01.has(addressData[j].children[k].label)) {
+                break;
+            }
+            for (let l = 0; l < addressData[j].children[k].children.length; l++) {
+                if (set01.has(addressData[j].children[k].children[l].label)) {
+                    break;
+                }
+                if (j === addressData.length - 1 && k === addressData[j].children.length - 1
+                    && l === addressData[j].children[k].children.length - 1
+                    && addArr[i] != addressData[j].children[k].children[l].label) {
+                    console.log(addArr[i]);
+                }
+            }
+        }
+    }
+</script>
+</html>

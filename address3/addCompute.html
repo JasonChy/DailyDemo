@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="string01.js"></script>
+<script src="address_level3online.js"></script>
+<script>
+    const addArr = addString.split(",");
+    console.log(addArr);
+    console.log('addressData', addressData);
+    let sum = 0;
+    for (let j = 0; j < addressData.length; j++) {
+        for (let k = 0; k < addressData[j].children.length; k++) {
+            sum++;
+            console.log(sum + ": " + addressData[j].children[k].label);
+        }
+    }
+
+    /*for (let i = 0; i < addArr.length; i++) {
+        for (let j = 0; j < addressData.length; j++) {
+            for (let k = 0; k < addressData[j].children.length; k++) {
+                console.log(addressData[j].children[k].label);
+            }
+        }
+
+        /!* if (l === addressData[j].children[k].children.length - 1 && addArr[i] !== addressData[j].children[k].children[l].label) {
+            console.log(addArr[i]);
+        }*!/
+    }*/
+</script>
+</html>

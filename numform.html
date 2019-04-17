@@ -5,93 +5,19 @@
     <title>Title</title>
 </head>
 <body>
+    <div style="width: 100px;height: 100px; background: pink;" id="box">
 
+    </div>
 </body>
 <script>
-  class NumberFormat {
-    // 在单位为元的前提下，将金钱格式化，保留小数点后2位，加千分符
-    amountFormatting(s, n) {
-      n = n > 0 && n <= 20 ? n : 2;
-      s = parseFloat((s + '').replace(/[^\d\.-]/g, '')).toFixed(n) + '';
-      const l = s.split('.')[0].split('').reverse(),
-          r = s.split('.')[1];
-      let t = '';
-      for (let i = 0; i < l.length; i++) {
-        t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length ? ',' : '');
-      }
-      return t.split('').reverse().join('') + '.' + r;
-    }
-    // 对个数添加千分符，无小数位
-    countFormatting(count) {
-      return count.toString().replace(/(\d{1,3})(?=(\d{3})+$)/g, '$1,');
-    }
-  }
-
-  const numberFormat = new NumberFormat();
-  function formatData(obj, str) {
-    for (const member in obj) {
-      if (obj.hasOwnProperty(member)) {
-        if ((obj[member]) instanceof Object) {
-          this.formatData(obj[member], str);
-        } else {
-          // 对金额和个数做格式化
-          if (obj[member] === null || obj[member] === '') {
-            // 将没数据，或者空值，显示默认字符
-            obj[member] = str;
-          } else {
-            // 为金额增加千分符且保留2位小数
-            if (/Amt|BAL|Amount|Paid|Rate|registeredCapital|allFinancingBalance|totalRevenue/.test(member)) {
-              obj[member] = numberFormat.amountFormatting(obj[member], 2);
-            }
-            // 当前净利润
-            if (member === 'netProfit') {
-              if (obj[member] >= 0) {
-                obj[member] = numberFormat.amountFormatting(obj[member], 2);
-              } else if (obj[member] < 0) {
-                obj[member] = '-' + numberFormat.amountFormatting((-obj[member]), 2);
-              }
-            }
-            // 为户数或笔数增加千分符无小数位
-            if (/Num|No|Cust/.test(member)) {
-              obj[member] = numberFormat.countFormatting(obj[member]);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  let data =  {
-    "netProfit": -1774.17,
-    "allFinancingBalance": 0.00,
-    "badBalAmtCooperation": null,
-    "badBalAmtDataSys": 22260.00,
-    "badRateCooperation": null,
-    "badRateDataSys": 86.86,
-    "balAmtCooperation": null,
-    "balAmtDataSys": 25628.59,
-    "balCustCooperation": null,
-    "balCustDataSys": 36,
-    "bizPattern": null,
-    "companyName": "绍兴市柯桥区富邦小额贷款有限公司",
-    "dataSendSys": null,
-    "dt": "2018-12-11",
-    "fMonth": "2018-11",
-    "foundTime": null,
-    "incomeTaxPaid": 0.00,
-    "latestAccountDay": "2018年12月10日",
-    "mainInitiatorOrg": null,
-    "registeredCapital": 27606.00,
-    "totalRevenue": 1019.72,
-    "vatPaid": 64.31
-  };
-  formatData(data, '--');
-  console.log(data);
-
-  let netProfit = -1774.17;
-  let temp = "-" + numberFormat.amountFormatting((-netProfit), 2);
-  console.log(temp);
-  console.log(parseFloat(temp));
-  console.log(typeof temp);
+    const box = document.getElementById('box');
+    box.onclick = function() {
+        console.log('first');
+    };
+    setTimeout(() => {
+        box.onclick = function() {
+            console.log('second');
+        };
+    }, 5000)
 </script>
 </html>
