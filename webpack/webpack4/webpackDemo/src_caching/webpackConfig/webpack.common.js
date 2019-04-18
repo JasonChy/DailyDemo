@@ -2,12 +2,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const devConfig = require('./webpack.dev');
-const prodConfig = require('./webpack.prod');
 
-const commonConfig = {
+module.exports = {
   entry: {
     main: './src/index.js',
   },
@@ -15,12 +11,7 @@ const commonConfig = {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      use: [{
-        loader: 'babel-loader'
-      }, {
-           loader: 'imports-loader?this=>window'
-        }
-      ],
+      loader: 'babel-loader',
       /* options: {
         presets: [
           [ '@babel/preset-env', {
@@ -56,11 +47,6 @@ const commonConfig = {
       template: 'src/index.html',
     }),
     new CleanWebpackPlugin(),
-    // 当先某个模块中用了$变量时，就引入jQuery，将jQuery赋值给变量$
-    new webpack.ProvidePlugin({
-        $: 'jquery',
-        _join: ['lodash', 'join'],
-    })
   ],
   optimization: {
     // 在没改变源代码的情况下，文件名称中的hash值不变
@@ -85,12 +71,4 @@ const commonConfig = {
   output: {
     path: path.resolve(__dirname, '../dist'),
   },
-};
-
-module.exports = (env) => {
-  if (env && env.production) {
-    return merge(commonConfig, prodConfig)
-  } else {
-    return merge(commonConfig, devConfig)
-  }
 };

@@ -10,26 +10,26 @@ You should also be sure that the version you pass to the `corejs` option matches
   "errors": [],
   "warnings": [],
   "version": "4.30.0",
-  "hash": "2237e33a94cab3649bac",
-  "time": 1502,
-  "builtAt": 1555431887044,
+  "hash": "f67958b6aa7da9a02c91",
+  "time": 4605,
+  "builtAt": 1555605035150,
   "publicPath": "",
-  "outputPath": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/dist",
+  "outputPath": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\dist",
   "assetsByChunkName": {
     "main": "main.js",
-    "vendors~main": "vendors~main.chunk.js"
+    "runtime": "runtime.js"
   },
   "assets": [
     {
       "name": "index.html",
-      "size": 246,
+      "size": 244,
       "chunks": [],
       "chunkNames": [],
       "emitted": true
     },
     {
       "name": "main.js",
-      "size": 39424,
+      "size": 996,
       "chunks": [
         "main"
       ],
@@ -39,13 +39,13 @@ You should also be sure that the version you pass to the `corejs` option matches
       "emitted": true
     },
     {
-      "name": "vendors~main.chunk.js",
-      "size": 46597,
+      "name": "runtime.js",
+      "size": 31660,
       "chunks": [
-        "vendors~main"
+        "runtime"
       ],
       "chunkNames": [
-        "vendors~main"
+        "runtime"
       ],
       "emitted": true
     }
@@ -54,11 +54,11 @@ You should also be sure that the version you pass to the `corejs` option matches
   "entrypoints": {
     "main": {
       "chunks": [
-        "vendors~main",
+        "runtime",
         "main"
       ],
       "assets": [
-        "vendors~main.chunk.js",
+        "runtime.js",
         "main.js"
       ],
       "children": {},
@@ -68,11 +68,11 @@ You should also be sure that the version you pass to the `corejs` option matches
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        "vendors~main",
+        "runtime",
         "main"
       ],
       "assets": [
-        "vendors~main.chunk.js",
+        "runtime.js",
         "main.js"
       ],
       "children": {},
@@ -84,109 +84,29 @@ You should also be sure that the version you pass to the `corejs` option matches
       "id": "main",
       "rendered": true,
       "initial": true,
-      "entry": true,
-      "size": 1587,
+      "entry": false,
+      "size": 120,
       "names": [
         "main"
       ],
       "files": [
         "main.js"
       ],
-      "hash": "6d91ac58b7ce9157e910",
+      "hash": "99b531804176ed0d5cdb",
       "siblings": [
-        "vendors~main"
+        "runtime"
       ],
       "parents": [],
       "children": [],
       "childrenByOrder": {},
       "modules": [
         {
-          "id": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-          "index": 2,
-          "index2": 1,
-          "size": 190,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "main"
-          ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "issuerId": "./src/style.css",
-          "issuerName": "./src/style.css",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-              "name": "./src/index.js",
-              "profile": {
-                "factory": 236,
-                "building": 236
-              }
-            },
-            {
-              "id": "./src/style.css",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "name": "./src/style.css",
-              "profile": {
-                "factory": 77,
-                "building": 10
-              }
-            }
-          ],
-          "profile": {
-            "factory": 239,
-            "building": 845
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/style.css",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "module": "./src/style.css",
-              "moduleName": "./src/style.css",
-              "type": "cjs require",
-              "userRequest": "!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css",
-              "loc": "2:14-161"
-            },
-            {
-              "moduleId": "./src/style.css",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "module": "./src/style.css",
-              "moduleName": "./src/style.css",
-              "type": "module.hot.accept",
-              "userRequest": "!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css",
-              "loc": "21:1-42:3"
-            },
-            {
-              "moduleId": "./src/style.css",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "module": "./src/style.css",
-              "moduleName": "./src/style.css",
-              "type": "cjs require",
-              "userRequest": "!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css",
-              "loc": "22:19-166"
-            }
-          ],
-          "usedExports": true,
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 2,
-          "source": "exports = module.exports = require(\"../node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.id, \"body {\\n    background: green;\\n}\", \"\"]);\n\n"
-        },
-        {
           "id": "./src/index.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
+          "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_babel-loader@8.0.5@babel-loader\\lib\\index.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_imports-loader@0.8.0@imports-loader\\index.js?this=>window!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.js",
           "name": "./src/index.js",
           "index": 0,
-          "index2": 5,
-          "size": 43,
+          "index2": 0,
+          "size": 120,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -199,8 +119,8 @@ You should also be sure that the version you pass to the `corejs` option matches
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 236,
-            "building": 236
+            "factory": 322,
+            "building": 4034
           },
           "failed": false,
           "errors": 0,
@@ -218,63 +138,10 @@ You should also be sure that the version you pass to the `corejs` option matches
             }
           ],
           "usedExports": true,
-          "providedExports": [],
-          "optimizationBailout": [],
-          "depth": 0,
-          "source": "import './style.css';\nconsole.log('style');"
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./src/style.css",
-          "index": 1,
-          "index2": 4,
-          "size": 1354,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "main"
-          ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "issuerId": "./src/index.js",
-          "issuerName": "./src/index.js",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-              "name": "./src/index.js",
-              "profile": {
-                "factory": 236,
-                "building": 236
-              }
-            }
-          ],
-          "profile": {
-            "factory": 77,
-            "building": 10
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/index.js",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-              "module": "./src/index.js",
-              "moduleName": "./src/index.js",
-              "type": "harmony side effect evaluation",
-              "userRequest": "./style.css",
-              "loc": "1:0-21"
-            }
-          ],
-          "usedExports": false,
           "providedExports": null,
           "optimizationBailout": [],
-          "depth": 1,
-          "source": "\nvar content = require(\"!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css\");\n\nif(typeof content === 'string') content = [[module.id, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = require(\"!../node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(module.hot) {\n\tmodule.hot.accept(\"!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css\", function() {\n\t\tvar newContent = require(\"!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css\");\n\n\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\n\t\tvar locals = (function(a, b) {\n\t\t\tvar key, idx = 0;\n\n\t\t\tfor(key in a) {\n\t\t\t\tif(!b || a[key] !== b[key]) return false;\n\t\t\t\tidx++;\n\t\t\t}\n\n\t\t\tfor(key in b) idx--;\n\n\t\t\treturn idx === 0;\n\t\t}(content.locals, newContent.locals));\n\n\t\tif(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');\n\n\t\tupdate(newContent);\n\t});\n\n\tmodule.hot.dispose(function() { update(); });\n}"
+          "depth": 0,
+          "source": "/*** IMPORTS FROM imports-loader ***/\n(function () {\n  // this 默认当前当前模块\n  console.log(this === window);\n}).call(window);"
         }
       ],
       "filteredModules": 0,
@@ -290,231 +157,25 @@ You should also be sure that the version you pass to the `corejs` option matches
       ]
     },
     {
-      "id": "vendors~main",
+      "id": "runtime",
       "rendered": true,
       "initial": true,
-      "entry": false,
-      "reason": "split chunk (cache group: vendors) (name: vendors~main)",
-      "size": 15818,
+      "entry": true,
+      "size": 0,
       "names": [
-        "vendors~main"
+        "runtime"
       ],
       "files": [
-        "vendors~main.chunk.js"
+        "runtime.js"
       ],
-      "hash": "fc9dd4033823fdc72326",
+      "hash": "6431073e52f5880a1e7a",
       "siblings": [
         "main"
       ],
       "parents": [],
       "children": [],
       "childrenByOrder": {},
-      "modules": [
-        {
-          "id": "./node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-          "name": "./node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-          "index": 3,
-          "index2": 0,
-          "size": 2406,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "vendors~main"
-          ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "issuerId": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-          "issuerName": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-              "name": "./src/index.js",
-              "profile": {
-                "factory": 236,
-                "building": 236
-              }
-            },
-            {
-              "id": "./src/style.css",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "name": "./src/style.css",
-              "profile": {
-                "factory": 77,
-                "building": 10
-              }
-            },
-            {
-              "id": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "name": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-              "profile": {
-                "factory": 239,
-                "building": 845
-              }
-            }
-          ],
-          "profile": {
-            "factory": 1,
-            "building": 4
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "module": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-              "moduleName": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-              "type": "cjs require",
-              "userRequest": "../node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-              "loc": "1:27-102"
-            }
-          ],
-          "usedExports": true,
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 3,
-          "source": "\"use strict\";\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return '@media ' + item[2] + '{' + content + '}';\n      } else {\n        return content;\n      }\n    }).join('');\n  }; // import a list of modules into the list\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      var id = this[i][0];\n\n      if (id != null) {\n        alreadyImportedModules[id] = true;\n      }\n    }\n\n    for (i = 0; i < modules.length; i++) {\n      var item = modules[i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      // when a module is imported multiple times with different media queries.\n      // I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (item[0] == null || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || '';\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n  return '/*# ' + data + ' */';\n}"
-        },
-        {
-          "id": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "name": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "index": 4,
-          "index2": 3,
-          "size": 10399,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "vendors~main"
-          ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "issuerId": "./src/style.css",
-          "issuerName": "./src/style.css",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-              "name": "./src/index.js",
-              "profile": {
-                "factory": 236,
-                "building": 236
-              }
-            },
-            {
-              "id": "./src/style.css",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "name": "./src/style.css",
-              "profile": {
-                "factory": 77,
-                "building": 10
-              }
-            }
-          ],
-          "profile": {
-            "factory": 239,
-            "building": 845
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./src/style.css",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "module": "./src/style.css",
-              "moduleName": "./src/style.css",
-              "type": "cjs require",
-              "userRequest": "!../node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "loc": "16:13-91"
-            }
-          ],
-          "usedExports": true,
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 2,
-          "source": "/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n\nvar stylesInDom = {};\n\nvar\tmemoize = function (fn) {\n\tvar memo;\n\n\treturn function () {\n\t\tif (typeof memo === \"undefined\") memo = fn.apply(this, arguments);\n\t\treturn memo;\n\t};\n};\n\nvar isOldIE = memoize(function () {\n\t// Test for IE <= 9 as proposed by Browserhacks\n\t// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n\t// Tests for existence of standard globals is to allow style-loader\n\t// to operate correctly into non-standard environments\n\t// @see https://github.com/webpack-contrib/style-loader/issues/177\n\treturn window && document && document.all && !window.atob;\n});\n\nvar getTarget = function (target, parent) {\n  if (parent){\n    return parent.querySelector(target);\n  }\n  return document.querySelector(target);\n};\n\nvar getElement = (function (fn) {\n\tvar memo = {};\n\n\treturn function(target, parent) {\n                // If passing function in options, then use it for resolve \"head\" element.\n                // Useful for Shadow Root style i.e\n                // {\n                //   insertInto: function () { return document.querySelector(\"#foo\").shadowRoot }\n                // }\n                if (typeof target === 'function') {\n                        return target();\n                }\n                if (typeof memo[target] === \"undefined\") {\n\t\t\tvar styleTarget = getTarget.call(this, target, parent);\n\t\t\t// Special case to return head of iframe instead of iframe itself\n\t\t\tif (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n\t\t\t\ttry {\n\t\t\t\t\t// This will throw an exception if access to iframe is blocked\n\t\t\t\t\t// due to cross-origin restrictions\n\t\t\t\t\tstyleTarget = styleTarget.contentDocument.head;\n\t\t\t\t} catch(e) {\n\t\t\t\t\tstyleTarget = null;\n\t\t\t\t}\n\t\t\t}\n\t\t\tmemo[target] = styleTarget;\n\t\t}\n\t\treturn memo[target]\n\t};\n})();\n\nvar singleton = null;\nvar\tsingletonCounter = 0;\nvar\tstylesInsertedAtTop = [];\n\nvar\tfixUrls = require(\"./urls\");\n\nmodule.exports = function(list, options) {\n\tif (typeof DEBUG !== \"undefined\" && DEBUG) {\n\t\tif (typeof document !== \"object\") throw new Error(\"The style-loader cannot be used in a non-browser environment\");\n\t}\n\n\toptions = options || {};\n\n\toptions.attrs = typeof options.attrs === \"object\" ? options.attrs : {};\n\n\t// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\n\t// tags it will allow on a page\n\tif (!options.singleton && typeof options.singleton !== \"boolean\") options.singleton = isOldIE();\n\n\t// By default, add <style> tags to the <head> element\n        if (!options.insertInto) options.insertInto = \"head\";\n\n\t// By default, add <style> tags to the bottom of the target\n\tif (!options.insertAt) options.insertAt = \"bottom\";\n\n\tvar styles = listToStyles(list, options);\n\n\taddStylesToDom(styles, options);\n\n\treturn function update (newList) {\n\t\tvar mayRemove = [];\n\n\t\tfor (var i = 0; i < styles.length; i++) {\n\t\t\tvar item = styles[i];\n\t\t\tvar domStyle = stylesInDom[item.id];\n\n\t\t\tdomStyle.refs--;\n\t\t\tmayRemove.push(domStyle);\n\t\t}\n\n\t\tif(newList) {\n\t\t\tvar newStyles = listToStyles(newList, options);\n\t\t\taddStylesToDom(newStyles, options);\n\t\t}\n\n\t\tfor (var i = 0; i < mayRemove.length; i++) {\n\t\t\tvar domStyle = mayRemove[i];\n\n\t\t\tif(domStyle.refs === 0) {\n\t\t\t\tfor (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();\n\n\t\t\t\tdelete stylesInDom[domStyle.id];\n\t\t\t}\n\t\t}\n\t};\n};\n\nfunction addStylesToDom (styles, options) {\n\tfor (var i = 0; i < styles.length; i++) {\n\t\tvar item = styles[i];\n\t\tvar domStyle = stylesInDom[item.id];\n\n\t\tif(domStyle) {\n\t\t\tdomStyle.refs++;\n\n\t\t\tfor(var j = 0; j < domStyle.parts.length; j++) {\n\t\t\t\tdomStyle.parts[j](item.parts[j]);\n\t\t\t}\n\n\t\t\tfor(; j < item.parts.length; j++) {\n\t\t\t\tdomStyle.parts.push(addStyle(item.parts[j], options));\n\t\t\t}\n\t\t} else {\n\t\t\tvar parts = [];\n\n\t\t\tfor(var j = 0; j < item.parts.length; j++) {\n\t\t\t\tparts.push(addStyle(item.parts[j], options));\n\t\t\t}\n\n\t\t\tstylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};\n\t\t}\n\t}\n}\n\nfunction listToStyles (list, options) {\n\tvar styles = [];\n\tvar newStyles = {};\n\n\tfor (var i = 0; i < list.length; i++) {\n\t\tvar item = list[i];\n\t\tvar id = options.base ? item[0] + options.base : item[0];\n\t\tvar css = item[1];\n\t\tvar media = item[2];\n\t\tvar sourceMap = item[3];\n\t\tvar part = {css: css, media: media, sourceMap: sourceMap};\n\n\t\tif(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});\n\t\telse newStyles[id].parts.push(part);\n\t}\n\n\treturn styles;\n}\n\nfunction insertStyleElement (options, style) {\n\tvar target = getElement(options.insertInto)\n\n\tif (!target) {\n\t\tthrow new Error(\"Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.\");\n\t}\n\n\tvar lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];\n\n\tif (options.insertAt === \"top\") {\n\t\tif (!lastStyleElementInsertedAtTop) {\n\t\t\ttarget.insertBefore(style, target.firstChild);\n\t\t} else if (lastStyleElementInsertedAtTop.nextSibling) {\n\t\t\ttarget.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);\n\t\t} else {\n\t\t\ttarget.appendChild(style);\n\t\t}\n\t\tstylesInsertedAtTop.push(style);\n\t} else if (options.insertAt === \"bottom\") {\n\t\ttarget.appendChild(style);\n\t} else if (typeof options.insertAt === \"object\" && options.insertAt.before) {\n\t\tvar nextSibling = getElement(options.insertAt.before, target);\n\t\ttarget.insertBefore(style, nextSibling);\n\t} else {\n\t\tthrow new Error(\"[Style Loader]\\n\\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\\n Must be 'top', 'bottom', or Object.\\n (https://github.com/webpack-contrib/style-loader#insertat)\\n\");\n\t}\n}\n\nfunction removeStyleElement (style) {\n\tif (style.parentNode === null) return false;\n\tstyle.parentNode.removeChild(style);\n\n\tvar idx = stylesInsertedAtTop.indexOf(style);\n\tif(idx >= 0) {\n\t\tstylesInsertedAtTop.splice(idx, 1);\n\t}\n}\n\nfunction createStyleElement (options) {\n\tvar style = document.createElement(\"style\");\n\n\tif(options.attrs.type === undefined) {\n\t\toptions.attrs.type = \"text/css\";\n\t}\n\n\tif(options.attrs.nonce === undefined) {\n\t\tvar nonce = getNonce();\n\t\tif (nonce) {\n\t\t\toptions.attrs.nonce = nonce;\n\t\t}\n\t}\n\n\taddAttrs(style, options.attrs);\n\tinsertStyleElement(options, style);\n\n\treturn style;\n}\n\nfunction createLinkElement (options) {\n\tvar link = document.createElement(\"link\");\n\n\tif(options.attrs.type === undefined) {\n\t\toptions.attrs.type = \"text/css\";\n\t}\n\toptions.attrs.rel = \"stylesheet\";\n\n\taddAttrs(link, options.attrs);\n\tinsertStyleElement(options, link);\n\n\treturn link;\n}\n\nfunction addAttrs (el, attrs) {\n\tObject.keys(attrs).forEach(function (key) {\n\t\tel.setAttribute(key, attrs[key]);\n\t});\n}\n\nfunction getNonce() {\n\tif (typeof __webpack_nonce__ === 'undefined') {\n\t\treturn null;\n\t}\n\n\treturn __webpack_nonce__;\n}\n\nfunction addStyle (obj, options) {\n\tvar style, update, remove, result;\n\n\t// If a transform function was defined, run it on the css\n\tif (options.transform && obj.css) {\n\t    result = typeof options.transform === 'function'\n\t\t ? options.transform(obj.css) \n\t\t : options.transform.default(obj.css);\n\n\t    if (result) {\n\t    \t// If transform returns a value, use that instead of the original css.\n\t    \t// This allows running runtime transformations on the css.\n\t    \tobj.css = result;\n\t    } else {\n\t    \t// If the transform function returns a falsy value, don't add this css.\n\t    \t// This allows conditional loading of css\n\t    \treturn function() {\n\t    \t\t// noop\n\t    \t};\n\t    }\n\t}\n\n\tif (options.singleton) {\n\t\tvar styleIndex = singletonCounter++;\n\n\t\tstyle = singleton || (singleton = createStyleElement(options));\n\n\t\tupdate = applyToSingletonTag.bind(null, style, styleIndex, false);\n\t\tremove = applyToSingletonTag.bind(null, style, styleIndex, true);\n\n\t} else if (\n\t\tobj.sourceMap &&\n\t\ttypeof URL === \"function\" &&\n\t\ttypeof URL.createObjectURL === \"function\" &&\n\t\ttypeof URL.revokeObjectURL === \"function\" &&\n\t\ttypeof Blob === \"function\" &&\n\t\ttypeof btoa === \"function\"\n\t) {\n\t\tstyle = createLinkElement(options);\n\t\tupdate = updateLink.bind(null, style, options);\n\t\tremove = function () {\n\t\t\tremoveStyleElement(style);\n\n\t\t\tif(style.href) URL.revokeObjectURL(style.href);\n\t\t};\n\t} else {\n\t\tstyle = createStyleElement(options);\n\t\tupdate = applyToTag.bind(null, style);\n\t\tremove = function () {\n\t\t\tremoveStyleElement(style);\n\t\t};\n\t}\n\n\tupdate(obj);\n\n\treturn function updateStyle (newObj) {\n\t\tif (newObj) {\n\t\t\tif (\n\t\t\t\tnewObj.css === obj.css &&\n\t\t\t\tnewObj.media === obj.media &&\n\t\t\t\tnewObj.sourceMap === obj.sourceMap\n\t\t\t) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tupdate(obj = newObj);\n\t\t} else {\n\t\t\tremove();\n\t\t}\n\t};\n}\n\nvar replaceText = (function () {\n\tvar textStore = [];\n\n\treturn function (index, replacement) {\n\t\ttextStore[index] = replacement;\n\n\t\treturn textStore.filter(Boolean).join('\\n');\n\t};\n})();\n\nfunction applyToSingletonTag (style, index, remove, obj) {\n\tvar css = remove ? \"\" : obj.css;\n\n\tif (style.styleSheet) {\n\t\tstyle.styleSheet.cssText = replaceText(index, css);\n\t} else {\n\t\tvar cssNode = document.createTextNode(css);\n\t\tvar childNodes = style.childNodes;\n\n\t\tif (childNodes[index]) style.removeChild(childNodes[index]);\n\n\t\tif (childNodes.length) {\n\t\t\tstyle.insertBefore(cssNode, childNodes[index]);\n\t\t} else {\n\t\t\tstyle.appendChild(cssNode);\n\t\t}\n\t}\n}\n\nfunction applyToTag (style, obj) {\n\tvar css = obj.css;\n\tvar media = obj.media;\n\n\tif(media) {\n\t\tstyle.setAttribute(\"media\", media)\n\t}\n\n\tif(style.styleSheet) {\n\t\tstyle.styleSheet.cssText = css;\n\t} else {\n\t\twhile(style.firstChild) {\n\t\t\tstyle.removeChild(style.firstChild);\n\t\t}\n\n\t\tstyle.appendChild(document.createTextNode(css));\n\t}\n}\n\nfunction updateLink (link, options, obj) {\n\tvar css = obj.css;\n\tvar sourceMap = obj.sourceMap;\n\n\t/*\n\t\tIf convertToAbsoluteUrls isn't defined, but sourcemaps are enabled\n\t\tand there is no publicPath defined then lets turn convertToAbsoluteUrls\n\t\ton by default.  Otherwise default to the convertToAbsoluteUrls option\n\t\tdirectly\n\t*/\n\tvar autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;\n\n\tif (options.convertToAbsoluteUrls || autoFixUrls) {\n\t\tcss = fixUrls(css);\n\t}\n\n\tif (sourceMap) {\n\t\t// http://stackoverflow.com/a/26603875\n\t\tcss += \"\\n/*# sourceMappingURL=data:application/json;base64,\" + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + \" */\";\n\t}\n\n\tvar blob = new Blob([css], { type: \"text/css\" });\n\n\tvar oldSrc = link.href;\n\n\tlink.href = URL.createObjectURL(blob);\n\n\tif(oldSrc) URL.revokeObjectURL(oldSrc);\n}\n"
-        },
-        {
-          "id": "./node_modules/_style-loader@0.23.1@style-loader/lib/urls.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/urls.js",
-          "name": "./node_modules/_style-loader@0.23.1@style-loader/lib/urls.js",
-          "index": 5,
-          "index2": 2,
-          "size": 3013,
-          "cacheable": true,
-          "built": true,
-          "optional": false,
-          "prefetched": false,
-          "chunks": [
-            "vendors~main"
-          ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "issuerId": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "issuerName": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "issuerPath": [
-            {
-              "id": "./src/index.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-              "name": "./src/index.js",
-              "profile": {
-                "factory": 236,
-                "building": 236
-              }
-            },
-            {
-              "id": "./src/style.css",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-              "name": "./src/style.css",
-              "profile": {
-                "factory": 77,
-                "building": 10
-              }
-            },
-            {
-              "id": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "name": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "profile": {
-                "factory": 239,
-                "building": 845
-              }
-            }
-          ],
-          "profile": {
-            "factory": 3,
-            "building": 5
-          },
-          "failed": false,
-          "errors": 0,
-          "warnings": 0,
-          "assets": [],
-          "reasons": [
-            {
-              "moduleId": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "module": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "moduleName": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-              "type": "cjs require",
-              "userRequest": "./urls",
-              "loc": "67:14-31"
-            }
-          ],
-          "usedExports": true,
-          "providedExports": null,
-          "optimizationBailout": [],
-          "depth": 3,
-          "source": "\n/**\n * When source maps are enabled, `style-loader` uses a link element with a data-uri to\n * embed the css on the page. This breaks all relative urls because now they are relative to a\n * bundle instead of the current page.\n *\n * One solution is to only use full urls, but that may be impossible.\n *\n * Instead, this function \"fixes\" the relative urls to be absolute according to the current page location.\n *\n * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.\n *\n */\n\nmodule.exports = function (css) {\n  // get current location\n  var location = typeof window !== \"undefined\" && window.location;\n\n  if (!location) {\n    throw new Error(\"fixUrls requires window.location\");\n  }\n\n\t// blank or null?\n\tif (!css || typeof css !== \"string\") {\n\t  return css;\n  }\n\n  var baseUrl = location.protocol + \"//\" + location.host;\n  var currentDir = baseUrl + location.pathname.replace(/\\/[^\\/]*$/, \"/\");\n\n\t// convert each url(...)\n\t/*\n\tThis regular expression is just a way to recursively match brackets within\n\ta string.\n\n\t /url\\s*\\(  = Match on the word \"url\" with any whitespace after it and then a parens\n\t   (  = Start a capturing group\n\t     (?:  = Start a non-capturing group\n\t         [^)(]  = Match anything that isn't a parentheses\n\t         |  = OR\n\t         \\(  = Match a start parentheses\n\t             (?:  = Start another non-capturing groups\n\t                 [^)(]+  = Match anything that isn't a parentheses\n\t                 |  = OR\n\t                 \\(  = Match a start parentheses\n\t                     [^)(]*  = Match anything that isn't a parentheses\n\t                 \\)  = Match a end parentheses\n\t             )  = End Group\n              *\\) = Match anything and then a close parens\n          )  = Close non-capturing group\n          *  = Match anything\n       )  = Close capturing group\n\t \\)  = Match a close parens\n\n\t /gi  = Get all matches, not the first.  Be case insensitive.\n\t */\n\tvar fixedCss = css.replace(/url\\s*\\(((?:[^)(]|\\((?:[^)(]+|\\([^)(]*\\))*\\))*)\\)/gi, function(fullMatch, origUrl) {\n\t\t// strip quotes (if they exist)\n\t\tvar unquotedOrigUrl = origUrl\n\t\t\t.trim()\n\t\t\t.replace(/^\"(.*)\"$/, function(o, $1){ return $1; })\n\t\t\t.replace(/^'(.*)'$/, function(o, $1){ return $1; });\n\n\t\t// already a full url? no change\n\t\tif (/^(#|data:|http:\\/\\/|https:\\/\\/|file:\\/\\/\\/|\\s*$)/i.test(unquotedOrigUrl)) {\n\t\t  return fullMatch;\n\t\t}\n\n\t\t// convert the url to a full url\n\t\tvar newUrl;\n\n\t\tif (unquotedOrigUrl.indexOf(\"//\") === 0) {\n\t\t  \t//TODO: should we add protocol?\n\t\t\tnewUrl = unquotedOrigUrl;\n\t\t} else if (unquotedOrigUrl.indexOf(\"/\") === 0) {\n\t\t\t// path should be relative to the base url\n\t\t\tnewUrl = baseUrl + unquotedOrigUrl; // already starts with '/'\n\t\t} else {\n\t\t\t// path should be relative to current directory\n\t\t\tnewUrl = currentDir + unquotedOrigUrl.replace(/^\\.\\//, \"\"); // Strip leading './'\n\t\t}\n\n\t\t// send back the fixed url(...)\n\t\treturn \"url(\" + JSON.stringify(newUrl) + \")\";\n\t});\n\n\t// send back the fixed css\n\treturn fixedCss;\n};\n"
-        }
-      ],
+      "modules": [],
       "filteredModules": 0,
       "origins": [
         {
@@ -530,296 +191,12 @@ You should also be sure that the version you pass to the `corejs` option matches
   ],
   "modules": [
     {
-      "id": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-      "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-      "name": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-      "index": 2,
-      "index2": 1,
-      "size": 190,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "main"
-      ],
-      "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-      "issuerId": "./src/style.css",
-      "issuerName": "./src/style.css",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "name": "./src/index.js",
-          "profile": {
-            "factory": 236,
-            "building": 236
-          }
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./src/style.css",
-          "profile": {
-            "factory": 77,
-            "building": 10
-          }
-        }
-      ],
-      "profile": {
-        "factory": 239,
-        "building": 845
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/style.css",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "module": "./src/style.css",
-          "moduleName": "./src/style.css",
-          "type": "cjs require",
-          "userRequest": "!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css",
-          "loc": "2:14-161"
-        },
-        {
-          "moduleId": "./src/style.css",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "module": "./src/style.css",
-          "moduleName": "./src/style.css",
-          "type": "module.hot.accept",
-          "userRequest": "!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css",
-          "loc": "21:1-42:3"
-        },
-        {
-          "moduleId": "./src/style.css",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "module": "./src/style.css",
-          "moduleName": "./src/style.css",
-          "type": "cjs require",
-          "userRequest": "!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css",
-          "loc": "22:19-166"
-        }
-      ],
-      "usedExports": true,
-      "providedExports": null,
-      "optimizationBailout": [],
-      "depth": 2,
-      "source": "exports = module.exports = require(\"../node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.id, \"body {\\n    background: green;\\n}\", \"\"]);\n\n"
-    },
-    {
-      "id": "./node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-      "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-      "name": "./node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-      "index": 3,
-      "index2": 0,
-      "size": 2406,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "vendors~main"
-      ],
-      "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-      "issuerId": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-      "issuerName": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "name": "./src/index.js",
-          "profile": {
-            "factory": 236,
-            "building": 236
-          }
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./src/style.css",
-          "profile": {
-            "factory": 77,
-            "building": 10
-          }
-        },
-        {
-          "id": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-          "profile": {
-            "factory": 239,
-            "building": 845
-          }
-        }
-      ],
-      "profile": {
-        "factory": 1,
-        "building": 4
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./src/style.css",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "module": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-          "moduleName": "./node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!./node_modules/_postcss-loader@3.0.0@postcss-loader/src!./src/style.css",
-          "type": "cjs require",
-          "userRequest": "../node_modules/_css-loader@2.1.1@css-loader/dist/runtime/api.js",
-          "loc": "1:27-102"
-        }
-      ],
-      "usedExports": true,
-      "providedExports": null,
-      "optimizationBailout": [],
-      "depth": 3,
-      "source": "\"use strict\";\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return '@media ' + item[2] + '{' + content + '}';\n      } else {\n        return content;\n      }\n    }).join('');\n  }; // import a list of modules into the list\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      var id = this[i][0];\n\n      if (id != null) {\n        alreadyImportedModules[id] = true;\n      }\n    }\n\n    for (i = 0; i < modules.length; i++) {\n      var item = modules[i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      // when a module is imported multiple times with different media queries.\n      // I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (item[0] == null || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || '';\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;\n  return '/*# ' + data + ' */';\n}"
-    },
-    {
-      "id": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-      "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-      "name": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-      "index": 4,
-      "index2": 3,
-      "size": 10399,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "vendors~main"
-      ],
-      "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-      "issuerId": "./src/style.css",
-      "issuerName": "./src/style.css",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "name": "./src/index.js",
-          "profile": {
-            "factory": 236,
-            "building": 236
-          }
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./src/style.css",
-          "profile": {
-            "factory": 77,
-            "building": 10
-          }
-        }
-      ],
-      "profile": {
-        "factory": 239,
-        "building": 845
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/style.css",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "module": "./src/style.css",
-          "moduleName": "./src/style.css",
-          "type": "cjs require",
-          "userRequest": "!../node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "loc": "16:13-91"
-        }
-      ],
-      "usedExports": true,
-      "providedExports": null,
-      "optimizationBailout": [],
-      "depth": 2,
-      "source": "/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\n\nvar stylesInDom = {};\n\nvar\tmemoize = function (fn) {\n\tvar memo;\n\n\treturn function () {\n\t\tif (typeof memo === \"undefined\") memo = fn.apply(this, arguments);\n\t\treturn memo;\n\t};\n};\n\nvar isOldIE = memoize(function () {\n\t// Test for IE <= 9 as proposed by Browserhacks\n\t// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805\n\t// Tests for existence of standard globals is to allow style-loader\n\t// to operate correctly into non-standard environments\n\t// @see https://github.com/webpack-contrib/style-loader/issues/177\n\treturn window && document && document.all && !window.atob;\n});\n\nvar getTarget = function (target, parent) {\n  if (parent){\n    return parent.querySelector(target);\n  }\n  return document.querySelector(target);\n};\n\nvar getElement = (function (fn) {\n\tvar memo = {};\n\n\treturn function(target, parent) {\n                // If passing function in options, then use it for resolve \"head\" element.\n                // Useful for Shadow Root style i.e\n                // {\n                //   insertInto: function () { return document.querySelector(\"#foo\").shadowRoot }\n                // }\n                if (typeof target === 'function') {\n                        return target();\n                }\n                if (typeof memo[target] === \"undefined\") {\n\t\t\tvar styleTarget = getTarget.call(this, target, parent);\n\t\t\t// Special case to return head of iframe instead of iframe itself\n\t\t\tif (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n\t\t\t\ttry {\n\t\t\t\t\t// This will throw an exception if access to iframe is blocked\n\t\t\t\t\t// due to cross-origin restrictions\n\t\t\t\t\tstyleTarget = styleTarget.contentDocument.head;\n\t\t\t\t} catch(e) {\n\t\t\t\t\tstyleTarget = null;\n\t\t\t\t}\n\t\t\t}\n\t\t\tmemo[target] = styleTarget;\n\t\t}\n\t\treturn memo[target]\n\t};\n})();\n\nvar singleton = null;\nvar\tsingletonCounter = 0;\nvar\tstylesInsertedAtTop = [];\n\nvar\tfixUrls = require(\"./urls\");\n\nmodule.exports = function(list, options) {\n\tif (typeof DEBUG !== \"undefined\" && DEBUG) {\n\t\tif (typeof document !== \"object\") throw new Error(\"The style-loader cannot be used in a non-browser environment\");\n\t}\n\n\toptions = options || {};\n\n\toptions.attrs = typeof options.attrs === \"object\" ? options.attrs : {};\n\n\t// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\n\t// tags it will allow on a page\n\tif (!options.singleton && typeof options.singleton !== \"boolean\") options.singleton = isOldIE();\n\n\t// By default, add <style> tags to the <head> element\n        if (!options.insertInto) options.insertInto = \"head\";\n\n\t// By default, add <style> tags to the bottom of the target\n\tif (!options.insertAt) options.insertAt = \"bottom\";\n\n\tvar styles = listToStyles(list, options);\n\n\taddStylesToDom(styles, options);\n\n\treturn function update (newList) {\n\t\tvar mayRemove = [];\n\n\t\tfor (var i = 0; i < styles.length; i++) {\n\t\t\tvar item = styles[i];\n\t\t\tvar domStyle = stylesInDom[item.id];\n\n\t\t\tdomStyle.refs--;\n\t\t\tmayRemove.push(domStyle);\n\t\t}\n\n\t\tif(newList) {\n\t\t\tvar newStyles = listToStyles(newList, options);\n\t\t\taddStylesToDom(newStyles, options);\n\t\t}\n\n\t\tfor (var i = 0; i < mayRemove.length; i++) {\n\t\t\tvar domStyle = mayRemove[i];\n\n\t\t\tif(domStyle.refs === 0) {\n\t\t\t\tfor (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();\n\n\t\t\t\tdelete stylesInDom[domStyle.id];\n\t\t\t}\n\t\t}\n\t};\n};\n\nfunction addStylesToDom (styles, options) {\n\tfor (var i = 0; i < styles.length; i++) {\n\t\tvar item = styles[i];\n\t\tvar domStyle = stylesInDom[item.id];\n\n\t\tif(domStyle) {\n\t\t\tdomStyle.refs++;\n\n\t\t\tfor(var j = 0; j < domStyle.parts.length; j++) {\n\t\t\t\tdomStyle.parts[j](item.parts[j]);\n\t\t\t}\n\n\t\t\tfor(; j < item.parts.length; j++) {\n\t\t\t\tdomStyle.parts.push(addStyle(item.parts[j], options));\n\t\t\t}\n\t\t} else {\n\t\t\tvar parts = [];\n\n\t\t\tfor(var j = 0; j < item.parts.length; j++) {\n\t\t\t\tparts.push(addStyle(item.parts[j], options));\n\t\t\t}\n\n\t\t\tstylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};\n\t\t}\n\t}\n}\n\nfunction listToStyles (list, options) {\n\tvar styles = [];\n\tvar newStyles = {};\n\n\tfor (var i = 0; i < list.length; i++) {\n\t\tvar item = list[i];\n\t\tvar id = options.base ? item[0] + options.base : item[0];\n\t\tvar css = item[1];\n\t\tvar media = item[2];\n\t\tvar sourceMap = item[3];\n\t\tvar part = {css: css, media: media, sourceMap: sourceMap};\n\n\t\tif(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});\n\t\telse newStyles[id].parts.push(part);\n\t}\n\n\treturn styles;\n}\n\nfunction insertStyleElement (options, style) {\n\tvar target = getElement(options.insertInto)\n\n\tif (!target) {\n\t\tthrow new Error(\"Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.\");\n\t}\n\n\tvar lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];\n\n\tif (options.insertAt === \"top\") {\n\t\tif (!lastStyleElementInsertedAtTop) {\n\t\t\ttarget.insertBefore(style, target.firstChild);\n\t\t} else if (lastStyleElementInsertedAtTop.nextSibling) {\n\t\t\ttarget.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);\n\t\t} else {\n\t\t\ttarget.appendChild(style);\n\t\t}\n\t\tstylesInsertedAtTop.push(style);\n\t} else if (options.insertAt === \"bottom\") {\n\t\ttarget.appendChild(style);\n\t} else if (typeof options.insertAt === \"object\" && options.insertAt.before) {\n\t\tvar nextSibling = getElement(options.insertAt.before, target);\n\t\ttarget.insertBefore(style, nextSibling);\n\t} else {\n\t\tthrow new Error(\"[Style Loader]\\n\\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\\n Must be 'top', 'bottom', or Object.\\n (https://github.com/webpack-contrib/style-loader#insertat)\\n\");\n\t}\n}\n\nfunction removeStyleElement (style) {\n\tif (style.parentNode === null) return false;\n\tstyle.parentNode.removeChild(style);\n\n\tvar idx = stylesInsertedAtTop.indexOf(style);\n\tif(idx >= 0) {\n\t\tstylesInsertedAtTop.splice(idx, 1);\n\t}\n}\n\nfunction createStyleElement (options) {\n\tvar style = document.createElement(\"style\");\n\n\tif(options.attrs.type === undefined) {\n\t\toptions.attrs.type = \"text/css\";\n\t}\n\n\tif(options.attrs.nonce === undefined) {\n\t\tvar nonce = getNonce();\n\t\tif (nonce) {\n\t\t\toptions.attrs.nonce = nonce;\n\t\t}\n\t}\n\n\taddAttrs(style, options.attrs);\n\tinsertStyleElement(options, style);\n\n\treturn style;\n}\n\nfunction createLinkElement (options) {\n\tvar link = document.createElement(\"link\");\n\n\tif(options.attrs.type === undefined) {\n\t\toptions.attrs.type = \"text/css\";\n\t}\n\toptions.attrs.rel = \"stylesheet\";\n\n\taddAttrs(link, options.attrs);\n\tinsertStyleElement(options, link);\n\n\treturn link;\n}\n\nfunction addAttrs (el, attrs) {\n\tObject.keys(attrs).forEach(function (key) {\n\t\tel.setAttribute(key, attrs[key]);\n\t});\n}\n\nfunction getNonce() {\n\tif (typeof __webpack_nonce__ === 'undefined') {\n\t\treturn null;\n\t}\n\n\treturn __webpack_nonce__;\n}\n\nfunction addStyle (obj, options) {\n\tvar style, update, remove, result;\n\n\t// If a transform function was defined, run it on the css\n\tif (options.transform && obj.css) {\n\t    result = typeof options.transform === 'function'\n\t\t ? options.transform(obj.css) \n\t\t : options.transform.default(obj.css);\n\n\t    if (result) {\n\t    \t// If transform returns a value, use that instead of the original css.\n\t    \t// This allows running runtime transformations on the css.\n\t    \tobj.css = result;\n\t    } else {\n\t    \t// If the transform function returns a falsy value, don't add this css.\n\t    \t// This allows conditional loading of css\n\t    \treturn function() {\n\t    \t\t// noop\n\t    \t};\n\t    }\n\t}\n\n\tif (options.singleton) {\n\t\tvar styleIndex = singletonCounter++;\n\n\t\tstyle = singleton || (singleton = createStyleElement(options));\n\n\t\tupdate = applyToSingletonTag.bind(null, style, styleIndex, false);\n\t\tremove = applyToSingletonTag.bind(null, style, styleIndex, true);\n\n\t} else if (\n\t\tobj.sourceMap &&\n\t\ttypeof URL === \"function\" &&\n\t\ttypeof URL.createObjectURL === \"function\" &&\n\t\ttypeof URL.revokeObjectURL === \"function\" &&\n\t\ttypeof Blob === \"function\" &&\n\t\ttypeof btoa === \"function\"\n\t) {\n\t\tstyle = createLinkElement(options);\n\t\tupdate = updateLink.bind(null, style, options);\n\t\tremove = function () {\n\t\t\tremoveStyleElement(style);\n\n\t\t\tif(style.href) URL.revokeObjectURL(style.href);\n\t\t};\n\t} else {\n\t\tstyle = createStyleElement(options);\n\t\tupdate = applyToTag.bind(null, style);\n\t\tremove = function () {\n\t\t\tremoveStyleElement(style);\n\t\t};\n\t}\n\n\tupdate(obj);\n\n\treturn function updateStyle (newObj) {\n\t\tif (newObj) {\n\t\t\tif (\n\t\t\t\tnewObj.css === obj.css &&\n\t\t\t\tnewObj.media === obj.media &&\n\t\t\t\tnewObj.sourceMap === obj.sourceMap\n\t\t\t) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\tupdate(obj = newObj);\n\t\t} else {\n\t\t\tremove();\n\t\t}\n\t};\n}\n\nvar replaceText = (function () {\n\tvar textStore = [];\n\n\treturn function (index, replacement) {\n\t\ttextStore[index] = replacement;\n\n\t\treturn textStore.filter(Boolean).join('\\n');\n\t};\n})();\n\nfunction applyToSingletonTag (style, index, remove, obj) {\n\tvar css = remove ? \"\" : obj.css;\n\n\tif (style.styleSheet) {\n\t\tstyle.styleSheet.cssText = replaceText(index, css);\n\t} else {\n\t\tvar cssNode = document.createTextNode(css);\n\t\tvar childNodes = style.childNodes;\n\n\t\tif (childNodes[index]) style.removeChild(childNodes[index]);\n\n\t\tif (childNodes.length) {\n\t\t\tstyle.insertBefore(cssNode, childNodes[index]);\n\t\t} else {\n\t\t\tstyle.appendChild(cssNode);\n\t\t}\n\t}\n}\n\nfunction applyToTag (style, obj) {\n\tvar css = obj.css;\n\tvar media = obj.media;\n\n\tif(media) {\n\t\tstyle.setAttribute(\"media\", media)\n\t}\n\n\tif(style.styleSheet) {\n\t\tstyle.styleSheet.cssText = css;\n\t} else {\n\t\twhile(style.firstChild) {\n\t\t\tstyle.removeChild(style.firstChild);\n\t\t}\n\n\t\tstyle.appendChild(document.createTextNode(css));\n\t}\n}\n\nfunction updateLink (link, options, obj) {\n\tvar css = obj.css;\n\tvar sourceMap = obj.sourceMap;\n\n\t/*\n\t\tIf convertToAbsoluteUrls isn't defined, but sourcemaps are enabled\n\t\tand there is no publicPath defined then lets turn convertToAbsoluteUrls\n\t\ton by default.  Otherwise default to the convertToAbsoluteUrls option\n\t\tdirectly\n\t*/\n\tvar autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;\n\n\tif (options.convertToAbsoluteUrls || autoFixUrls) {\n\t\tcss = fixUrls(css);\n\t}\n\n\tif (sourceMap) {\n\t\t// http://stackoverflow.com/a/26603875\n\t\tcss += \"\\n/*# sourceMappingURL=data:application/json;base64,\" + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + \" */\";\n\t}\n\n\tvar blob = new Blob([css], { type: \"text/css\" });\n\n\tvar oldSrc = link.href;\n\n\tlink.href = URL.createObjectURL(blob);\n\n\tif(oldSrc) URL.revokeObjectURL(oldSrc);\n}\n"
-    },
-    {
-      "id": "./node_modules/_style-loader@0.23.1@style-loader/lib/urls.js",
-      "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/urls.js",
-      "name": "./node_modules/_style-loader@0.23.1@style-loader/lib/urls.js",
-      "index": 5,
-      "index2": 2,
-      "size": 3013,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "vendors~main"
-      ],
-      "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-      "issuerId": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-      "issuerName": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "name": "./src/index.js",
-          "profile": {
-            "factory": 236,
-            "building": 236
-          }
-        },
-        {
-          "id": "./src/style.css",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-          "name": "./src/style.css",
-          "profile": {
-            "factory": 77,
-            "building": 10
-          }
-        },
-        {
-          "id": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "name": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "profile": {
-            "factory": 239,
-            "building": 845
-          }
-        }
-      ],
-      "profile": {
-        "factory": 3,
-        "building": 5
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "module": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "moduleName": "./node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js",
-          "type": "cjs require",
-          "userRequest": "./urls",
-          "loc": "67:14-31"
-        }
-      ],
-      "usedExports": true,
-      "providedExports": null,
-      "optimizationBailout": [],
-      "depth": 3,
-      "source": "\n/**\n * When source maps are enabled, `style-loader` uses a link element with a data-uri to\n * embed the css on the page. This breaks all relative urls because now they are relative to a\n * bundle instead of the current page.\n *\n * One solution is to only use full urls, but that may be impossible.\n *\n * Instead, this function \"fixes\" the relative urls to be absolute according to the current page location.\n *\n * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.\n *\n */\n\nmodule.exports = function (css) {\n  // get current location\n  var location = typeof window !== \"undefined\" && window.location;\n\n  if (!location) {\n    throw new Error(\"fixUrls requires window.location\");\n  }\n\n\t// blank or null?\n\tif (!css || typeof css !== \"string\") {\n\t  return css;\n  }\n\n  var baseUrl = location.protocol + \"//\" + location.host;\n  var currentDir = baseUrl + location.pathname.replace(/\\/[^\\/]*$/, \"/\");\n\n\t// convert each url(...)\n\t/*\n\tThis regular expression is just a way to recursively match brackets within\n\ta string.\n\n\t /url\\s*\\(  = Match on the word \"url\" with any whitespace after it and then a parens\n\t   (  = Start a capturing group\n\t     (?:  = Start a non-capturing group\n\t         [^)(]  = Match anything that isn't a parentheses\n\t         |  = OR\n\t         \\(  = Match a start parentheses\n\t             (?:  = Start another non-capturing groups\n\t                 [^)(]+  = Match anything that isn't a parentheses\n\t                 |  = OR\n\t                 \\(  = Match a start parentheses\n\t                     [^)(]*  = Match anything that isn't a parentheses\n\t                 \\)  = Match a end parentheses\n\t             )  = End Group\n              *\\) = Match anything and then a close parens\n          )  = Close non-capturing group\n          *  = Match anything\n       )  = Close capturing group\n\t \\)  = Match a close parens\n\n\t /gi  = Get all matches, not the first.  Be case insensitive.\n\t */\n\tvar fixedCss = css.replace(/url\\s*\\(((?:[^)(]|\\((?:[^)(]+|\\([^)(]*\\))*\\))*)\\)/gi, function(fullMatch, origUrl) {\n\t\t// strip quotes (if they exist)\n\t\tvar unquotedOrigUrl = origUrl\n\t\t\t.trim()\n\t\t\t.replace(/^\"(.*)\"$/, function(o, $1){ return $1; })\n\t\t\t.replace(/^'(.*)'$/, function(o, $1){ return $1; });\n\n\t\t// already a full url? no change\n\t\tif (/^(#|data:|http:\\/\\/|https:\\/\\/|file:\\/\\/\\/|\\s*$)/i.test(unquotedOrigUrl)) {\n\t\t  return fullMatch;\n\t\t}\n\n\t\t// convert the url to a full url\n\t\tvar newUrl;\n\n\t\tif (unquotedOrigUrl.indexOf(\"//\") === 0) {\n\t\t  \t//TODO: should we add protocol?\n\t\t\tnewUrl = unquotedOrigUrl;\n\t\t} else if (unquotedOrigUrl.indexOf(\"/\") === 0) {\n\t\t\t// path should be relative to the base url\n\t\t\tnewUrl = baseUrl + unquotedOrigUrl; // already starts with '/'\n\t\t} else {\n\t\t\t// path should be relative to current directory\n\t\t\tnewUrl = currentDir + unquotedOrigUrl.replace(/^\\.\\//, \"\"); // Strip leading './'\n\t\t}\n\n\t\t// send back the fixed url(...)\n\t\treturn \"url(\" + JSON.stringify(newUrl) + \")\";\n\t});\n\n\t// send back the fixed css\n\treturn fixedCss;\n};\n"
-    },
-    {
       "id": "./src/index.js",
-      "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
+      "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_babel-loader@8.0.5@babel-loader\\lib\\index.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_imports-loader@0.8.0@imports-loader\\index.js?this=>window!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.js",
       "name": "./src/index.js",
       "index": 0,
-      "index2": 5,
-      "size": 43,
+      "index2": 0,
+      "size": 120,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -832,8 +209,8 @@ You should also be sure that the version you pass to the `corejs` option matches
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 236,
-        "building": 236
+        "factory": 322,
+        "building": 4034
       },
       "failed": false,
       "errors": 0,
@@ -851,63 +228,10 @@ You should also be sure that the version you pass to the `corejs` option matches
         }
       ],
       "usedExports": true,
-      "providedExports": [],
-      "optimizationBailout": [],
-      "depth": 0,
-      "source": "import './style.css';\nconsole.log('style');"
-    },
-    {
-      "id": "./src/style.css",
-      "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_style-loader@0.23.1@style-loader/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/style.css",
-      "name": "./src/style.css",
-      "index": 1,
-      "index2": 4,
-      "size": 1354,
-      "cacheable": true,
-      "built": true,
-      "optional": false,
-      "prefetched": false,
-      "chunks": [
-        "main"
-      ],
-      "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-      "issuerId": "./src/index.js",
-      "issuerName": "./src/index.js",
-      "issuerPath": [
-        {
-          "id": "./src/index.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "name": "./src/index.js",
-          "profile": {
-            "factory": 236,
-            "building": 236
-          }
-        }
-      ],
-      "profile": {
-        "factory": 77,
-        "building": 10
-      },
-      "failed": false,
-      "errors": 0,
-      "warnings": 0,
-      "assets": [],
-      "reasons": [
-        {
-          "moduleId": "./src/index.js",
-          "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_babel-loader@8.0.5@babel-loader/lib/index.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.js",
-          "module": "./src/index.js",
-          "moduleName": "./src/index.js",
-          "type": "harmony side effect evaluation",
-          "userRequest": "./style.css",
-          "loc": "1:0-21"
-        }
-      ],
-      "usedExports": false,
       "providedExports": null,
       "optimizationBailout": [],
-      "depth": 1,
-      "source": "\nvar content = require(\"!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css\");\n\nif(typeof content === 'string') content = [[module.id, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = require(\"!../node_modules/_style-loader@0.23.1@style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(module.hot) {\n\tmodule.hot.accept(\"!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css\", function() {\n\t\tvar newContent = require(\"!!../node_modules/_css-loader@2.1.1@css-loader/dist/cjs.js!../node_modules/_postcss-loader@3.0.0@postcss-loader/src/index.js!./style.css\");\n\n\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\n\t\tvar locals = (function(a, b) {\n\t\t\tvar key, idx = 0;\n\n\t\t\tfor(key in a) {\n\t\t\t\tif(!b || a[key] !== b[key]) return false;\n\t\t\t\tidx++;\n\t\t\t}\n\n\t\t\tfor(key in b) idx--;\n\n\t\t\treturn idx === 0;\n\t\t}(content.locals, newContent.locals));\n\n\t\tif(!locals) throw new Error('Aborting CSS HMR due to changed css-modules locals.');\n\n\t\tupdate(newContent);\n\t});\n\n\tmodule.hot.dispose(function() { update(); });\n}"
+      "depth": 0,
+      "source": "/*** IMPORTS FROM imports-loader ***/\n(function () {\n  // this 默认当前当前模块\n  console.log(this === window);\n}).call(window);"
     }
   ],
   "filteredModules": 0,
@@ -916,12 +240,12 @@ You should also be sure that the version you pass to the `corejs` option matches
       "errors": [],
       "warnings": [],
       "publicPath": "",
-      "outputPath": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/dist",
+      "outputPath": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\dist",
       "assetsByChunkName": {},
       "assets": [
         {
           "name": "index.html",
-          "size": 1450041,
+          "size": 1450104,
           "chunks": [
             0
           ],
@@ -960,12 +284,12 @@ You should also be sure that the version you pass to the `corejs` option matches
           "rendered": true,
           "initial": true,
           "entry": true,
-          "size": 541167,
+          "size": 541185,
           "names": [],
           "files": [
             "index.html"
           ],
-          "hash": "76e2b15476927183c9e5",
+          "hash": "e665dacef734fd9d6ac3",
           "siblings": [],
           "parents": [],
           "children": [],
@@ -973,11 +297,11 @@ You should also be sure that the version you pass to the `corejs` option matches
           "modules": [
             {
               "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "index": 0,
               "index2": 3,
-              "size": 343,
+              "size": 361,
               "cacheable": true,
               "built": true,
               "optional": false,
@@ -990,8 +314,8 @@ You should also be sure that the version you pass to the `corejs` option matches
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 24,
-                "building": 19
+                "factory": 32,
+                "building": 73
               },
               "failed": false,
               "errors": 0,
@@ -1004,18 +328,18 @@ You should also be sure that the version you pass to the `corejs` option matches
                   "module": null,
                   "moduleName": null,
                   "type": "single entry",
-                  "userRequest": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html"
+                  "userRequest": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html"
                 }
               ],
               "usedExports": true,
               "providedExports": null,
               "optimizationBailout": [],
               "depth": 0,
-              "source": "var _ = require(\"!!../node_modules/_lodash@4.17.11@lodash/lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\n<html lang=\"en\">\\n<head>\\n    <meta charset=\"UTF-8\">\\n    <title>模板html</title>\\n</head>\\n<body>\\n\\n</body>\\n</html>';\nreturn __p\n})();}}"
+              "source": "var _ = require(\"!!../node_modules/_lodash@4.17.11@lodash/lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\r\\n<html lang=\"en\">\\r\\n<head>\\r\\n    <meta charset=\"UTF-8\">\\r\\n    <title>模板html</title>\\r\\n</head>\\r\\n<body>\\r\\n\\r\\n</body>\\r\\n</html>';\nreturn __p\n})();}}"
             },
             {
               "id": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "name": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "index": 1,
               "index2": 2,
@@ -1027,23 +351,23 @@ You should also be sure that the version you pass to the `corejs` option matches
               "chunks": [
                 0
               ],
-              "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "issuer": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "issuerId": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "issuerName": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "issuerPath": [
                 {
                   "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-                  "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+                  "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
                   "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
                   "profile": {
-                    "factory": 24,
-                    "building": 19
+                    "factory": 32,
+                    "building": 73
                   }
                 }
               ],
               "profile": {
-                "factory": 3,
-                "building": 177
+                "factory": 9,
+                "building": 202
               },
               "failed": false,
               "errors": 0,
@@ -1052,7 +376,7 @@ You should also be sure that the version you pass to the `corejs` option matches
               "reasons": [
                 {
                   "moduleId": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-                  "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+                  "moduleIdentifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
                   "module": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
                   "moduleName": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
                   "type": "cjs require",
@@ -1068,7 +392,7 @@ You should also be sure that the version you pass to the `corejs` option matches
             },
             {
               "id": "./node_modules/_webpack@4.30.0@webpack/buildin/global.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_webpack@4.30.0@webpack/buildin/global.js",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_webpack@4.30.0@webpack\\buildin\\global.js",
               "name": "(webpack)/buildin/global.js",
               "index": 2,
               "index2": 0,
@@ -1080,32 +404,32 @@ You should also be sure that the version you pass to the `corejs` option matches
               "chunks": [
                 0
               ],
-              "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "issuer": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "issuerId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "issuerName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "issuerPath": [
                 {
                   "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-                  "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+                  "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
                   "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
                   "profile": {
-                    "factory": 24,
-                    "building": 19
+                    "factory": 32,
+                    "building": 73
                   }
                 },
                 {
                   "id": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-                  "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+                  "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
                   "name": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
                   "profile": {
-                    "factory": 3,
-                    "building": 177
+                    "factory": 9,
+                    "building": 202
                   }
                 }
               ],
               "profile": {
-                "factory": 257,
-                "building": 2
+                "factory": 4058,
+                "building": 10
               },
               "failed": false,
               "errors": 0,
@@ -1114,7 +438,7 @@ You should also be sure that the version you pass to the `corejs` option matches
               "reasons": [
                 {
                   "moduleId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-                  "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+                  "moduleIdentifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
                   "module": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
                   "moduleName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
                   "type": "cjs require",
@@ -1130,7 +454,7 @@ You should also be sure that the version you pass to the `corejs` option matches
             },
             {
               "id": "./node_modules/_webpack@4.30.0@webpack/buildin/module.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_webpack@4.30.0@webpack/buildin/module.js",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_webpack@4.30.0@webpack\\buildin\\module.js",
               "name": "(webpack)/buildin/module.js",
               "index": 3,
               "index2": 1,
@@ -1142,32 +466,32 @@ You should also be sure that the version you pass to the `corejs` option matches
               "chunks": [
                 0
               ],
-              "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "issuer": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "issuerId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "issuerName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "issuerPath": [
                 {
                   "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-                  "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+                  "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
                   "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
                   "profile": {
-                    "factory": 24,
-                    "building": 19
+                    "factory": 32,
+                    "building": 73
                   }
                 },
                 {
                   "id": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-                  "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+                  "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
                   "name": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
                   "profile": {
-                    "factory": 3,
-                    "building": 177
+                    "factory": 9,
+                    "building": 202
                   }
                 }
               ],
               "profile": {
-                "factory": 257,
-                "building": 2
+                "factory": 4058,
+                "building": 10
               },
               "failed": false,
               "errors": 0,
@@ -1176,7 +500,7 @@ You should also be sure that the version you pass to the `corejs` option matches
               "reasons": [
                 {
                   "moduleId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-                  "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+                  "moduleIdentifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
                   "module": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
                   "moduleName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
                   "type": "cjs require",
@@ -1198,7 +522,7 @@ You should also be sure that the version you pass to the `corejs` option matches
               "moduleIdentifier": "",
               "moduleName": "",
               "loc": "",
-              "request": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "request": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "reasons": []
             }
           ]
@@ -1207,11 +531,11 @@ You should also be sure that the version you pass to the `corejs` option matches
       "modules": [
         {
           "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+          "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
           "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
           "index": 0,
           "index2": 3,
-          "size": 343,
+          "size": 361,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -1224,8 +548,8 @@ You should also be sure that the version you pass to the `corejs` option matches
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 24,
-            "building": 19
+            "factory": 32,
+            "building": 73
           },
           "failed": false,
           "errors": 0,
@@ -1238,18 +562,18 @@ You should also be sure that the version you pass to the `corejs` option matches
               "module": null,
               "moduleName": null,
               "type": "single entry",
-              "userRequest": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html"
+              "userRequest": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html"
             }
           ],
           "usedExports": true,
           "providedExports": null,
           "optimizationBailout": [],
           "depth": 0,
-          "source": "var _ = require(\"!!../node_modules/_lodash@4.17.11@lodash/lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\n<html lang=\"en\">\\n<head>\\n    <meta charset=\"UTF-8\">\\n    <title>模板html</title>\\n</head>\\n<body>\\n\\n</body>\\n</html>';\nreturn __p\n})();}}"
+          "source": "var _ = require(\"!!../node_modules/_lodash@4.17.11@lodash/lodash.js\");module.exports = function (templateParams) { with(templateParams) {return (function(data) {\nvar __t, __p = '';\n__p += '<!DOCTYPE html>\\r\\n<html lang=\"en\">\\r\\n<head>\\r\\n    <meta charset=\"UTF-8\">\\r\\n    <title>模板html</title>\\r\\n</head>\\r\\n<body>\\r\\n\\r\\n</body>\\r\\n</html>';\nreturn __p\n})();}}"
         },
         {
           "id": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+          "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
           "name": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
           "index": 1,
           "index2": 2,
@@ -1261,23 +585,23 @@ You should also be sure that the version you pass to the `corejs` option matches
           "chunks": [
             0
           ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+          "issuer": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
           "issuerId": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
           "issuerName": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
           "issuerPath": [
             {
               "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "profile": {
-                "factory": 24,
-                "building": 19
+                "factory": 32,
+                "building": 73
               }
             }
           ],
           "profile": {
-            "factory": 3,
-            "building": 177
+            "factory": 9,
+            "building": 202
           },
           "failed": false,
           "errors": 0,
@@ -1286,7 +610,7 @@ You should also be sure that the version you pass to the `corejs` option matches
           "reasons": [
             {
               "moduleId": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "moduleIdentifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "module": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "moduleName": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "type": "cjs require",
@@ -1302,7 +626,7 @@ You should also be sure that the version you pass to the `corejs` option matches
         },
         {
           "id": "./node_modules/_webpack@4.30.0@webpack/buildin/global.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_webpack@4.30.0@webpack/buildin/global.js",
+          "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_webpack@4.30.0@webpack\\buildin\\global.js",
           "name": "(webpack)/buildin/global.js",
           "index": 2,
           "index2": 0,
@@ -1314,32 +638,32 @@ You should also be sure that the version you pass to the `corejs` option matches
           "chunks": [
             0
           ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+          "issuer": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
           "issuerId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
           "issuerName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
           "issuerPath": [
             {
               "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "profile": {
-                "factory": 24,
-                "building": 19
+                "factory": 32,
+                "building": 73
               }
             },
             {
               "id": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "name": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "profile": {
-                "factory": 3,
-                "building": 177
+                "factory": 9,
+                "building": 202
               }
             }
           ],
           "profile": {
-            "factory": 257,
-            "building": 2
+            "factory": 4058,
+            "building": 10
           },
           "failed": false,
           "errors": 0,
@@ -1348,7 +672,7 @@ You should also be sure that the version you pass to the `corejs` option matches
           "reasons": [
             {
               "moduleId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "moduleIdentifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "module": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "moduleName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "type": "cjs require",
@@ -1364,7 +688,7 @@ You should also be sure that the version you pass to the `corejs` option matches
         },
         {
           "id": "./node_modules/_webpack@4.30.0@webpack/buildin/module.js",
-          "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_webpack@4.30.0@webpack/buildin/module.js",
+          "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_webpack@4.30.0@webpack\\buildin\\module.js",
           "name": "(webpack)/buildin/module.js",
           "index": 3,
           "index2": 1,
@@ -1376,32 +700,32 @@ You should also be sure that the version you pass to the `corejs` option matches
           "chunks": [
             0
           ],
-          "issuer": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+          "issuer": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
           "issuerId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
           "issuerName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
           "issuerPath": [
             {
               "id": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/src/index.html",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_html-webpack-plugin@3.2.0@html-webpack-plugin\\lib\\loader.js!D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\src\\index.html",
               "name": "./node_modules/_html-webpack-plugin@3.2.0@html-webpack-plugin/lib/loader.js!./src/index.html",
               "profile": {
-                "factory": 24,
-                "building": 19
+                "factory": 32,
+                "building": 73
               }
             },
             {
               "id": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-              "identifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "identifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "name": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "profile": {
-                "factory": 3,
-                "building": 177
+                "factory": 9,
+                "building": 202
               }
             }
           ],
           "profile": {
-            "factory": 257,
-            "building": 2
+            "factory": 4058,
+            "building": 10
           },
           "failed": false,
           "errors": 0,
@@ -1410,7 +734,7 @@ You should also be sure that the version you pass to the `corejs` option matches
           "reasons": [
             {
               "moduleId": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
-              "moduleIdentifier": "/Users/qiyapeng/workspace/frontEnd/DailyDemo/webpack/webpack4/webpackDemo/node_modules/_lodash@4.17.11@lodash/lodash.js",
+              "moduleIdentifier": "D:\\FrontEnd\\DailyDemo\\webpack\\webpack4\\webpackDemo\\node_modules\\_lodash@4.17.11@lodash\\lodash.js",
               "module": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "moduleName": "./node_modules/_lodash@4.17.11@lodash/lodash.js",
               "type": "cjs require",

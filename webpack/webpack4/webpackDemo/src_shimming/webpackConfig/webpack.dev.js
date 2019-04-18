@@ -40,4 +40,4 @@ const devConfig = {
   },
 };
 
-module.exports = devConfig;
+module.exports = webpackMerge(commonConfig, devConfig);
