@@ -1,87 +1,66 @@
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const merge = require('webpack-merge');
-const devConfig = require('./webpack.dev');
-const prodConfig = require('./webpack.prod');
+const webpack = require('webpack');
 
-const commonConfig = {
+module.exports = {
   entry: {
     main: './src/index.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      child: path.resolve(__dirname, '../src/a/b/c/child')
+    }
+  },
   module: {
     rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
+      test: /\.jsx?$/,
+      include: path.resolve(__dirname, '../src'),
       use: [{
         loader: 'babel-loader'
-      }],
-      /* options: {
-        presets: [
-          [ '@babel/preset-env', {
-            targets: {
-              chrome: '67',
-            },
-            useBuiltIns: 'usage',
-          },
-            [ '@babel/preset-react' ],
-          ],
-        ],
-      },*/
-    },
-    {
+      }]
+    }, {
       test: /\.(jpg|png|gif)$/,
       use: {
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: 'image/',
-        },
-      },
+          name: '[name]_[hash].[ext]',
+          outputPath: 'images/',
+          limit: 10240
+        }
+      }
     }, {
-      test: /\.(eot|ttf|svg)/,
+      test: /\.(eot|ttf|svg)$/,
       use: {
-        loader: 'file-loader',
-      },
-    }],
+        loader: 'file-loader'
+      }
+    }]
   },
-  // manifest
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'src/index.html'
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ],
   optimization: {
-    // 在没改变源代码的情况下，文件名称中的hash值不变
     runtimeChunk: {
-      name: 'runtime',
+      name: 'runtime'
     },
-    // tree shaking 需要optimization
     usedExports: true,
-    // code spliting的配置，让打包后的文件命名开头不是vendors
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
-        verdors: {
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           name: 'vendors',
-        },
-      },
-    },
+        }
+      }
+    }
   },
   performance: false,
   output: {
-    path: path.resolve(__dirname, '../dist'),
-  },
-};
-
-module.exports = (env) => {
-  if (env && env.production) {
-    return merge(commonConfig, prodConfig)
-  } else {
-    return merge(commonConfig, devConfig)
+    path: path.resolve(__dirname, '../dist')
   }
-};
+}

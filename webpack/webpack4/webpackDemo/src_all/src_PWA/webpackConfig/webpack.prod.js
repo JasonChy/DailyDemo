@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 // plugin可以在webpack运行到某个时刻的时候，帮你做一些事情
 const prodConfig = {
@@ -22,17 +23,20 @@ const prodConfig = {
       },
     ],
   },
+  // tree shaking 需要optimization
+  optimization: {
+    minimizer: [ new OptimizeCSSAssetsPlugin({}) ],
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name].chunk.css',
     }),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
   ],
-  // tree shaking 需要optimization
-  optimization: {
-    usedExports: true,
-    minimizer: [ new OptimizeCSSAssetsPlugin({}) ],
-  },
   output: {
     publicPath: './', // 使用devServer的使用要用/, npx webpack的时候要用./
     filename: '[name].[contenthash].js', // 没有这句的话，打包生成的js默认名称为main.js

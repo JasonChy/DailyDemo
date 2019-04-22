@@ -1,0 +1,20 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Jason CHi",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.123",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.4",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
