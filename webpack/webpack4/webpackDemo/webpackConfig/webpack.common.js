@@ -8,18 +8,18 @@ module.exports = {
     main: './src/index.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [ '.js', '.jsx' ],
     alias: {
-      child: path.resolve(__dirname, '../src/a/b/c/child')
-    }
+      child: path.resolve(__dirname, '../src/a/b/c/child'),
+    },
   },
   module: {
     rules: [{
       test: /\.jsx?$/,
       include: path.resolve(__dirname, '../src'),
       use: [{
-        loader: 'babel-loader'
-      }]
+        loader: 'babel-loader',
+      }],
     }, {
       test: /\.(jpg|png|gif)$/,
       use: {
@@ -27,25 +27,25 @@ module.exports = {
         options: {
           name: '[name]_[hash].[ext]',
           outputPath: 'images/',
-          limit: 10240
-        }
-      }
+          limit: 10240,
+        },
+      },
     }, {
       test: /\.(eot|ttf|svg)$/,
       use: {
-        loader: 'file-loader'
-      }
-    }]
+        loader: 'file-loader',
+      },
+    }],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   optimization: {
     runtimeChunk: {
-      name: 'runtime'
+      name: 'runtime',
     },
     usedExports: true,
     splitChunks: {
@@ -55,12 +55,12 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           name: 'vendors',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   performance: false,
   output: {
-    path: path.resolve(__dirname, '../dist')
-  }
-}
+    path: path.resolve(__dirname, '../dist'),
+  },
+};
