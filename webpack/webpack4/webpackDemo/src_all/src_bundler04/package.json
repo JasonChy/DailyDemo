@@ -1,0 +1,26 @@
+{
+  "name": "webpackdemo",
+  "sideEffects": [
+    "*.css"
+  ],
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "debug": "node --inspect --inspect-brk node_modules/webpack/bin/webpack.js",
+    "build": "webpack"
+  },
+  "author": "Jason CHi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.4",
+    "loader-utils": "^1.2.3",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/parser": "^7.4.4",
+    "@babel/traverse": "^7.4.4"
+  }
+}
