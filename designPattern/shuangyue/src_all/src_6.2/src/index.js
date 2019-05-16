@@ -19,3 +19,4 @@ class Target {
 const target = new Target();
 const res = target.request();
 console.log(res);
+
