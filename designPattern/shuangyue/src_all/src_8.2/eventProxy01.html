@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理</title>
+</head>
+<body>
+<div id="div1">
+    <a href="#">a1</a>
+    <a href="#">a2</a>
+    <a href="#">a3</a>
+    <a href="#">a4</a>
+    <a href="#">a5</a>
+</div>
+<script>
+    const div1 = document.getElementById('div1');
+    div1.addEventListener('click', function(e) {
+      const target = e.target;
+      if (target.nodeName === 'A') {
+        alert(target.innerHTML);
+      }
+    })
+</script>
+</body>
+</html>
