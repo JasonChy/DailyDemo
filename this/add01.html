@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://division-data.alicdn.com/simple/addr_3_111_1.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+  function unique(arr) {
+    return Array.from(new Set(arr))
+  }
+
+  Array.prototype.remove = function(val) {
+    var index = this.indexOf(val);
+    if (index > -1) {
+      this.splice(index, 1);
+    }
+  };
+
+  console.log(tdist);
+
+  function factory() {
+    const addrKeys = Object.keys(tdist);
+    // console.log('14 ', addrKeys);
+    const province = unique(addrKeys.map((item) => {
+      return item.slice(0, 2);
+    }));
+    province.remove('47');
+    console.log('14 ', province);
+
+    const addressOptions = [];
+    const cityList = [];
+    province.forEach((item, index) => {
+      // console.log('25 ',item, tdist[item + '0000'][0]);
+      const provinceName = tdist[item + '0000'][0];
+      addressOptions.push(
+          {
+            value: item,
+            label: provinceName,
+            children: cityList.push(tdist[item + ]),
+          })
+    });
+  }
+
+  console.log('18 province', addressOptions);
+</script>
+</html>
