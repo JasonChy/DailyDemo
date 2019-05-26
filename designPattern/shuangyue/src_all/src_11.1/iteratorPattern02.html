@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <a href="#">a1</a>
+        <a href="#">a2</a>
+        <a href="#">a3</a>
+        <a href="#">a4</a>
+        <a href="#">a5</a>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        const arr = [1, 2, 3];
+        const nodeList = document.getElementsByTagName('a');
+        const $a = $('a');
+
+        function each(data) {
+          // 生成迭代器
+          const $data = $(data);
+          $data.each(function (key, item) {
+            console.log(key, item)
+          })
+        }
+        each(arr);
+        each(nodeList);
+        each($a);
+        // 顺序遍历有序集合
+        // 使用者不必知道集合的内部结构
+    </script>
+</body>
+</html>

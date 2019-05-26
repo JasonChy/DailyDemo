@@ -1,4 +1,4 @@
-
+// 迭代器
 class Iterator {
   constructor(container) {
     this.list = container.list;
@@ -17,7 +17,7 @@ class Iterator {
     return true;
   }
 }
-
+// 将顺序列表转换成 容器
 class Container {
   constructor(list) {
     this.list = list;
