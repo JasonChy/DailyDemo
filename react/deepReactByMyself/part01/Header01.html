@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header组件</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const Header = props => {
+      console.log('14', props);
+      const { title, text } = props;
+      return (<h3 title={title}>{text}</h3>);
+    };
+
+    const header = <Header title="hello world!" text="世界你好!" />;
+    // console.log(window.ReactDOM);
+    ReactDOM.render(
+        // new Header("hello world!", "世界你好"),
+        header,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header组件</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    const HelloMessage = props => {
+      console.log('14', props);
+      return <h1>Hello World!</h1>;
+    };
+
+    // const element = <HelloMessage />;
+
+    ReactDOM.render(
+        <HelloMessage aaa={true} bbb={'qiyapeng'} />,
+        document.getElementById('example')
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://division-data.alicdn.com/simple/addr_3_111_1.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+  // 数组中移除特定元素
+  Array.prototype.remove = function (val) {
+    let index = this.indexOf(val);
+    if (index > -1) {
+      this.splice(index, 1);
+    }
+  };
+
+  // tdist是高德地址库对象
+  // console.log('25', tdist);
+
+  // 开始执行的时间戳
+  const startTime = (new Date).getTime();
+  // 最终需要转换成的地址JSON数据
+  let addressOptions = [];
+
+  for (let member in tdist) {
+    if (tdist.hasOwnProperty(member)
+        && member.slice(0, 2) !== '71' && member.slice(0, 2) !== '81'
+        && member.slice(0, 2) !== '82' && member.slice(0, 2) !== '99')
+    {
+      if (member.slice(2, 6) === '0000') {
+        // console.log(member);
+        addressOptions.push(
+            {
+              value: member,
+              label: tdist[member][0]
+            }
+        )
+      } else if (member.slice(2, 4) !== '00' && member.slice(4, 6) === '00') {
+        // console.log(member, member.slice(0, 2) + '0000');
+        let hasCurrentProvince = false;
+        for (let i = 0; i < addressOptions.length; i++) {
+          if (addressOptions[i].value.slice(0, 2) === member.slice(0, 2)) {
+            hasCurrentProvince = true;
+            // console.log(addressOptions[i].value);
+            if (!addressOptions[i].hasOwnProperty('children')) {
+              addressOptions[i].children = [];
+            }
+            addressOptions[i].children.push(
+                {
+                  value: member,
+                  label: tdist[member][0]
+                }
+            )
+          }
+        }
+        // addressOptions中没有该省时添加
+        if(!hasCurrentProvince) {
+          console.log('hasCurrentProvince');
+          addressOptions.push({
+            value: member.slice(0, 2) + '0000',
+            label: tdist[member.slice(0, 2) + '0000'][0]
+          })
+        }
+      } else if (member.slice(2, 4) !== '00' && member.slice(4, 6) !== '00') {
+        for (let j = 0; j < addressOptions.length; j++) {
+          if (addressOptions[j].value.slice(0, 2) === member.slice(0, 2)) {
+            for (let k = 0; k < addressOptions[j].children.length; k++) {
+              if (addressOptions[j].children[k].value.slice(2, 4) === member.slice(2, 4)) {
+                if (!addressOptions[j].children[k].hasOwnProperty('children')) {
+                  addressOptions[j].children[k].children = [];
+                }
+                addressOptions[j].children[k].children.push(
+                    {
+                      value: member,
+                      label: tdist[member][0]
+                    }
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // console.log('96 addressOptions', addressOptions);
+  // console.log('96 addressOptions', JSON.stringify(addressOptions));
+  // 结束的时间戳
+  const endTIme = (new Date).getTime();
+  console.log(endTIme - startTime);
+</script>
+</html>

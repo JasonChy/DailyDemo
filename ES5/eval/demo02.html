@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // testObjString 是一个字符串
+  const testObjString = 'const obj = {"name": "Jason", "age": "18", "getName": function() {return this.name}}';
+  // const testObj = JSON.parse(testObjString);
+  const testObj = eval(testObjString);
+
+  console.log('17 testObj', testObj);
+  console.log('18 obj', obj);
+</script>
+</html>

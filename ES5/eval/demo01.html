@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  // testObjString 是一个字符串
+  const testObjString = '{"name": "Jason", "age": "18", "getName": function() {return this.name}}';
+  // JSON.parse方法只能转json格式的字符串，无法转带有函数和表达式的普通js对象
+  // const testObj = JSON.parse(testObjString);
+  const testObj = eval('('+ testObjString +')');
+
+  console.log(testObj);
+</script>
+</html>

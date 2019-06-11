@@ -1,80 +1,50 @@
-// inport只能用在网页打包文件中，不能用在nodejs（会报错）
-import StateMachine from 'javascript-state-machine';
 
-// 模型
-const fsm = new StateMachine({
-  init: 'pending',
-  transitions: [
-    {
-      name: 'resolve',
-      from: 'pending',
-      to: 'fullfilled',
-    },
-    {
-      name: 'reject',
-      from: 'pending',
-      to: 'rejected',
-    },
-  ],
-  methods: {
-    // 成功
-    onResolve(state, data) {
-      // 参数：state - 当前状态示例; data - fsm.resolve(xxx) 执行时传递过来的参数
-      data.successList.forEach(fn => fn());
-    },
-    // 失败
-    onReject(state, data) {
-      // 参数：state - 当前状态示例; data - fsm.reject(xxx) 执行时传递过来的参数
-      data.failList.forEach(fn => fn());
-    },
-  },
-});
-
-// 定义 Promise
-class MyPromise {
-  constructor(fn) {
-    this.successList = [];
-    this.failList = [];
-
-    fn(() => {
-      // resolve 函数
-      fsm.resolve(this);
-    }, () => {
-      // reject 函数
-      fsm.reject(this);
-    });
+// 笨方法
+/* class User {
+  constructor(type) {
+    this.type = type;
   }
-  then(successFn, failFn) {
-    this.successList.push(successFn);
-    this.failList.push(failFn);
+  buy() {
+    if (this.type === 'ordinary') {
+      console.log('普通用户购买');
+    } else if (this.type === 'member') {
+      console.log('会员用户购买');
+    } else if (this.type === 'vip') {
+      console.log('vip用户购买');
+    }
   }
 }
+
 // 测试代码
-function loadImage(src) {
-  const promise = new MyPromise(function(resolve, reject) {
-    const img = document.createElement('img');
-    img.onload = function() {
-      resolve(img);
-    };
-    img.onerror = function() {
-      reject();
-    };
-    img.src = src;
-  });
-  return promise;
+const u1 = new User('ordinary');
+u1.buy();
+const u2 = new User('member');
+u2.buy();
+const u3 = new User('vip');
+u3.buy();*/
+
+// 策略模式
+class OrdinaryUser {
+  buy() {
+    console.log('普通用户购买');
+  }
 }
 
-const src = 'http://www.fatizi5.com/css/logo.gif';
-const result = loadImage(src);
+class MemberUser {
+  buy() {
+    console.log('会员用户购买');
+  }
+}
 
-result.then(function() {
-  console.log('ok 1');
-}, function() {
-  console.log('fail 1');
-});
+class VipUser {
+  buy() {
+    console.log('会员用户购买');
+  }
+}
 
-result.then(function() {
-  console.log('ok 2');
-}, function() {
-  console.log('fail 2');
-});
+const u1 = new OrdinaryUser();
+u1.buy();
+const u2 = new MemberUser();
+u2.buy();
+const u3 = new VipUser();
+u3.buy();
