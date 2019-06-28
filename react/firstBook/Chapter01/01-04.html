@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello React</title>
+</head>
+<body>
+    <div id="app">
+        <!--应用渲染的位置-->
+    </div>
+    <script src="../lib/react/build/react.js"></script>
+    <script src="../lib/react/build/react-dom.js"></script>
+    <script>
+        //应用的JavaScript代码
+        ReactDOM.render(
+                React.DOM.h1(
+                        { id: "my-heading" },
+                        React.DOM.span( null,
+                            React.DOM.em(null, "Hel"),
+                                "lo"
+                        ),
+                        " World!"
+                ),
+                document.getElementById("app")
+        )
+    </script>
+</body>
+</html>

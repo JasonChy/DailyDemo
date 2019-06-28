@@ -1,0 +1,17 @@
+html {
+    background: white;
+    font: normal 16px "simsun";
+}
+
+input {
+    font: 16px Arial;
+}
+
+th{
+    cursor: pointer;
+}
+td {
+    border-top: 1px solid black;
+    cursor: cell;
+    padding: 5px;
+}

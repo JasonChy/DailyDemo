@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>third</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+</body>
+<script type="text/babel">
+    var HelloMessage = React.createClass({
+        getInitialState: function(){
+            return {
+                value: 'Hello Runoob!'
+            };
+        },
+
+        handleChange: function () {
+            this.setState({value:'菜鸟教程'})
+        },
+
+        render: function () {
+            var value = this.state.value;
+            return (
+                <div>
+                    <button onClick={this.handleChange}>点我</button>
+                    <h4>{value}</h4>
+                </div>
+            )
+        }
+    })
+    ReactDOM.render(
+        <HelloMessage />,
+        document.getElementById("example")
+    )
+</script>
+</html>

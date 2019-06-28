@@ -1,0 +1,1 @@
+(Get-Content bundle.css).replace('../..iamges','images')|Set-Content bundle.css

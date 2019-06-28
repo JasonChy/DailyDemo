@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+</body>
+<script type="text/babel">
+    var MyComponent = React.createClass({
+        handleClick: function () {
+            /*使用原生的DOM API获取焦点*/
+            this.refs.myInput.focus();
+        },
+
+        render: function () {
+            return (
+                <div>
+                    <input type="text" ref="myInput"/>
+                    <input type="button" value="点击我获取输入焦点"
+                        onClick={this.handleClick}/>
+                </div>
+            )
+        }
+    });
+
+    ReactDOM.render(
+        <MyComponent />,
+        document.getElementById("example")
+    )
+</script>
+</html>

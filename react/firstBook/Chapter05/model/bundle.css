@@ -1,0 +1,13 @@
+/*每个组件的样式*/
+.Logo {
+    background-image: url('images/react-logo.svg');
+    background-size: cover;
+    display: inline-block;
+    height: 50px;
+    vertical-align: middle;
+    width: 50px;
+}/*整个应用的通用样式*/
+html {
+    background: white;
+    font: 16px Arial;
+}

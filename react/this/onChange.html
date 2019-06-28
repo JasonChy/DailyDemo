@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onChange事件</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="test">
+    </div>
+</body>
+<script>
+    /*var testInput = document.getElementById("test");
+    function changeFunc() {
+        console.log("我变了！")
+    }*/
+
+    document.getElementById("test").addEventListener("onchange", function(){
+        /*document.getElementById("demo").innerHTML = "Hello World";*/
+        console.log("我变了！")
+    });
+
+
+</script>
+</html>
