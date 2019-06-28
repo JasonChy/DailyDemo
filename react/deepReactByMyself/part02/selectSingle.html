@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox 组件</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  // 结构出React，ReactDOM
+  const {React, ReactDOM} = window;
+  const {Component} = React;
+
+  // 创建组件
+  class SelectSingle extends Component {
+    constructor(props) {
+      super(props);
+      this.handleChange = this.handleChange.bind(this);
+      this.state = {
+        area: ''
+      }
+    }
+
+    componentDidUpdate() {
+      console.log('28', this.state);
+    }
+
+    handleChange(e) {
+      const {value} = e.target;
+      console.log('33 ', e.target);
+      this.setState({
+        area: value
+      })
+    }
+
+    render() {
+      const {area} = this.state;
+      return (
+          <div>
+            <p>请选择城市：</p>
+            <select value={area} onChange={this.handleChange}>
+              <option value="beijing">北京</option>
+              <option value="shanghai">上海</option>
+              <option value="hangzhou">杭州</option>
+              <option value="guangzhou">广州</option>
+              <option value="shenzheng">深圳</option>
+            </select>
+          </div>
+      )
+    }
+  }
+
+  //  使用组件
+  ReactDOM.render(<SelectSingle />, document.getElementById('root'));
+</script>
+</body>
+</html>

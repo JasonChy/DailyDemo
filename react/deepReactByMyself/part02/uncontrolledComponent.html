@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uncontrolledComponent 组件</title>
+    <style>
+        select {
+            height: 300px;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  // 结构出React，ReactDOM
+  const {React, ReactDOM} = window;
+  const {Component} = React;
+
+  // 创建组件
+  class UncontrolledComponent extends Component {
+    constructor(props) {
+      super(props);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate() {
+      console.log('28', this.state);
+    }
+
+    handleSubmit(e) {
+      e.preventDefault();
+      console.log('32', this.state);
+      const {value} = this.refs.name;
+      console.log('37 value', value);
+    }
+
+    render() {
+      return (
+          <div>
+            <p>请提交表单</p>
+            <form onSubmit={this.handleSubmit}>
+              <input type="text" ref="name" defaultValue="Hangzhou"/>
+              <button>提交</button>
+            </form>
+          </div>
+      )
+    }
+  }
+
+  //  使用组件
+  ReactDOM.render(<UncontrolledComponent/>, document.getElementById('root'));
+</script>
+</body>
+</html>

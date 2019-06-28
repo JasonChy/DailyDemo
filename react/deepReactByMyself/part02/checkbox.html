@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox 组件</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  // 结构出React，ReactDOM
+  const {React, ReactDOM} = window;
+  const {Component} = React;
+
+  // 创建组件
+  class CheckBox extends Component {
+    constructor(props) {
+      super(props);
+      this.handleChange = this.handleChange.bind(this);
+      this.state = {
+        coffee: []
+      }
+    }
+
+    componentDidUpdate() {
+      console.log('28', this.state);
+    }
+
+    handleChange(e) {
+      const {checked, value} = e.target;
+      // console.log('33 ', checked);
+      let {coffee} = this.state;
+      // console.log(coffee);
+      if (checked && !coffee.includes(value)) {
+        coffee.push(e.target.value);
+      } else {
+        coffee = coffee.filter(item => item !== value)
+      }
+      this.setState({
+        coffee
+      })
+    }
+
+    render() {
+      const {coffee} = this.state;
+      return (
+          <div>
+            <p>请选择你最喜欢的咖啡：</p>
+            <label>
+              <input type="checkbox" value="Cappuccino" checked={coffee.includes('Cappuccino')}
+                     onChange={this.handleChange}/>
+              Cappuccino
+            </label>
+
+            <label>
+              <input type="checkbox" value="CafeMocha" checked={coffee.includes('CafeMocha')}
+                     onChange={this.handleChange}/>
+              CafeMocha
+            </label>
+
+            <label>
+              <input type="checkbox" value="CaffeLatte" checked={coffee.includes('CaffeLatte')}
+                     onChange={this.handleChange}/>
+              CafeMocha
+            </label>
+
+            <label>
+              <input type="checkbox" value="Machiatto" checked={coffee.includes('Machiatto')}
+                     onChange={this.handleChange}/>
+              CafeMocha
+            </label>
+          </div>
+      )
+    }
+  }
+
+  //  使用组件
+  ReactDOM.render(<CheckBox/>, document.getElementById('root'));
+</script>
+</body>
+</html>

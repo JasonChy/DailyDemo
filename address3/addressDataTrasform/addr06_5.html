@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://division-data.alicdn.com/simple/addr_3_111_1.js"></script>
+    <script src="addressDataFormating.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+  // 生成特定数据结构的JSON地址数据
+  /* level参数 是想要的数据层级：
+    当level=1时，所生成的addressOptions只有省一级；
+    当level=2时，所生成的addressOptions是省市两级；
+    当level=3时，所生成的addressOptions有省市区三级；
+  */
+
+  const addressOptions = addressDataFormating(window.tdist, 3, );
+  console.log('76 addressOptions', addressOptions);
+</script>
+</html>
