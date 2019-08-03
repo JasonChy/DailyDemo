@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <a href="#" data-digit="1">链接一</a>
+    <a href="#" data-digit="2">链接二</a>
+    <span>这不是a链接</span>
+    <a href="#" data-digit="3">链接三</a>
+    <a href="#" data-digit="4">链接四</a>
+</div>
+<script>
+    const container = document.getElementById('container');
+    container.addEventListener('click', function (event) {
+      console.log(event.currentTarget);
+      console.log();
+      if (event.target.tagName.toUpperCase() !== 'A') {
+        return;
+      }
+      console.log(event.target.dataset.digit + event.target.innerText)
+    })
+</script>
+</body>
+</html>

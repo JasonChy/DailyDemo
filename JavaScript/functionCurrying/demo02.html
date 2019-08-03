@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function add() {
+      const tmpSlice = [].slice;
+      let params = tmpSlice.apply(arguments);
+
+      function currying() {
+        const arr = tmpSlice.apply(arguments);
+        params = params.concat(arr);
+        return currying;
+      }
+
+      currying.toString = function () {
+        let result = 0;
+        params.forEach(function (value) {
+          result += value;
+        });
+        return result;
+      };
+
+      return currying;
+    }
+
+    const value01 = add(1, 2, 3, 4);
+    const value02 = add(1)(2)(3);
+    console.log(value01);
+    console.log( typeof value02 );
+</script>
+</body>
+</html>

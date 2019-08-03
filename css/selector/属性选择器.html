@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+        }
+        div[myAttr|="val"] {
+            background-color: pink;
+        }
+        /*div[myAttr~="value"] {
+            background-color: green;
+        }*/
+    </style>
+</head>
+<body>
+<div myAttr="val" id="ele01">你好</div>
+<div myAttr="value01">你好</div>
+<div myAttr="value02">你好</div>
+<div myAttr="sdfvalue02">你好</div>
+<div myAttr="sdfvalue02">你好</div>
+<script>
+    const ele = document.querySelectorAll('[myAttr^="value"]');
+    console.log(ele);
+    console.log(document.getElementById('ele01').getAttributeNode('myAttr'));
+    // console.log(document.getElementById('ele01').getAttribute('myAttr'))
+    let y, x = 3, z = 3;
+    y = x + ++x;
+    console.log(y);
+</script>
+</body>
+</html>

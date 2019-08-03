@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>子盒子margin-top作用于父盒子</title>
+    <style>
+        .box1 {
+            height: 100px;
+            background-color: yellow;
+        }
+        .outer {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        /* inner的margin-top会作用于 父盒子outer，而inner和outer上边距是重合的
+            有一下解决方案：
+            1、为父盒子设置border；
+            2、为父盒子添加overflow: hidden; 样式；
+            3、给父盒子设置padding-top代替子盒子的margin-top；
+            4、为父盒子或子盒子设置float;
+            5、给子盒子设置display: inline-block;
+            6、为父盒子或者子盒子申明绝对定位；
+        */
+        .inner {
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+    <div class="outer">
+        <div class="inner">
+
+        </div>
+    </div>
+</body>
+</html>

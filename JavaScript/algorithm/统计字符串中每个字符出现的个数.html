@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function computeCharCount(stringArg) {
+      let charCountObj = {};
+      for (let i = 0; i < stringArg.length; i++) {
+        currentChar = stringArg[i];
+        if(!charCountObj[currentChar]) {
+          charCountObj[currentChar] = 1;
+        } else {
+          charCountObj[currentChar]++;
+        }
+      }
+      return charCountObj;
+    }
+
+    console.log(computeCharCount('11444666678'));
+    console.log(computeCharCount('aabccddd'));
+</script>
+</html>
