@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="addressData.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    //  全国所有省市区
+    console.log('12 rawCitiesData', rawCitiesData);
+
+    // 最终需要生成的地址对象 addressData
+    const addressData = [];
+
+    // 后端返回的服务地区code
+    const addressCodeArray = ['350000/350300/350303', '350000/350300/350305',
+      '500000/500100/500243', '500000/500100/500381', '330000/330100/330122',
+        '330000/330100/330127', '330000/330300/330304'];
+    // addressCodeArray = addressCode.split('/');
+    // console.log('16 addressCodeArray', addressCodeArray);
+    addressCodeArray.map((item) => {
+      filterServiceAddress(addressData, item);
+    });
+
+    console.log('24 最终生成的服务省市区 addressData', addressData);
+    // filterServiceAddress(addressCode);
+
+    function filterServiceAddress(addressData, addressCode) {
+      let addressCodeArray = addressCode.split('/');
+
+      for (let i = 0; i < addressCodeArray.length; i++) {
+        if (i === 0) {
+          let flag = true;
+          for (let j = 0; j < addressData.length; j++) {
+            if (addressData[j].code === addressCodeArray[i]) {
+              flag = false;
+            }
+          }
+          if (flag) {
+            for (let k = 0; k < rawCitiesData.length; k++) {
+              if (rawCitiesData[k].code === addressCodeArray[i]) {
+                addressData.push({
+                  code: rawCitiesData[k].code,
+                  name: rawCitiesData[k].name
+                });
+              }
+            }
+          }
+        }
+
+        if (i === 1) {
+          let flag = true;
+          for (let j = 0; j < addressData.length; j++) {
+            if (addressData[j].sub) {
+              for (let k = 0; k < addressData[j].sub.length; k++) {
+                if (addressData[j].sub[k].code === addressCodeArray[i]) {
+                  flag = false;
+                }
+              }
+            } else {
+              addressData[j].sub = [];
+            }
+            if (flag) {
+              for (let l = 0; l < rawCitiesData.length; l++) {
+                for (let m = 0; m < rawCitiesData[l].sub.length; m++) {
+                  if (rawCitiesData[l].sub[m].code === addressCodeArray[i]) {
+                    addressData[j].sub.push({
+                      code: rawCitiesData[l].sub[m].code,
+                      name: rawCitiesData[l].sub[m].name
+                    });
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    console.log('65 addressData', addressData);
+</script>
+</html>

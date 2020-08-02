@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class HellMessage extends React.Component {
+            render() {
+                console.log('this', this);
+                return (
+                    <div>
+                        Hello {this.props.name}
+                    </div>
+                );
+            }
+        }
+        // function HellMessage(name) {
+        //     console.log('24 name', name);
+        //     return (
+        //             <div>
+        //                 Hello {name}
+        //             </div>
+        //         );
+        // }
+        const rootDOM = document.getElementById('root');
+        ReactDOM.render(<HellMessage name="齐亚鹏" >试试看</HellMessage>, rootDOM);
+    </script>
+</body>
+</html>

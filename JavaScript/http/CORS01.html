@@ -12,7 +12,7 @@
     function sendRequest() {
       let xhr = new XMLHttpRequest();
       xhr.open('GET', 'http://render-dev.site.alipay.net/p/h5data_offline/dev_h5data-block_notice-h5data.json?name=春', true);
-      // xhr.setRequestHeader('Access-Control-Request-Headers', 'x-requested-with');
+      xhr.setRequestHeader('Access-Control-Request-Headers', 'x-requested-with');
       // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
       // xhr.setRequestHeader('Origin', 'http://localhost');
       // xhr['Access-Control-Request-Headers'] = 'x-requested-with';

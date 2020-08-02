@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Timer</title>
+    <script src="http://cdn.staticfile.org/react/16.13.1/umd/react.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // state = 333;s
+        class TodoApp extends React.Component {
+            constructor(props) {
+                // console.log('18 props', props);
+                super(props);
+                this.state = { items: [], text: '' };
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+            }
+            componentDidUpdate() {
+                console.log('29 ', this.state);
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h3>TODO</h3>
+                        <TodoList items={this.state.items} />
+                        <form onSubmit={this.handleSubmit}>
+                            <label htmlFor="new-todo">
+                                What needs to be done?
+                            </label>
+                            <input
+                                id="new-todo"
+                                onChange={this.handleChange}
+                                value={this.state.text}
+                            />
+                            <button>
+                                Add #{this.state.items.length + 1}
+                            </button>
+                        </form>
+                    </div>
+                );
+            }
+
+            handleChange(e) {
+                this.setState({ text: e.target.value });
+            }
+
+            handleSubmit(e) {
+                e.preventDefault();
+                if (this.state.text.length === 0) {
+                    return;
+                }
+                const newItem = {
+                    text: this.state.text,
+                    id: Date.now()
+                };
+                this.setState(state => ({
+                    items: state.items.concat(newItem),
+                    text: ''
+                }));
+            }
+        }
+
+        class TodoList extends React.Component {
+            // componentWillUpdate() {
+            //     this.setState({
+            //         text: 'test'
+            //     })
+            // }
+
+            componentDidUpdate() {
+                console.log('78 ', this.state);
+            }
+            render() {
+                // console.log('67', this.props);
+                return (
+                    <ul>
+                        {this.props.items.map(item => (
+                            <li key={item.id}>{item.text}</li>
+                        ))}
+                    </ul>
+                );
+            }
+        }
+
+    const rootDOM = document.getElementById('root');
+    ReactDOM.render(<TodoApp />, rootDOM);
+    </script>
+</body>
+
+</html>

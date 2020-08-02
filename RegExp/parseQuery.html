@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 正则题：实现正则获取url params 对象
+// function parseQuery(url) {
+//     // ...
+// }
+// var url='http:www.baidu.com/index?name=username&age=27&pwd=zbc|123@&likes=lol&likes=beautifull girl&$id=main#flag=66';
+// console.log(parseQuery(url));
+
+// 输出结果：
+// { name: 'username',
+//   age: '27',
+//   pwd: 'zbc|123@',
+//   likes: [ 'lol', 'beautifull girl' ],
+//   '$id': 'main' 
+// }
+
+function parseQuery(url) {
+    let parameters = {};
+    const reg = /[?&]([^=&#]+)=([^&#]*)/g;
+    const querys = url.match(reg);
+    console.log('30 querys', querys);
+    querys.forEach(element => {
+        let oneKeyValue = element.replace(/[?&]/, '');
+        let key = oneKeyValue.split('=')[0];
+        let value = oneKeyValue.split('=')[1];
+        parameters[decodeURIComponent(key)] = decodeURIComponent(value);
+    });
+    console.log('41 parameters', parameters);
+}
+
+const url='http:www.baidu.com/index?name=username&age=27&pwd=zbc|123@&likes=lol&likes=beautifull girl&$id=main#flag=66';
+parseQuery(url);
+</script>
+</html>

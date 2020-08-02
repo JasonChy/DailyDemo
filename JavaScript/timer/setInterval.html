@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let skipToWsone = true;
+    let count = 0;
+    let timerId = '';
+
+    if (skipToWsone) {
+    // 冻结保证金  然后返回调用划拨  
+      let that = this;
+      timerId = setInterval(() => {
+        count++;
+        // that.appropriate();
+        console.log('21 count', count, timerId);
+        if(count >= 5){
+          clearInterval(timerId);
+          console.log('26 timerId', timerId);
+          console.log({sentext:"确认缴纳保证金"});
+          return;
+        }
+      }, 3000);
+    };
+</script>
+</html>

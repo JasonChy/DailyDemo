@@ -53,7 +53,8 @@
         </div>
         <div class="fileInputBox">
             <div class="fileInputText">身份证正面</div>
-            <input type="file" class="fileInput" id="fileInput" onchange="inputChanged(this)" />
+            <input type="file" class="fileInput" id="fileInput"
+                multiple onchange="inputChanged(this, event)" />
         </div>
 
     </div>
@@ -63,21 +64,27 @@
 
         // console.log(inputButton);
 
-        function inputChanged(param) {
-           console.log( param.files );
-          // console.log('选择了文件', param.files[0]);
+        function inputChanged(param, event) {
+            console.log('67 param', param);
+            console.log('68 event', event.target.files);
+            console.log('70 param.files', param.files );
+            // console.log('选择了文件', param.files[0]);
 
-          const fileObj = param.files[0];
-          const reader = new FileReader();
-          // console.log(fileObj)
-          // reader.readAs
-          reader.readAsDataURL(fileObj);
-          reader.onload = function (e) {
-            imagePlace.src = e.target.result;
-          };
-          // console.log( url )
+            const fileObj = param.files;
+            const reader = new FileReader();
+            // console.log('75 fileObj', typeof fileObj)
+            // reader.readAs
+            for(let i = 0; i < fileObj.length; i++) {
+                reader.readAsDataURL(fileObj[i]);
+                reader.onload = function (e) {
+                    console.log('79:  ' + i + ' fileObj', e.target.result);
+                    imagePlace.src = e.target.result;
+                };
 
-          // console.log(imagePlace);
+            }
+            // console.log( url )
+
+            // console.log(imagePlace);
 
 
 

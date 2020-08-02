@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="addressData.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    console.log('12 rawCitiesData', rawCitiesData);
+
+    // 最终需要生成的地址对象 addressData
+    const addressData = [];
+
+    const addressCode = '350000/350300/350303';
+    const addressCodeArray = addressCode.split('/');
+    console.log('16 addressCodeArray', addressCodeArray);
+
+    for (let i = 0; i < rawCitiesData.length; i++) {
+      // 遍历rawCitiesData的第一级 省
+      if (rawCitiesData[i].code === addressCodeArray[0]) {
+        // console.log('23 ');
+        let flag = true;
+        for (let j = 0; j < addressData.length; j++) {
+          if (addressData[j].code === addressCodeArray[0]) {
+            console.log('26 ');
+            flag = false;
+          }
+        }
+        if (flag) {
+          addressData.push({
+            code: rawCitiesData[i].code,
+            name: rawCitiesData[i].name
+          });
+        }
+      }
+
+      // console.log('40 addressData', addressData);
+
+      // 遍历rawCitiesData的第二级 市
+      for (let k = 0; k < rawCitiesData[i].sub.length; k++) {
+        if (rawCitiesData[i].sub[k].code === addressCodeArray[1]) {
+          let flag = true;
+          for (let l = 0; l < addressData.length; l++) {
+            // console.log('45 ', l);
+            if (addressData[l].sub) {
+              for (let m = 0; m < addressData[l].sub.length; m++) {
+                if (addressData[l].sub[m].code === addressCodeArray[1]) {
+                  // console.log('46 ');
+                  flag = false;
+                }
+              }
+            } else {
+              addressData[l].sub = [];
+            }
+            if (flag) {
+              addressData[l].sub.push({
+                code: rawCitiesData[i].sub[k].code,
+                name: rawCitiesData[i].sub[k].name
+              });
+            }
+          }
+
+        }
+        console.log('67 k', k);
+        // 遍历rawCitiesData的第三级 区
+        if (rawCitiesData[i].sub[k].sub) {
+          for (let n = 0; n < rawCitiesData[i].sub[k].sub.length; n++) {
+            if (rawCitiesData[i].sub[k].sub[n].code === addressCodeArray[2]) {
+              let flag = true;
+              for (let p = 0; p < addressData.length; p++) {
+                for (let q = 0; q < addressData[p].sub.length; q++) {
+                  if (addressData[p].sub[q].sub) {
+                    for (let r = 0; r < addressData[p].sub[q].sub.length; r++) {
+                      if (addressData[p].sub[q].sub[r].code === addressCodeArray[2]) {
+                        flag = false;
+                      }
+                    }
+                  } else {
+                    addressData[p].sub[q].sub = [];
+                  }
+                  if (flag) {
+                    addressData[p].sub[q].sub.push({
+                      code: rawCitiesData[i].sub[k].sub[n].code,
+                      name: rawCitiesData[i].sub[k].sub[n].name
+                    });
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    console.log('65 addressData', addressData);
+
+
+</script>
+</html>

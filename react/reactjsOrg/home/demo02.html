@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Timer</title>
+    <script src="http://cdn.staticfile.org/react/16.13.1/umd/react.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // state = 333;s
+        class Timer extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    seconds: 0
+                };
+            }
+
+            componentDidMount() {
+                this.intervalTimer = setInterval(() => { this.tick() }, 1000);
+                // 五秒后触发组件卸载事件
+                setTimeout(() => { this.componentWillUnmount() }, 5000);
+            }
+
+            componentWillUnmount() {
+                clearInterval(this.intervalTimer);
+            }
+
+            tick() {
+                console.log(28, this);
+                this.setState({seconds: ++this.state.seconds})
+            }
+
+            render() {
+                const seconds = this.state.seconds;
+                return (
+                    <div>Second: {seconds}</div>
+                );
+            }
+        }
+        const rootDOM = document.getElementById('root');
+        ReactDOM.render(<Timer name="齐亚鹏" age={ 25 } />, rootDOM);
+    </script>
+</body>
+</html>

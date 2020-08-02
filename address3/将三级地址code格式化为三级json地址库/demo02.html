@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="addressData.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+
+    //  全国所有省市区
+    console.log('12 rawCitiesData', rawCitiesData);
+
+    // 最终需要生成的地址对象 addressData
+    const addressData = [];
+
+    // 后端返回的服务地区code
+    // const addressCodeArray = ['350000/350300/350303', '350000/350300/350305',
+    //   '500000/500100/500101', '500000/500100/500243', '500000/500100/500381',
+    //   '330000/330100/330122',
+    //     '330000/330100/330127', '330000/330300/330304'];
+    const addressCodeArray = [
+      "630000/630100/630122",
+      "630000/630100/630104",
+      "320000/320600/320682",
+      "610000/610400/610429",
+      "610000/610100/610103",
+      "440000/441900/441901403",
+      "440000/441900/441901402",
+      "440000/441900/441901401",
+      "610000/610300/610322",
+      "610000/610300/610324",
+      "610000/610300/610323",
+      "610000/610300/610326",
+      "330000/330100/330105",
+      "330000/330100/330104",
+      "330000/330100/330106",
+      "330000/330100/330103",
+      "330000/330100/330102",
+      "610000/610300/610331",
+      "610000/610300/610330",
+      "610000/610300/610332",
+      "330000/330100/330109",
+      "330000/330100/330108",
+      "610000/610300/610328",
+      "610000/610300/610327",
+      "610000/610300/610329",
+      "330000/330100/330110",
+      "610000/610300/610302",
+      "610000/610300/610304",
+      "610000/610300/610303",
+      "330000/330100/330127",
+      "330000/330100/330122",
+      "440000/441900/441901004",
+      "440000/441900/441901125",
+      "440000/441900/441901003",
+      "440000/441900/441901124",
+      "440000/441900/441901123",
+      "440000/441900/441901122",
+      "440000/441900/441901129",
+      "440000/441900/441901128",
+      "440000/441900/441901006",
+      "440000/441900/441901127",
+      "440000/441900/441901005",
+      "440000/441900/441901126",
+      "330000/330100/330185",
+      "330000/330100/330186",
+      "440000/441900/441901121",
+      "330000/330100/330183",
+      "330000/330100/330182",
+      "440000/441900/441901114",
+      "440000/441900/441901113",
+      "440000/441900/441901112",
+      "440000/441900/441901111",
+      "440000/441900/441901118",
+      "440000/441900/441901117",
+      "440000/441900/441901116",
+      "440000/441900/441901115",
+      "440000/441900/441901119",
+      "440000/441900/441901110",
+      "440000/441900/441901103",
+      "440000/441900/441901102",
+      "440000/441900/441901101",
+      "440000/441900/441901107",
+      "440000/441900/441901106",
+      "440000/441900/441901105",
+      "440000/441900/441901104",
+      "440000/441900/441901109",
+      "440000/441900/441901108"
+    ];
+    // addressCodeArray = addressCode.split('/');
+    // console.log('16 addressCodeArray', addressCodeArray);
+    addressCodeArray.map((item) => {
+      filterServiceAddress(addressData, item);
+    });
+
+    console.log('24 最终生成的服务省市区 addressData', addressData);
+    // filterServiceAddress(addressCode);
+
+    function filterServiceAddress(addressData, addressCode) {
+      let addressCodeArray = addressCode.split('/');
+      for (let i = 0; i < rawCitiesData.length; i++) {
+        // 遍历rawCitiesData的第一级 省
+        if (rawCitiesData[i].code === addressCodeArray[0]) {
+          // console.log('23 ');
+          let flag = true;
+          for (let j = 0; j < addressData.length; j++) {
+            if (addressData[j].code === addressCodeArray[0]) {
+              // console.log('26 ');
+              flag = false;
+            }
+          }
+          if (flag) {
+            addressData.push({
+              code: rawCitiesData[i].code,
+              name: rawCitiesData[i].name
+            });
+          }
+        }
+
+        // console.log('40 addressData', addressData);
+
+        // 遍历rawCitiesData的第二级 市
+        for (let k = 0; k < rawCitiesData[i].sub.length; k++) {
+          if (rawCitiesData[i].sub[k].code === addressCodeArray[1]) {
+            let flag = true;
+            for (let l = 0; l < addressData.length; l++) {
+              // console.log('45 ', l);
+              if (addressData[l].sub) {
+                for (let m = 0; m < addressData[l].sub.length; m++) {
+                  if (addressData[l].sub[m].code === addressCodeArray[1]) {
+                    // console.log('46 ');
+                    flag = false;
+                  }
+                }
+              } else {
+                addressData[l].sub = [];
+              }
+              if (flag && rawCitiesData[i].sub[k].code.slice(0, 2) === addressData[l].code.slice(0, 2)) {
+                addressData[l].sub.push({
+                  code: rawCitiesData[i].sub[k].code,
+                  name: rawCitiesData[i].sub[k].name
+                });
+              }
+            }
+
+          }
+          // console.log('67 k', k);
+          // 遍历rawCitiesData的第三级 区
+          if (rawCitiesData[i].sub[k].sub) {
+            for (let n = 0; n < rawCitiesData[i].sub[k].sub.length; n++) {
+              if (addressCodeArray[2].length !== 6) {
+                // console.log('155 addressCodeArray[2]', addressCodeArray[2]);
+              } else if (rawCitiesData[i].sub[k].sub[n].code === addressCodeArray[2]) {
+                // console.log('155 ', addressCodeArray[2]);
+                let flag = true;
+                for (let p = 0; p < addressData.length; p++) {
+                  for (let q = 0; q < addressData[p].sub.length; q++) {
+                    if (addressData[p].sub[q].sub) {
+                      for (let r = 0; r < addressData[p].sub[q].sub.length; r++) {
+                        if (addressData[p].sub[q].sub[r].code === addressCodeArray[2]) {
+                          flag = false;
+                        }
+                      }
+                    } else {
+                      console.log('173 ',p, q, addressCodeArray[2]);
+                      addressData[p].sub[q].sub = [rawCitiesData[i].sub[k].sub[n].name];
+                    }
+
+                    // if (flag && rawCitiesData[i].sub[k].sub[n].code.slice(0, 2) === addressData[p].sub[q].code.slice(0, 2)) {
+                    //   if ([ '11', '12', '31', '50' ].includes(rawCitiesData[i].sub[k].sub[n].code.slice(0, 2))) {
+                    //     addressData[p].sub[q].sub.push({
+                    //       code: rawCitiesData[i].sub[k].sub[n].code,
+                    //       name: rawCitiesData[i].sub[k].sub[n].name
+                    //     });
+                    //   } else if (rawCitiesData[i].sub[k].sub[n].code.slice(2, 4) === addressData[p].sub[q].code.slice(2, 4)) {
+                    //     addressData[p].sub[q].sub.push({
+                    //       code: rawCitiesData[i].sub[k].sub[n].code,
+                    //       name: rawCitiesData[i].sub[k].sub[n].name
+                    //     });
+                    //   }
+                    // }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // console.log('65 addressData', addressData);
+</script>
+</html>
