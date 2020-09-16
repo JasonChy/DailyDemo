@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Stack implement
+    class Stack {
+        constructor() {
+            this.stack = [];
+        }
+        
+        push(element) {
+            this.stack.push(element);
+        }
+        
+        pop() {
+            if (this.isEmpty()) return 'Stack is empty!';
+            return this.stack.pop();
+        }
+        
+        isEmpty() {
+            return !this.stack.length;
+        }
+    }
+
+    // Queue implement
+    class Queue {
+        constructor(param) {
+            if (typeof param === 'string') {
+                this.queue = param.split('');
+            };
+            this.lastHandle = '';
+            this.enqueueChar = ''
+        }
+        
+        enqueue(element) {
+            this.lastHandle = 'enqueue';
+            this.enqueueChar = element
+            this.queue.unshift(element);
+        }
+        
+        dequeue() {
+            this.lastHandle = 'dequeue';
+            if (this.isEmpty()){
+            return 'Queue is empty';
+        }
+            return this.queue.pop();
+        }
+        
+        isEmpty() {
+            return !this.queue.length;
+        }
+
+        print() {
+            let message = '';
+            if (this.lastHandle === 'dequeue') {
+                message = this.lastHandle + ': ';
+            } else if (this.lastHandle === 'enqueue') {
+                message = `${this.lastHandle}(${this.enqueueChar}): `;
+            } else {
+                message = 'initial: ';
+            }
+            console.log(message, this.queue.join(''));
+        }
+    }
+
+    // test
+    const input = "Javascript"
+
+    const queue = new Queue(input); queue.print()
+    const firstItem = queue.dequeue(); queue.print()
+    const secondItem = queue.dequeue(); queue.print()
+    queue.enqueue(firstItem); queue.print()
+    queue.enqueue(secondItem); queue.print()
+</script>
+</html>

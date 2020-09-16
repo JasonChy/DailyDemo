@@ -19,14 +19,19 @@
 
         var friend = new Person();
 
+        console.log('22 ', friend.__proto__ === Person.prototype);
+        console.log('23 ', Person.prototype.constructor === Person);
+        console.log('24 ', Person.__proto__ === Object.__proto__);
+
         console.log(friend instanceof Object);  //true
         console.log(friend instanceof Person);  //true
         console.log(friend.constructor == Person);  //false
         console.log("constructor", friend.constructor);  //false
         console.log(friend.constructor == Object);  //true
-        console.log(friend.hasOwnProperty(constructor)  );  //true
-        console.log(friend.hasOwnProperty("constructor") );  //true
-        console.log(friend.__proto__.hasOwnProperty("constructor") );  //true
+        console.log('27', friend.hasOwnProperty(constructor)  );  //false
+        console.log(friend.hasOwnProperty("constructor") );  //false
+        console.log('29 ',friend.__proto__.hasOwnProperty("constructor") );  //true
+        console.log('30 ',friend.__proto__.__proto__.hasOwnProperty("constructor") );  //true
         console.log("constructor" in friend );  //true
         console.log("constructor" in friend.__proto__ );  //true
         console.log( Object.keys(friend) );
@@ -37,3 +42,18 @@
 
 </body>
 </html>
+
+<script>
+    (function() {
+        let a = 1;
+        fn();
+        function fn() {
+            a += 1;
+            console.log(a);
+            return a;
+        }
+        console.log(a);
+        console.log(fn() + 1);
+    })();
+
+</script>
