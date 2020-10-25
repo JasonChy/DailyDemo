@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo02</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 记录显示的类
+    function Display() {
+        this.currentDisplay = '',
+        this.copiedLetter = '',
+        this.ctrlC = false,   // 2
+        this.ctrlX = false,   // 3
+        this.ctrlV = false,   // 4
+        this.ctrlA = false    // 5
+    }
+
+    // 键盘逻辑
+    function computerLetterCount(input) {
+        let display = new Display();
+        input = input.replace(/\s/g, '');
+        // console.log('13 input', input);
+        for (let i = 0; i < input.length; i++) {
+            // console.log(input[i]);
+            if (input[i] == 5) {
+                display.ctrlA = true;
+            } else if (input[i] == 4) {
+                if (display.ctrlA) {
+                    display.currentDisplay = display.copiedLetter;
+                } else {
+                    display.currentDisplay += display.copiedLetter;
+                }
+                display.ctrlA = false;
+            } else if (input[i] == 3) {
+                if (display.ctrlA) {
+                    display.copiedLetter = display.currentDisplay;
+                    display.currentDisplay = '';
+                }
+                display.ctrlA = false;
+            } else if (input[i] == 2) {
+                if (display.ctrlA) {
+                    display.copiedLetter = display.currentDisplay;
+                }
+            } else if (input[i] == 1) {
+                if (display.ctrlA) {
+                    display.currentDisplay = '';
+                }
+                display.currentDisplay += 'a';
+                display.ctrlA = false;
+            }
+            // console.log('55 display.ctrlA: ', display.ctrlA);
+            // console.log('51 display.copiedLetter: ', display.copiedLetter);
+            // console.log('52 display.currentDisplay: ', display.currentDisplay);
+        }
+        // console.log('48 display.currentDisplay: ', display.currentDisplay);
+        return display.currentDisplay.length;
+    };
+
+    const input01 = '1 1 5 1 5 2 4 4';
+    const input02 = '1 5 3 2 2 1 4 1';
+    console.log(computerLetterCount(input01));
+    console.log(computerLetterCount(input02));
+
+    // 1, a
+    // 1, aa
+    // 5, aa
+    // 1, a
+    // 5, a
+    // 2 a
+    // 4 a
+    // 4 aa
+</script>
+</html>

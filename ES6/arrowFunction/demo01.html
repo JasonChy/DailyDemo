@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let fn1 = function(name, age) {
+        // console.log('16 arguments', arguments)
+        this.name = name;
+        this.age = age;
+    }
+
+    let fn2 = (name, age) => {
+        // console.log('16 this', this)
+        this.name = name;
+        this.age = age;
+    };
+    fn2.prototype = new fn1();
+    fn2.prototype.constructor = fn1;
+    let person01 = new fn1('李白', 23);
+    // let person02 = new fn2('杜甫', 25);
+    console.dir(fn1);
+    console.dir(fn2);
+    console.dir(person01);
+    // console.dir(person02);
+</script>
+</html>

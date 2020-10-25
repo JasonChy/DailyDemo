@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var bigIntNum = 90071992547409932n;
+    console.log('13', typeof bigIntNum); // bigint
+
+    // 结果是                900719925474090052063256903680n
+    var bigIntNum2 = BigInt(900719925474090071992547409932);
+    
+    var anOtherBigIntNum = BigInt('900719925474099390071992547409932');
+
+    var bigNumRet = 9007199254740993n + 9007199254740993n; // -> -> 18014398509481986n
+
+    bigNumRet.toString(); // -> '18014398509481986'
+    console.log();
+</script>
+</html>

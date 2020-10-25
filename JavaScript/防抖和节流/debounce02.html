@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+function debounce(fn, delay) {
+    console.log('14 arguments', arguments);
+    // let now = arguments[2]
+    // console.log('16 now', now);
+    let timerId = null;
+    return function() {
+        let context = this;
+        let args = arguments;
+        console.log('18 args', arguments);
+        console.log(fn, delay);
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        timerId = setTimeout(function () {
+            fn.apply(context, args)
+        }, delay);
+    }
+}
+function handle (args) {
+    console.log(Math.random());
+    console.log('29 args', args);
+}
+// let resize = (event) => {
+//     console.log(event);
+// }
+// window.onresize = function(event) {
+//     return debounce(handle, 3000, event);
+//     // console.log('27:  ', test());
+// }();
+// let nowTime = Date.now();
+let fn03 = debounce(handle, 3000).bind(this, 555, 666);
+console.log('44 fn03', fn03);
+window.onresize = fn03;
+/**
+ * 1、事件处理函数 默认会被 传入 event对象
+ * 2、事件处理函数的event形参 无法传入其内部的 闭包函数
+ * 3、如何通过debounce函数给内部的闭包函数 传参数
+ * */ 
+</script>
+</html>

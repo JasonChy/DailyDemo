@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num = Number.MAX_SAFE_INTEGER;  // -> 9007199254740991
+
+    num = num + 1; // -> 9007199254740992
+
+    // 再次加 +1 后无法正常运算
+    num = num + 1; // -> 9007199254740992
+
+    // 两个不同的值，却返回了true
+    9007199254740992 === 9007199254740993// -> true
+</script>
+</html>

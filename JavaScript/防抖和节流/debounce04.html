@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟百度搜索</title>
+</head>
+<body>
+    <input type="text">
+</body>
+<script>
+function debounce(callback, time) {
+    var timer;
+    return function () {
+        clearTimeout(timer) //清除之前的计时
+        var args = arguments; //保存当前函数参数数组，把参数带到setTimeout里面需要执行的函数。这里也有一点闭包的感觉
+        timer = setTimeout(function () {
+          callback.apply(null, args);
+          //因为参数是个伪数组，而apply传递参数就是用数组传递，所以我们就正好利用这一点
+          // ，让apply帮忙，但是this指向不需要用到，所以我们给个null
+        }, time)
+    }
+}
+var inp = document.querySelector("input");
+var handle = debounce(function (val) {
+    console.log("搜索了: " + val);
+}, 1000)
+inp.oninput = function () {
+    handle(this.value)
+}
+</script>
+</html>

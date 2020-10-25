@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function foo() {
+        // (1<=N<= 888888888 )
+        for (let amount = 0; amount < 100; amount++) {
+            let string = amount.toString();
+            if (/4/.test(string)) {
+                let loc = string.indexOf('4');
+                console.log(amount);
+                charArray = string.split('');
+                charArray[loc] = Number(charArray[loc]) + 1;
+                let newAmount = charArray.join('');
+                console.log(newAmount);
+            }
+        }
+    }
+    foo();
+</script>
+</html>

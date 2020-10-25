@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素demo</title>
+</head>
+<body>
+    <article id="#first">
+        <style>
+            h1:before {
+                content: "Hello ";
+            }
+            h1:after {
+                content: " test";
+            }
+            h1::first-letter {
+                font-size: 2em;
+            }
+            p {
+                width: 100px;
+                height: 100px;
+            }
+            p:first-line {
+                background: orange;
+            }
+            ::selection {
+                color: orange;
+                background-color: pink;
+            }
+            input::placeholder {
+                color: aqua;
+            }
+        </style>
+        <h1>World</h1>
+        <p>
+            irst-line 匹配元素中第一行的文本。这个伪元素只能用在块元素中，
+        </p>
+        <input type="text"  placeholder="输入金额">
+    </article>
+    <article>
+        <style>
+            h1#element:fullscreen::backdrop {
+                background: orange;
+            }
+        </style>
+        <h1 id="element">This heading will have a solid background color in full-screen mode.</h1>
+        <button onclick="var el = document.getElementById('element'); el.webkitRequestFullscreen();">Trigger full screen!</button>
+
+    </article>
+    <article>
+        <input type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+    </article>
+</body>
+</html>

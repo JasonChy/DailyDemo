@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖01</title>
+</head>
+
+<body>
+<script>
+    function throttle(callback, time, immediately) {
+        var t;
+        var timer;
+        return function () {
+            if (immediately) {
+                if (!t || Date.now() - t >= time) {
+                    callback.apply(null, arguments);
+                    t = Date.now()
+                }
+            }
+            if (!immediately) {
+                if (timer) {
+                    return;
+                } //如果发现当前已经有计时了，啥都不做
+                var args = arguments; //保存当前函数参数数组，把参数带到setTimeout里面需要执行的函数。这里也有一点闭包的感觉
+                timer = setTimeout(function () {
+                    callback.apply(null, args);
+                    timer = null; //执行一次后timer必须清空，不然永远不会执行下一次了
+                }, time)
+            }
+        }
+    }
+    function handle() {
+        console.log(arguments[0]);
+    }
+    window.onresize = throttle(handle, 2000);
+</script>
+</body>
+
+</html>

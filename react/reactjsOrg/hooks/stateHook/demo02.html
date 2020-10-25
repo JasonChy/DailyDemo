@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="http://cdn.staticfile.org/react/16.8.6/umd/react.production.min.js"></script>
+    <script src="http://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        // import React, { useState } from 'react';
+        // 定义 Example 组件
+        class Example extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    count: 0
+                };
+            }
+
+            render() {
+                return (
+                    <div>
+                        <p>You clicked {this.state.count} times</p>
+                        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+                            Click me
+                        </button>
+                    </div>
+                );
+            };
+        }
+        const rootDOM = document.getElementById('root');
+        ReactDOM.render(<Example />, rootDOM);
+    </script>
+</body>
+</html>

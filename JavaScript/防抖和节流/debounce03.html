@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+function fn01(args01, args02) {
+    console.log('14 arguments', arguments);
+    let fn2 =  function() {
+        // let args = arguments;
+        console.log('18 arguments',arguments);
+    }
+    return fn2;
+}
+fn01(111, 222)(333, 444);
+</script>
+</html>

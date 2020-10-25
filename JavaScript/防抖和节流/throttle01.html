@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖01</title>
+</head>
+<body>
+    <script>
+        function throttle(fn, delay) {
+            let prevTime = Date.now();
+            return function () {
+                let context = this;
+                let args = arguments;
+                console.log('15 args', args);
+                // let nowTime = Date.now();
+                if (Date.now() - prevTime > delay) {
+                    fn.apply(context, args);
+                    prevTime = Date.now();
+                    // console.log('19 prevTime', prevTime);
+                }
+            }
+        }
+
+        function handle() {
+            console.log(arguments[0]);
+        }
+        window.onresize = throttle(handle, 2000);
+    </script>
+</body>
+</html>

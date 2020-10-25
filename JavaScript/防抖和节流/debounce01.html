@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+<body>
+    <div style="height: 3000px;"></div>
+</body>
+<script>
+function debounce(fn, delay) {
+    let timerId = null;
+    console.log('15: ', arguments);
+    return function() {
+        let args = arguments;
+        console.log('17 args', args);
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        // console.log('20: ', timerId);
+        timerId = setTimeout(() => {
+            fn.apply(this, args);
+        }, delay);
+    }
+}
+
+const generateRandom = function(args) {
+    console.log(Math.random());
+    console.log('30 arguments: ', args);
+}
+
+// console.log(debounce(generateRandom, 3000));
+let kankan = function(event) {
+    return debounce(generateRandom, 3000, '333', event);
+    // .bind(this, event);
+}();
+
+console.log('37 kankan: ', kankan);
+window.onresize = kankan;
+// window.onresize = debounce(generateRandom, 3000);
+// debounce(generateRandom, 3000);
+// console.log('generateRandom: ', generateRandom());
+
+</script>
+
+</html>
