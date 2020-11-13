@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // const aaa = { name: 'qiyapeng' };
+    // const bbb = { aaa }
+    // function foo({ aaa }) {
+    //     console.log('14 arg', aaa)
+    // }
+    // foo({ aaa })
+    const aaa = {
+        bbb: {
+            ccc: '你好',
+            ddd: 'Hello'
+        },
+        eee: [{ name: 'qiyapeng' }, { age: 25 }]
+    }
+    const { bbb: { ccc = '爱你们', ddd}, eee: [{ name }, { age: gender = 23 }] } = aaa;
+    console.log('26', ccc, ddd, name, gender)
+</script>
+</html>

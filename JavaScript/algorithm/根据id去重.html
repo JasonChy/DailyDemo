@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const arr = [{ id: 1, name: 1 }, { id: 2, name: 2 }, { id: 1, name: 3 }];
+
+function unique(arr) {
+    let result = [];
+    let alreadyHas = [];
+    arr.map((item, index) => {
+        if (!alreadyHas.includes(item.id)) {
+            alreadyHas.push(item.id);
+            result.push(item);
+        }
+    })
+
+    return result;
+}
+
+console.log(unique(arr));
+</script>
+</html>

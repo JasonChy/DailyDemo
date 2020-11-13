@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //    [{ CLOUD_FUND: ['BUSINESS_COOPERATION1','BUSINESS_COOPERATION2'] }]
+    //   ['CLOUD_FUND','BUSINESS_COOPERATION1'] ['CLOUD_FUND','BUSINESS_COOPERATION2']
+
+
+    // let result = [
+    //     {
+    //         'level01': ['value111', 'value122', 'value133']
+    //     },
+    //     {
+    //         'level02': ['value111', 'value122', 'value133']
+    //     },
+    //     {
+    //         'level03': ['value111', 'value122', 'value133']
+    //     },
+    // ];
+
+    // let result01 = {
+    //     'level01': ['value111', 'value122', 'value133'],
+    //     'level02': ['value111', 'value122', 'value133'],
+    //     'level03': ['value111', 'value122', 'value133']
+    // };
+
+    let arr01 = ['level01', 'value111'];
+    let arr02 = ['level01', 'value122'];
+    let arr03 = ['level01', 'value133'];
+
+    let arr04 = ['level02', 'value211'];
+    let arr05 = ['level02', 'value211'];
+
+    let arr06 = ['level03', 'value311'];
+    let arr07 = ['level03', 'value311'];
+
+
+    function foo() {
+        let result = {};
+        let resultArr = [];
+        for (let i = 0; i < arguments.length; i++) {
+            if (!result[arguments[i][0]]) {
+                result[arguments[i][0]] = [];
+            } if (!result[arguments[i][0]].includes(arguments[i][1])) {
+                    result[arguments[i][0]].push(arguments[i][1]);
+                    // [].includes
+                }
+        }
+
+        console.log('26 ', result)
+        for (let key in result) {
+            let objTemp = {
+                [key]: result[key]
+            }
+            resultArr.push(objTemp)
+        }
+        return resultArr;
+    }
+
+    const hahaha = foo(arr01, arr02, arr03, arr04, arr05, arr06, arr07);
+    console.log('29 foo', hahaha)
+
+</script>
+
+</html>
+

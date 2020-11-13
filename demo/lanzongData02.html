@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //    [{ CLOUD_FUND: ['BUSINESS_COOPERATION1','BUSINESS_COOPERATION2'] }]
+    //   ['CLOUD_FUND','BUSINESS_COOPERATION1'] ['CLOUD_FUND','BUSINESS_COOPERATION2']
+
+    let arr01 = ['level01', 'value111'];
+    let arr02 = ['level01', 'value122'];
+    let arr03 = ['level01', 'value133'];
+
+    let arr04 = ['level02', 'value211'];
+    let arr05 = ['level02', 'value211'];
+
+    let arr06 = ['level03', 'value311'];
+    let arr07 = ['level03', 'value311'];
+
+    // let result = [
+    //     {
+    //         'level01': ['value111', 'value122', 'value133']
+    //     },
+    //     {
+    //         'level02': ['value111', 'value122', 'value133']
+    //     },
+    //     {
+    //         'level03': ['value111', 'value122', 'value133']
+    //     },
+    // ];
+
+    let result01 = {
+        'level01': ['value111', 'value122', 'value133'],
+        'level02': ['value111', 'value122', 'value133'],
+        'level03': ['value111', 'value122', 'value133']
+    };
+
+    /**
+     * 闭包：可以访问其他函数左右域中变量的变量的函数；
+     * 形成条件：
+     *      1、函数套函数（内层函数 就是闭包）；
+     *      2、内层函数被使用了（被执行，或者被return出去了）；
+     *      3、内层函数访问了 外层函数定义的变量或外层函数的参数；
+     *  如何使用：
+     *      1.定义外层函数，封装被保护的局部变量；
+     *      2.定义内层函数，执行对外部函数变量的操作；
+     *      3.外层函数返回内层函数的对象，并且外层函数被调用，结果保存在一个全局的变量中；
+
+     *  特性和作用：封装私有变量，延长私有变量的生命周期（定义在外层函数作用域的变量，既长久的保存又不会造成全局污染）；
+        常见应用场景：
+            1、通过循环给页面上多个dom节点绑定事件（每个次记录循环的当前次数）；
+            2、防抖函数和节流函数中用来保存 计数器的Id
+
+        缺点：
+            容易造成 内存泄露，不建议多用，解决办法就是 用完闭包后，将闭包函数赋值为null
+       
+    */
+    function foo() {
+        let result = {};
+        return function(arg) {
+            if (!result[arg[0]]) {
+                result[arg[0]] = [];
+            }
+
+            if (result[arg[0]].indexOf(arg[1]) === -1) {
+                result[arg[0]].push(arg[1]);
+            }
+            return result;
+        }
+    }
+
+    let foo02 = foo();
+    // foo02 是闭包
+
+    foo02(arr05);
+    foo02(arr06);
+    foo02(arr01);
+    foo02(arr02);
+    foo02(arr03);
+    foo02(arr04);
+    let hahaha = foo02(arr07);
+    foo02 = null;
+
+    // foo02用完了应该赋值为null，让垃圾回收机制回收 result变量，避免造成内存泄露
+    console.log('29 foo', JSON.parse(JSON.stringify(hahaha)));
+
+    function step02(obj) {
+        let resultArr = [];
+        for (let key in obj) {
+            let objTemp = Object.create(null, {
+                [key]: {
+                    value: obj[key],
+                    // writable:true,       // 是否是可改写的
+                    // configurable:true,   // 是否能够删除，是否能够被修改
+                    // enumerable:true      //是否可以用for in 进行枚举
+                }
+            });
+            // objTemp[key] = obj[key]
+            resultArr.push(objTemp)
+        }
+        return resultArr;
+    }
+
+    console.log('76 foo', step02(hahaha))
+
+</script>
+
+</html>
+

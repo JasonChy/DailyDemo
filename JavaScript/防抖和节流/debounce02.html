@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>防抖02</title>
 </head>
 <body>
     
 </body>
 <script>
-
 function debounce(fn, delay) {
     console.log('14 arguments', arguments);
     // let now = arguments[2]
@@ -44,9 +43,22 @@ let fn03 = debounce(handle, 3000).bind(this, 555, 666);
 console.log('44 fn03', fn03);
 window.onresize = fn03;
 /**
- * 1、事件处理函数 默认会被 传入 event对象
- * 2、事件处理函数的event形参 无法传入其内部的 闭包函数
- * 3、如何通过debounce函数给内部的闭包函数 传参数
+ * 1、timerId要么放在全局，要么用闭包（放在外层函数中）；
+ * 2、事件处理函数 默认会被 传入 event对象；
+ * 3、事件处理函数的event形参 无法传入其内部的 闭包函数；
+ * 4、如何通过debounce函数给内部的闭包函数 传参数，可以用bind方法；
+ * 
  * */ 
+
+ var a = 1;
+(
+        function (f) {
+            f()
+        }(
+            function () {
+                console.log(a)
+            }
+        )
+);
 </script>
 </html>
